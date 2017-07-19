@@ -72,6 +72,12 @@
     <Compile Include="VIEW\AG_AGENDA\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\CX_CAIXA\CaixaSaidaTela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\CX_CAIXA\CaixaSaidaTela.Designer.cs">
+      <DependentUpon>CaixaSaidaTela.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\CX_CAIXA\CaixaTela.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </Compile>
     <EmbeddedResource Include="VIEW\AD_ADMINISTRACAO\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaSaidaTela.resx">
+      <DependentUpon>CaixaSaidaTela.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaTela.resx">
       <DependentUpon>CaixaTela.cs</DependentUpon>
