@@ -29,5 +29,10 @@ namespace LJMSOFT
             CaixaTela caixaTela = new CaixaTela();
             caixaTela.ShowDialog();
         }
+
+        private void MenuTela_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
