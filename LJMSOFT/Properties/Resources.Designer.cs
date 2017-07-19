@@ -4,7 +4,7 @@
 //     Versão de Tempo de Execução:4.0.30319.42000
 //
 //     As alterações ao arquivo poderão causar comportamento incorreto e serão perdidas se
-//     o código for gerado CaixaTelamente.
+//     o código for gerado novamente.
 // </auto-generated>
 //------------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ namespace LJMSOFT.Properties {
     /// </summary>
     // Essa classe foi gerada automaticamente pela classe StronglyTypedResourceBuilder
     // através de uma ferramenta como ResGen ou Visual Studio.
-    // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen CaixaTelamente
+    // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -76,6 +76,26 @@ namespace LJMSOFT.Properties {
         internal static System.Drawing.Bitmap background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background1 {
+            get {
+                object obj = ResourceManager.GetObject("background1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backgroundn {
+            get {
+                object obj = ResourceManager.GetObject("backgroundn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
