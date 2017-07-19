@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LJMSOFT
+namespace LJMSOFT.VIEW.AD_ADMINISTRACAO
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
