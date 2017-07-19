@@ -15,7 +15,7 @@ namespace LJMSOFT
         public Form1()
         {
             InitializeComponent();
-            dasdasda
+           
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
