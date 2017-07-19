@@ -72,17 +72,23 @@
     <Compile Include="VIEW\AG_AGENDA\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\CX_CAIXA\CaixaSaidaTela.cs">
+    <Compile Include="VIEW\CX_CAIXA\CaixaEntradaTela.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\CX_CAIXA\CaixaSaidaTela.Designer.cs">
-      <DependentUpon>CaixaSaidaTela.cs</DependentUpon>
+    <Compile Include="VIEW\CX_CAIXA\CaixaEntradaTela.Designer.cs">
+      <DependentUpon>CaixaEntradaTela.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\CX_CAIXA\CaixaTela.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEW\CX_CAIXA\CaixaTela.Designer.cs">
       <DependentUpon>CaixaTela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\CX_CAIXA\ListarItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\CX_CAIXA\ListarItem.Designer.cs">
+      <DependentUpon>ListarItem.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\PS_PESSOA\Form1.cs">
       <SubType>Form</SubType>
@@ -112,11 +118,14 @@
     <EmbeddedResource Include="VIEW\AD_ADMINISTRACAO\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaSaidaTela.resx">
-      <DependentUpon>CaixaSaidaTela.cs</DependentUpon>
+    <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaEntradaTela.resx">
+      <DependentUpon>CaixaEntradaTela.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaTela.resx">
       <DependentUpon>CaixaTela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\CX_CAIXA\ListarItem.resx">
+      <DependentUpon>ListarItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -148,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\saidaDinheiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundn.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
