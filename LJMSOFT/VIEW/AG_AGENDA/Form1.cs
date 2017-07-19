@@ -16,5 +16,10 @@ namespace LJMSOFT.VIEW.AG_AGENDA
         {
             InitializeComponent();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
