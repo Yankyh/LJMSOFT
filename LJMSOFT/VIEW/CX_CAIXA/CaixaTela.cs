@@ -15,6 +15,12 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         public CaixaTela()
         {
             InitializeComponent();
+            
+        }
+
+        private void CaixaTela_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
