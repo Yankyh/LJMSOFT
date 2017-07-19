@@ -52,8 +52,11 @@ namespace LJMSOFT.DAL
         public void AdicionarNovoUsuario(String login, String senha,int Pessoa)
         {
 
-           String DataAtual = DateTime.Now.ToString();
-            MessageBox.Show(DataAtual);
+            String dataAtual = DateTime.Now.ToString();
+            DateTime teste = Convert.ToDateTime(dataAtual);
+            dataAtual = teste.ToString("yyyy/MM/dd");
+            
+            MessageBox.Show(dataAtual);
             String query = "declare @nome varchar(30),@senha varchar(20)," +
                  "@aux varbinary(100) set @nome ='" + login + "' set @senha ='" + senha + "' set @aux=Convert(varbinary(100),pwdEncrypt(@senha))" +
                  "INSERT INTO US_USUARIO(USUARIO,SENHA,PESSOA,DATAALTERACAO) VALUES(@nome,@aux,"+Pessoa+","+DataAtual+")";
