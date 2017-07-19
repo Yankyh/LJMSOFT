@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LJMSOFT
 {
-    public partial class Form1 : Form
+    public partial class MenuTela : Form
     {
-        public Form1()
+        public MenuTela()
         {
             InitializeComponent();
 

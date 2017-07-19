@@ -52,11 +52,11 @@
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Conexao.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MenuTela.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MenuTela.Designer.cs">
+      <DependentUpon>MenuTela.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,11 +72,11 @@
     <Compile Include="VIEW\AG_AGENDA\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\CX_CAIXA\Form1.cs">
+    <Compile Include="VIEW\CX_CAIXA\CaixaTela.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\CX_CAIXA\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="VIEW\CX_CAIXA\CaixaTela.Designer.cs">
+      <DependentUpon>CaixaTela.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\PS_PESSOA\Form1.cs">
       <SubType>Form</SubType>
@@ -90,8 +90,8 @@
     <Compile Include="VIEW\RL_RELATORIO\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MenuTela.resx">
+      <DependentUpon>MenuTela.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,7 +102,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VIEW\AG_AGENDA\Form1.resx">
+    <EmbeddedResource Include="VIEW\AD_ADMINISTRACAO\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LJMSOFT.VIEW.CX_CAIXA
 {
-    public partial class Form1 : Form
+    public partial class CaixaTela : Form
     {
-        public Form1()
+        public CaixaTela()
         {
             InitializeComponent();
         }
