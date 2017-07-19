@@ -22,5 +22,10 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         {
 
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
