@@ -112,6 +112,9 @@
     <EmbeddedResource Include="VIEW\AD_ADMINISTRACAO\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\AG_AGENDA\Agenda.resx">
+      <DependentUpon>Agenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaSaidaTela.resx">
       <DependentUpon>CaixaSaidaTela.cs</DependentUpon>
     </EmbeddedResource>

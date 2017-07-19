@@ -34,6 +34,7 @@ namespace LJMSOFT
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Agenda agenda = new Agenda();
+            agenda.ShowDialog();
         }
     }
 }
