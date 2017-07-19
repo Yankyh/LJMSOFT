@@ -1,6 +1,6 @@
 ﻿namespace LJMSOFT.VIEW.CX_CAIXA
 {
-    partial class Form1
+    partial class CaixaTela
     {
         /// <summary>
         /// Required designer variable.
