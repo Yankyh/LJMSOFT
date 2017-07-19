@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace LJMSOFT.VIEW.CX_CAIXA
 {
-    public partial class CaixaTela : Form
+    public partial class CaixaSaidaTela : Form
     {
-        public CaixaTela()
+        public CaixaSaidaTela()
         {
             InitializeComponent();
-            
-        }
-
-        private void CaixaTela_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

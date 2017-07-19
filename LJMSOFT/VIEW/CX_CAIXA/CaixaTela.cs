@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LJMSOFT.VIEW.CX_CAIXA;
 
 namespace LJMSOFT.VIEW.CX_CAIXA
 {
@@ -15,7 +16,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         public CaixaTela()
         {
             InitializeComponent();
-            
         }
 
         private void CaixaTela_Load(object sender, EventArgs e)
@@ -23,9 +23,10 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            CaixaSaidaTela caixaSaidaTela = new CaixaSaidaTela();
+            caixaSaidaTela.ShowDialog();
         }
     }
 }
