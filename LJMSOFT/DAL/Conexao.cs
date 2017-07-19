@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+//1366 x 768
 namespace LJMSOFT.DAL
 {
     class Conexao
@@ -59,7 +61,7 @@ namespace LJMSOFT.DAL
             MessageBox.Show(dataAtual);
             String query = "declare @nome varchar(30),@senha varchar(20)," +
                  "@aux varbinary(100) set @nome ='" + login + "' set @senha ='" + senha + "' set @aux=Convert(varbinary(100),pwdEncrypt(@senha))" +
-                 "INSERT INTO US_USUARIO(USUARIO,SENHA,PESSOA,DATAALTERACAO) VALUES(@nome,@aux,"+Pessoa+","+DataAtual+")";
+                 "INSERT INTO US_USUARIO(USUARIO,SENHA,PESSOA,DATAALTERACAO) VALUES(@nome,@aux,"+Pessoa+","+dataAtual+")";
             try
             {
                 Pesquisa(query);

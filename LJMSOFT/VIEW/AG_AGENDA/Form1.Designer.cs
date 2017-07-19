@@ -28,11 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dataGridViewLista = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLista)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridViewLista
+            // 
+            this.dataGridViewLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLista.Location = new System.Drawing.Point(12, 215);
+            this.dataGridViewLista.Name = "dataGridViewLista";
+            this.dataGridViewLista.Size = new System.Drawing.Size(1326, 502);
+            this.dataGridViewLista.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.dataGridViewLista);
+            this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLista)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridViewLista;
     }
 }
