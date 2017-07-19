@@ -66,11 +66,11 @@
     <Compile Include="VIEW\AD_ADMINISTRACAO\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\AG_AGENDA\Form1.cs">
+    <Compile Include="VIEW\AG_AGENDA\Agenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\AG_AGENDA\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="VIEW\AG_AGENDA\Agenda.Designer.cs">
+      <DependentUpon>Agenda.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\CX_CAIXA\CaixaSaidaTela.cs">
       <SubType>Form</SubType>
@@ -148,6 +148,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\saidaDinheiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad-icon-29008.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

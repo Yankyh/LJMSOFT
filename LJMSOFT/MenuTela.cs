@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LJMSOFT.VIEW.CX_CAIXA;
+using LJMSOFT.VIEW.AG_AGENDA;
 
 namespace LJMSOFT
 {
@@ -28,6 +29,11 @@ namespace LJMSOFT
         {
             CaixaTela caixaTela = new CaixaTela();
             caixaTela.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Agenda agenda = new Agenda();
         }
     }
 }
