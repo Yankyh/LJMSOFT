@@ -72,6 +72,12 @@
     <Compile Include="VIEW\AG_AGENDA\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\CX_CAIXA\CaixaSaidaTela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\CX_CAIXA\CaixaSaidaTela.Designer.cs">
+      <DependentUpon>CaixaSaidaTela.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\CX_CAIXA\CaixaTela.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +107,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="VIEW\AD_ADMINISTRACAO\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\AG_AGENDA\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaSaidaTela.resx">
+      <DependentUpon>CaixaSaidaTela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaTela.resx">
+      <DependentUpon>CaixaTela.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,6 +133,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Agenda\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caixaIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caixaIconn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entradaDinheiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saidaDinheiro.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
