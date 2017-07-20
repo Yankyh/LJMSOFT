@@ -37,7 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.pessoaCombo = new System.Windows.Forms.ComboBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -82,7 +82,7 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.comboBox3);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.comboBox2);
+            this.tabPage1.Controls.Add(this.pessoaCombo);
             this.tabPage1.Controls.Add(this.tabControl2);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
@@ -94,6 +94,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Venda";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // textBox2
             // 
@@ -106,7 +107,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.LightCoral;
             this.button2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1008, 521);
+            this.button2.Location = new System.Drawing.Point(998, 521);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 49);
             this.button2.TabIndex = 2;
@@ -157,16 +158,16 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Cliente";
             // 
-            // comboBox2
+            // pessoaCombo
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(18, 87);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(313, 35);
-            this.comboBox2.TabIndex = 6;
-            this.comboBox2.DropDown += new System.EventHandler(this.listarCliente);
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.pessoaCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pessoaCombo.FormattingEnabled = true;
+            this.pessoaCombo.Location = new System.Drawing.Point(18, 87);
+            this.pessoaCombo.Name = "pessoaCombo";
+            this.pessoaCombo.Size = new System.Drawing.Size(313, 35);
+            this.pessoaCombo.TabIndex = 6;
+            this.pessoaCombo.DropDown += new System.EventHandler(this.listarCliente);
+            this.pessoaCombo.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // tabControl2
             // 
@@ -291,7 +292,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(1050, 87);
+            this.textBox4.Location = new System.Drawing.Point(1040, 87);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(102, 35);
             this.textBox4.TabIndex = 13;
@@ -299,7 +300,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1045, 56);
+            this.label8.Location = new System.Drawing.Point(1036, 56);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 27);
             this.label8.TabIndex = 14;
@@ -340,7 +341,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox pessoaCombo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;

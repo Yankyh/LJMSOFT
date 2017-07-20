@@ -52,6 +52,7 @@
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Conexao.cs" />
+    <Compile Include="DAL\MetodoQuery.cs" />
     <Compile Include="MenuTela.cs">
       <SubType>Form</SubType>
     </Compile>
