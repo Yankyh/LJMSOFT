@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.codigoBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,7 +42,15 @@
             this.pessoaCombo = new System.Windows.Forms.ComboBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.quantidadeRoll = new System.Windows.Forms.NumericUpDown();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.valorTotalBox = new System.Windows.Forms.TextBox();
+            this.itensCombo = new System.Windows.Forms.ComboBox();
+            this.itemDataGridView = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tipoPagamentoCombo = new System.Windows.Forms.ComboBox();
@@ -49,23 +59,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.itensCombo = new System.Windows.Forms.ComboBox();
-            this.valorTotalBox = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.quantidadeRoll = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantidadeRoll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -82,7 +82,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.codigoBox);
             this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label5);
@@ -103,6 +103,23 @@
             this.tabPage1.Text = "Venda";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1036, 56);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 27);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Código";
+            // 
+            // codigoBox
+            // 
+            this.codigoBox.Enabled = false;
+            this.codigoBox.Location = new System.Drawing.Point(1040, 87);
+            this.codigoBox.Name = "codigoBox";
+            this.codigoBox.Size = new System.Drawing.Size(102, 35);
+            this.codigoBox.TabIndex = 13;
             // 
             // textBox2
             // 
@@ -200,7 +217,7 @@
             this.tabPage3.Controls.Add(this.checkBox1);
             this.tabPage3.Controls.Add(this.valorTotalBox);
             this.tabPage3.Controls.Add(this.itensCombo);
-            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.itemDataGridView);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
@@ -210,14 +227,112 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Itens";
             // 
-            // dataGridView1
+            // label11
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(960, 228);
-            this.dataGridView1.TabIndex = 1;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(555, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 18);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Valor Total";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(457, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(89, 18);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Quantidade";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 18);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Item";
+            // 
+            // quantidadeRoll
+            // 
+            this.quantidadeRoll.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantidadeRoll.Location = new System.Drawing.Point(460, 31);
+            this.quantidadeRoll.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.quantidadeRoll.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.quantidadeRoll.Name = "quantidadeRoll";
+            this.quantidadeRoll.Size = new System.Drawing.Size(92, 32);
+            this.quantidadeRoll.TabIndex = 18;
+            this.quantidadeRoll.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.quantidadeRoll.ValueChanged += new System.EventHandler(this.recalcularValor);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(309, 34);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(145, 26);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "Informar valor";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // valorTotalBox
+            // 
+            this.valorTotalBox.Enabled = false;
+            this.valorTotalBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valorTotalBox.Location = new System.Drawing.Point(558, 31);
+            this.valorTotalBox.Name = "valorTotalBox";
+            this.valorTotalBox.Size = new System.Drawing.Size(176, 32);
+            this.valorTotalBox.TabIndex = 16;
+            // 
+            // itensCombo
+            // 
+            this.itensCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.itensCombo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itensCombo.FormattingEnabled = true;
+            this.itensCombo.Location = new System.Drawing.Point(5, 31);
+            this.itensCombo.Name = "itensCombo";
+            this.itensCombo.Size = new System.Drawing.Size(288, 32);
+            this.itensCombo.TabIndex = 15;
+            this.itensCombo.DropDown += new System.EventHandler(this.listarItens);
+            this.itensCombo.DropDownClosed += new System.EventHandler(this.itensCombo_DropDownClosed);
+            // 
+            // itemDataGridView
+            // 
+            this.itemDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.itemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itemDataGridView.Location = new System.Drawing.Point(3, 67);
+            this.itemDataGridView.Name = "itemDataGridView";
+            this.itemDataGridView.Size = new System.Drawing.Size(960, 228);
+            this.itemDataGridView.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightCoral;
+            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(740, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(222, 37);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Adcionar Item";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -297,121 +412,6 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightCoral;
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(740, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(222, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Adcionar Item";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(1040, 87);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(102, 35);
-            this.textBox4.TabIndex = 13;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1036, 56);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 27);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Código";
-            // 
-            // itensCombo
-            // 
-            this.itensCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.itensCombo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itensCombo.FormattingEnabled = true;
-            this.itensCombo.Location = new System.Drawing.Point(5, 31);
-            this.itensCombo.Name = "itensCombo";
-            this.itensCombo.Size = new System.Drawing.Size(288, 32);
-            this.itensCombo.TabIndex = 15;
-            this.itensCombo.DropDown += new System.EventHandler(this.listarItens);
-            this.itensCombo.DropDownClosed += new System.EventHandler(this.itensCombo_DropDownClosed);
-            // 
-            // valorTotalBox
-            // 
-            this.valorTotalBox.Enabled = false;
-            this.valorTotalBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorTotalBox.Location = new System.Drawing.Point(558, 31);
-            this.valorTotalBox.Name = "valorTotalBox";
-            this.valorTotalBox.Size = new System.Drawing.Size(176, 32);
-            this.valorTotalBox.TabIndex = 16;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(309, 34);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(145, 26);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Informar valor";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // quantidadeRoll
-            // 
-            this.quantidadeRoll.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantidadeRoll.Location = new System.Drawing.Point(460, 31);
-            this.quantidadeRoll.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.quantidadeRoll.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.quantidadeRoll.Name = "quantidadeRoll";
-            this.quantidadeRoll.Size = new System.Drawing.Size(92, 32);
-            this.quantidadeRoll.TabIndex = 18;
-            this.quantidadeRoll.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.quantidadeRoll.ValueChanged += new System.EventHandler(this.recalcularValor);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 18);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Item";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(457, 10);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 18);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Quantidade";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(555, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 18);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Valor Total";
-            // 
             // CaixaEntradaTela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,10 +428,10 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantidadeRoll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.quantidadeRoll)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -452,7 +452,7 @@
         private System.Windows.Forms.ComboBox pessoaCombo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView itemDataGridView;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox richTextBox1;
@@ -461,7 +461,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox codigoBox;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox valorTotalBox;
         private System.Windows.Forms.ComboBox itensCombo;
