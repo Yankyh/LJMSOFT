@@ -37,5 +37,15 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             ListarItem listarItem = new ListarItem();
             listarItem.ShowDialog();
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listarCliente(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }

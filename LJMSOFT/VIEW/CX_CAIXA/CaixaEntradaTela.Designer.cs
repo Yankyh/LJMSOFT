@@ -41,7 +41,6 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -50,6 +49,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -71,6 +73,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.textBox4);
             this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label5);
@@ -93,16 +97,16 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(642, 211);
+            this.textBox2.Location = new System.Drawing.Point(656, 87);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 35);
+            this.textBox2.Size = new System.Drawing.Size(317, 35);
             this.textBox2.TabIndex = 12;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button2.BackColor = System.Drawing.Color.LightCoral;
             this.button2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(686, 361);
+            this.button2.Location = new System.Drawing.Point(1008, 521);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(144, 49);
             this.button2.TabIndex = 2;
@@ -112,7 +116,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(637, 40);
+            this.label5.Location = new System.Drawing.Point(332, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(193, 27);
             this.label5.TabIndex = 11;
@@ -120,15 +124,15 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(642, 70);
+            this.textBox1.Location = new System.Drawing.Point(337, 200);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 35);
+            this.textBox1.Size = new System.Drawing.Size(317, 35);
             this.textBox1.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(315, 311);
+            this.label4.Location = new System.Drawing.Point(332, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(243, 27);
             this.label4.TabIndex = 9;
@@ -139,15 +143,15 @@
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(320, 341);
+            this.comboBox3.Location = new System.Drawing.Point(337, 87);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(196, 35);
+            this.comboBox3.Size = new System.Drawing.Size(313, 35);
             this.comboBox3.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(318, 40);
+            this.label3.Location = new System.Drawing.Point(13, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 27);
             this.label3.TabIndex = 7;
@@ -157,59 +161,49 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(320, 70);
+            this.comboBox2.Location = new System.Drawing.Point(18, 87);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(196, 35);
+            this.comboBox2.Size = new System.Drawing.Size(313, 35);
             this.comboBox2.TabIndex = 6;
+            this.comboBox2.DropDown += new System.EventHandler(this.listarCliente);
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl2.Location = new System.Drawing.Point(31, 6);
+            this.tabControl2.Location = new System.Drawing.Point(18, 266);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(247, 399);
+            this.tabControl2.Size = new System.Drawing.Size(897, 308);
             this.tabControl2.TabIndex = 5;
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.Transparent;
             this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(239, 361);
+            this.tabPage3.Size = new System.Drawing.Size(889, 270);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Itens";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 38);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 42);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(239, 316);
+            this.dataGridView1.Size = new System.Drawing.Size(889, 228);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LimeGreen;
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(239, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Adcionar Item";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(637, 180);
+            this.label2.Location = new System.Drawing.Point(651, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 27);
             this.label2.TabIndex = 3;
@@ -218,7 +212,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(315, 181);
+            this.label1.Location = new System.Drawing.Point(13, 170);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 27);
             this.label1.TabIndex = 1;
@@ -229,9 +223,9 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(320, 211);
+            this.comboBox1.Location = new System.Drawing.Point(18, 200);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(194, 35);
+            this.comboBox1.Size = new System.Drawing.Size(313, 35);
             this.comboBox1.TabIndex = 0;
             // 
             // tabPage2
@@ -243,23 +237,23 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 36);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(862, 416);
+            this.tabPage2.Size = new System.Drawing.Size(1158, 580);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Complemento";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(26, 66);
+            this.textBox3.Location = new System.Drawing.Point(6, 66);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(188, 35);
+            this.textBox3.Size = new System.Drawing.Size(237, 35);
             this.textBox3.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(22, 26);
+            this.label7.Location = new System.Drawing.Point(6, 39);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(237, 24);
             this.label7.TabIndex = 2;
@@ -269,19 +263,47 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 104);
+            this.label6.Location = new System.Drawing.Point(6, 279);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(265, 24);
+            this.label6.Size = new System.Drawing.Size(125, 24);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Observação sobre a venda";
+            this.label6.Text = "Observação";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(26, 131);
+            this.richTextBox1.Location = new System.Drawing.Point(6, 306);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(810, 268);
+            this.richTextBox1.Size = new System.Drawing.Size(1146, 268);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightCoral;
+            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(675, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(222, 43);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Adcionar Item";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(1050, 87);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(102, 35);
+            this.textBox4.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1045, 56);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 27);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Código";
             // 
             // CaixaEntradaTela
             // 
@@ -315,7 +337,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
@@ -329,5 +350,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
