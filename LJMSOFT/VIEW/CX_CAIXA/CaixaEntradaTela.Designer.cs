@@ -50,15 +50,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.caixaLabel = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -66,10 +63,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(245, 223);
+            this.tabControl1.Location = new System.Drawing.Point(96, 53);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(870, 456);
+            this.tabControl1.Size = new System.Drawing.Size(1166, 620);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -89,7 +86,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 36);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(862, 416);
+            this.tabPage1.Size = new System.Drawing.Size(1158, 580);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Venda";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -286,36 +283,12 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // caixaLabel
-            // 
-            this.caixaLabel.AutoSize = true;
-            this.caixaLabel.BackColor = System.Drawing.Color.Transparent;
-            this.caixaLabel.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.caixaLabel.Location = new System.Drawing.Point(562, 11);
-            this.caixaLabel.Name = "caixaLabel";
-            this.caixaLabel.Size = new System.Drawing.Size(252, 40);
-            this.caixaLabel.TabIndex = 18;
-            this.caixaLabel.Text = "Caixa - Entrada";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.BackgroundImage = global::LJMSOFT.Properties.Resources.caixaIconn;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(607, 54);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(159, 147);
-            this.pictureBox4.TabIndex = 17;
-            this.pictureBox4.TabStop = false;
-            // 
             // CaixaEntradaTela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LJMSOFT.Properties.Resources.backgroundn;
             this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.caixaLabel);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.tabControl1);
             this.Name = "CaixaEntradaTela";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -328,9 +301,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -358,7 +329,5 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label caixaLabel;
-        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
