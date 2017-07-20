@@ -120,11 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaEntradaTela.resx">
       <DependentUpon>CaixaEntradaTela.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\AG_AGENDA\Agenda.resx">
       <DependentUpon>Agenda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaSaidaTela.resx">
-      <DependentUpon>CaixaSaidaTela.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaTela.resx">
       <DependentUpon>CaixaTela.cs</DependentUpon>
