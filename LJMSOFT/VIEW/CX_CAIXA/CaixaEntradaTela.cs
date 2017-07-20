@@ -53,8 +53,8 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             pessoaCombo.Items.Clear();
 
             //Lista os tipos
-            String query1 = "SELECT NOME FROM US_TIPO";
-            query1 = MetodoQuery.StatusNotIn(query1);
+            String query1 = "SELECT NOME FROM PS_PESSOA";
+            //query1 = MetodoQuery.StatusNotIn(query1);
 
 
             SqlDataReader reader = conexao.Pesquisa(query1);

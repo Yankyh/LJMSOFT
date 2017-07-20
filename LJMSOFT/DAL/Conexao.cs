@@ -13,7 +13,7 @@ namespace LJMSOFT.DAL
 {
     class Conexao
     {
-        protected String stringConexao = "Data Source=25.7.90.139;Initial Catalog=SGBDSOFT;Persist Security Info=True;User ID=sa;Password=33226655;";
+        protected String stringConexao = "Data Source=25.7.90.139;Initial Catalog=LJMSOFT;Persist Security Info=True;User ID=sa;Password=33226655;";
         protected SqlConnection conexao;
         protected SqlCommand cmd;
         protected SqlDataReader resultSet;
@@ -27,7 +27,7 @@ namespace LJMSOFT.DAL
 
         public SqlDataReader Pesquisa(String query)
         {
-            this.Conectar();
+          
             this.cmd = new SqlCommand(query, this.conexao);
             this.resultSet = cmd.ExecuteReader();
 
