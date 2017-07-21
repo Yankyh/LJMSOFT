@@ -91,6 +91,12 @@
     <Compile Include="VIEW\CX_CAIXA\ListarItem.Designer.cs">
       <DependentUpon>ListarItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\PS_PESSOA\CadastraTarefa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\PS_PESSOA\CadastraTarefa.Designer.cs">
+      <DependentUpon>CadastraTarefa.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\PS_PESSOA\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\CX_CAIXA\ListarItem.resx">
       <DependentUpon>ListarItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\PS_PESSOA\CadastraTarefa.resx">
+      <DependentUpon>CadastraTarefa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
