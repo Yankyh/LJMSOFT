@@ -16,13 +16,14 @@ namespace LJMSOFT.VIEW.CX_CAIXA
     {
         Conexao conexao = new Conexao();
         static float valorItem = 0;
-        static int valor3 = 1;
+        static int valor3 = 1, count = 0;
         
 
         public CaixaEntradaTela()
         {
             InitializeComponent();
             valor3 = 1;
+            count = 0;
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -44,23 +45,30 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         {
 
            valor3.ToString();
-
-            pessoaCombo.Enabled = false;
-            formaPagamentoCombo.Enabled = false;
-            conexao.Conectar();
-            //Cria um pedido
-            String query1 = "INSERT INTO CX_PEDIDO (ATIVO) VALUES (1)";
-            conexao.Inserir(query1);
-            //Busca o handle e atualiza o código do pedido
-            String query2 = "SELECT MAX(HANDLE) HANDLE FROM CX_PEDIDO";
-
-            SqlDataReader reader = conexao.Pesquisa(query2);
-
-            while (reader.Read())
+            if(count == 0)
             {
-                codigoBox.Text = reader["HANDLE"].ToString();
-             
+                pessoaCombo.Enabled = false;
+                formaPagamentoCombo.Enabled = false;
+                conexao.Conectar();
+                //Cria um pedido
+                String query1 = "INSERT INTO CX_PEDIDO (ATIVO) VALUES (1)";
+                conexao.Inserir(query1);
+                //Busca o handle e atualiza o código do pedido
+                String query2 = "SELECT MAX(HANDLE) HANDLE FROM CX_PEDIDO";
+
+                SqlDataReader reader = conexao.Pesquisa(query2);
+
+                while (reader.Read())
+                {
+                    codigoBox.Text = reader["HANDLE"].ToString();
+                }
+                count++;
             }
+            else
+            {
+
+            }
+           
 
             //Adiciona o primeiro item 
 
@@ -229,6 +237,18 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             float total = valorItem * valor3;
             //Adiciona na text box
             valorTotalBox.Text = total.ToString();
+        }
+
+        private void informarValorCheck(object sender, EventArgs e)
+        {
+           if(checkBox1.Checked == true)
+            {
+                valorTotalBox.Enabled = true;
+            }
+            else
+            {
+                valorTotalBox.Enabled = false;
+            }
         }
     }
 }

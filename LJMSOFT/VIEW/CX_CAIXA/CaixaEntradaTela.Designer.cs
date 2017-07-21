@@ -291,6 +291,7 @@
             this.checkBox1.TabIndex = 17;
             this.checkBox1.Text = "Informar valor";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.informarValorCheck);
             // 
             // valorTotalBox
             // 
