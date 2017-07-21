@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.codigoBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.valorTotalPedidoBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -42,10 +46,10 @@
             this.pessoaCombo = new System.Windows.Forms.ComboBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.quantidadeBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.quantidadeRoll = new System.Windows.Forms.NumericUpDown();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.valorTotalBox = new System.Windows.Forms.TextBox();
             this.itensCombo = new System.Windows.Forms.ComboBox();
@@ -63,7 +67,6 @@
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.quantidadeRoll)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +86,7 @@
             // 
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.codigoBox);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.valorTotalPedidoBox);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.textBox1);
@@ -121,13 +124,13 @@
             this.codigoBox.Size = new System.Drawing.Size(102, 35);
             this.codigoBox.TabIndex = 13;
             // 
-            // textBox2
+            // valorTotalPedidoBox
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(341, 187);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(317, 35);
-            this.textBox2.TabIndex = 12;
+            this.valorTotalPedidoBox.Enabled = false;
+            this.valorTotalPedidoBox.Location = new System.Drawing.Point(341, 187);
+            this.valorTotalPedidoBox.Name = "valorTotalPedidoBox";
+            this.valorTotalPedidoBox.Size = new System.Drawing.Size(317, 35);
+            this.valorTotalPedidoBox.TabIndex = 12;
             // 
             // button2
             // 
@@ -210,10 +213,10 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage3.Controls.Add(this.quantidadeBox);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.quantidadeRoll);
             this.tabPage3.Controls.Add(this.checkBox1);
             this.tabPage3.Controls.Add(this.valorTotalBox);
             this.tabPage3.Controls.Add(this.itensCombo);
@@ -226,6 +229,15 @@
             this.tabPage3.Size = new System.Drawing.Size(966, 295);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Itens";
+            // 
+            // quantidadeBox
+            // 
+            this.quantidadeBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantidadeBox.Location = new System.Drawing.Point(459, 31);
+            this.quantidadeBox.Name = "quantidadeBox";
+            this.quantidadeBox.Size = new System.Drawing.Size(90, 32);
+            this.quantidadeBox.TabIndex = 22;
+            this.quantidadeBox.TextChanged += new System.EventHandler(this.recalcularValorr);
             // 
             // label11
             // 
@@ -256,30 +268,6 @@
             this.label9.Size = new System.Drawing.Size(37, 18);
             this.label9.TabIndex = 19;
             this.label9.Text = "Item";
-            // 
-            // quantidadeRoll
-            // 
-            this.quantidadeRoll.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantidadeRoll.Location = new System.Drawing.Point(460, 31);
-            this.quantidadeRoll.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.quantidadeRoll.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.quantidadeRoll.Name = "quantidadeRoll";
-            this.quantidadeRoll.Size = new System.Drawing.Size(92, 32);
-            this.quantidadeRoll.TabIndex = 18;
-            this.quantidadeRoll.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.quantidadeRoll.ValueChanged += new System.EventHandler(this.recalcularValor);
             // 
             // checkBox1
             // 
@@ -316,12 +304,44 @@
             // 
             // itemDataGridView
             // 
+            this.itemDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.itemDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.itemDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.itemDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.itemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.itemDataGridView.Location = new System.Drawing.Point(3, 67);
+            this.itemDataGridView.MultiSelect = false;
             this.itemDataGridView.Name = "itemDataGridView";
+            this.itemDataGridView.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.itemDataGridView.RowHeadersVisible = false;
             this.itemDataGridView.Size = new System.Drawing.Size(960, 228);
             this.itemDataGridView.TabIndex = 1;
+            this.itemDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemDataGridView_CellContentClick);
             // 
             // button1
             // 
@@ -429,7 +449,6 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.quantidadeRoll)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -457,7 +476,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox valorTotalPedidoBox;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
@@ -466,9 +485,9 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox valorTotalBox;
         private System.Windows.Forms.ComboBox itensCombo;
-        private System.Windows.Forms.NumericUpDown quantidadeRoll;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox quantidadeBox;
     }
 }
