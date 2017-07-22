@@ -88,16 +88,19 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
             SqlDataReader VerificaCPF = conexao.Pesquisa(query);
 
-            if (VerificaCPF != null)
+            while (VerificaCPF.Read())
+            if (VerificaCPF.Read() != null)
             {
-                MessageBox.Show("CPF OU RG JA CADASTRADOS");
+                MessageBox.Show("CPF/CNPJ ou RG já cadastrados para outra Pessoa"
+                               + "\n Pessoa que possui estes dados: " );
+                
             }
             else
             {
                 
                 String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + nomePessoa + "'," + "'" + fone + "'," + "'" + email + "'," + "'" + CPFCNPJ + "'," + "'" + observacao + "'," + "'" + RG + "'," + "'" + juridica + "'" + ")";
                 conexao.Inserir(query1);
-                
+                MessageBox.Show("teste");
                 
             }
 
