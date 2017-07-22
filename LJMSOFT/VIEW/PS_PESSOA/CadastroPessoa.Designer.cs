@@ -1,6 +1,6 @@
 ﻿namespace LJMSOFT.VIEW.PS_PESSOA
 {
-    partial class Form1
+    partial class CadastroPessoa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroPessoa));
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NomePessoatextBox = new System.Windows.Forms.TextBox();
@@ -44,21 +44,24 @@
             this.RGtextBox = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.PessoaEnderecoTabpage = new System.Windows.Forms.TabPage();
-            this.InfAdicionaisPessoatabPage = new System.Windows.Forms.TabPage();
-            this.RuaLabel = new System.Windows.Forms.Label();
-            this.EnderecoTextBox = new System.Windows.Forms.RichTextBox();
-            this.Bairrolabel6 = new System.Windows.Forms.Label();
-            this.CEPTextBox = new System.Windows.Forms.RichTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.CidadeTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.BairroTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.CEPlabel7 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ReferenciaTextBox = new System.Windows.Forms.RichTextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.NumeroEnderecoTextBox = new System.Windows.Forms.RichTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ReferenciaTextBox = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CEPlabel7 = new System.Windows.Forms.Label();
+            this.BairroTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.CidadeTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.CEPTextBox = new System.Windows.Forms.RichTextBox();
+            this.Bairrolabel6 = new System.Windows.Forms.Label();
+            this.EnderecoTextBox = new System.Windows.Forms.RichTextBox();
+            this.RuaLabel = new System.Windows.Forms.Label();
+            this.InfAdicionaisPessoatabPage = new System.Windows.Forms.TabPage();
             this.ObservacaoTextBox = new System.Windows.Forms.RichTextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.CancelarButton = new System.Windows.Forms.Button();
+            this.Cadastrarbutton = new System.Windows.Forms.Button();
+            this.Limparbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.PessoaEnderecoTabpage.SuspendLayout();
@@ -217,111 +220,13 @@
             this.PessoaEnderecoTabpage.Text = "Endereço";
             this.PessoaEnderecoTabpage.UseVisualStyleBackColor = true;
             // 
-            // InfAdicionaisPessoatabPage
+            // NumeroEnderecoTextBox
             // 
-            this.InfAdicionaisPessoatabPage.Controls.Add(this.ObservacaoTextBox);
-            this.InfAdicionaisPessoatabPage.Location = new System.Drawing.Point(4, 22);
-            this.InfAdicionaisPessoatabPage.Name = "InfAdicionaisPessoatabPage";
-            this.InfAdicionaisPessoatabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.InfAdicionaisPessoatabPage.Size = new System.Drawing.Size(732, 157);
-            this.InfAdicionaisPessoatabPage.TabIndex = 1;
-            this.InfAdicionaisPessoatabPage.Text = "Inf Adicionais";
-            this.InfAdicionaisPessoatabPage.UseVisualStyleBackColor = true;
-            // 
-            // RuaLabel
-            // 
-            this.RuaLabel.AutoSize = true;
-            this.RuaLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.RuaLabel.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RuaLabel.Location = new System.Drawing.Point(28, 23);
-            this.RuaLabel.Name = "RuaLabel";
-            this.RuaLabel.Size = new System.Drawing.Size(93, 25);
-            this.RuaLabel.TabIndex = 0;
-            this.RuaLabel.Text = "Endereço";
-            // 
-            // EnderecoTextBox
-            // 
-            this.EnderecoTextBox.Location = new System.Drawing.Point(162, 23);
-            this.EnderecoTextBox.Name = "EnderecoTextBox";
-            this.EnderecoTextBox.Size = new System.Drawing.Size(196, 25);
-            this.EnderecoTextBox.TabIndex = 1;
-            this.EnderecoTextBox.Text = "";
-            // 
-            // Bairrolabel6
-            // 
-            this.Bairrolabel6.AutoSize = true;
-            this.Bairrolabel6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Bairrolabel6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bairrolabel6.Location = new System.Drawing.Point(28, 75);
-            this.Bairrolabel6.Name = "Bairrolabel6";
-            this.Bairrolabel6.Size = new System.Drawing.Size(109, 25);
-            this.Bairrolabel6.TabIndex = 2;
-            this.Bairrolabel6.Text = "Bairro         ";
-            // 
-            // CEPTextBox
-            // 
-            this.CEPTextBox.Location = new System.Drawing.Point(486, 23);
-            this.CEPTextBox.Name = "CEPTextBox";
-            this.CEPTextBox.Size = new System.Drawing.Size(229, 25);
-            this.CEPTextBox.TabIndex = 3;
-            this.CEPTextBox.Text = "";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(384, 75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 25);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Cidade    ";
-            // 
-            // CidadeTextBox3
-            // 
-            this.CidadeTextBox3.Location = new System.Drawing.Point(491, 75);
-            this.CidadeTextBox3.Name = "CidadeTextBox3";
-            this.CidadeTextBox3.Size = new System.Drawing.Size(224, 25);
-            this.CidadeTextBox3.TabIndex = 5;
-            this.CidadeTextBox3.Text = "";
-            // 
-            // BairroTextBox3
-            // 
-            this.BairroTextBox3.Location = new System.Drawing.Point(162, 75);
-            this.BairroTextBox3.Name = "BairroTextBox3";
-            this.BairroTextBox3.Size = new System.Drawing.Size(196, 25);
-            this.BairroTextBox3.TabIndex = 6;
-            this.BairroTextBox3.Text = "";
-            // 
-            // CEPlabel7
-            // 
-            this.CEPlabel7.AutoSize = true;
-            this.CEPlabel7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.CEPlabel7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CEPlabel7.Location = new System.Drawing.Point(384, 23);
-            this.CEPlabel7.Name = "CEPlabel7";
-            this.CEPlabel7.Size = new System.Drawing.Size(95, 25);
-            this.CEPlabel7.TabIndex = 7;
-            this.CEPlabel7.Text = "Cep          ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(28, 119);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 25);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Referência ";
-            // 
-            // ReferenciaTextBox
-            // 
-            this.ReferenciaTextBox.Location = new System.Drawing.Point(162, 119);
-            this.ReferenciaTextBox.Name = "ReferenciaTextBox";
-            this.ReferenciaTextBox.Size = new System.Drawing.Size(423, 25);
-            this.ReferenciaTextBox.TabIndex = 9;
-            this.ReferenciaTextBox.Text = "";
+            this.NumeroEnderecoTextBox.Location = new System.Drawing.Point(657, 119);
+            this.NumeroEnderecoTextBox.Name = "NumeroEnderecoTextBox";
+            this.NumeroEnderecoTextBox.Size = new System.Drawing.Size(58, 25);
+            this.NumeroEnderecoTextBox.TabIndex = 11;
+            this.NumeroEnderecoTextBox.Text = "";
             // 
             // label8
             // 
@@ -334,13 +239,111 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "Nº ";
             // 
-            // NumeroEnderecoTextBox
+            // ReferenciaTextBox
             // 
-            this.NumeroEnderecoTextBox.Location = new System.Drawing.Point(657, 119);
-            this.NumeroEnderecoTextBox.Name = "NumeroEnderecoTextBox";
-            this.NumeroEnderecoTextBox.Size = new System.Drawing.Size(58, 25);
-            this.NumeroEnderecoTextBox.TabIndex = 11;
-            this.NumeroEnderecoTextBox.Text = "";
+            this.ReferenciaTextBox.Location = new System.Drawing.Point(162, 119);
+            this.ReferenciaTextBox.Name = "ReferenciaTextBox";
+            this.ReferenciaTextBox.Size = new System.Drawing.Size(423, 25);
+            this.ReferenciaTextBox.TabIndex = 9;
+            this.ReferenciaTextBox.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(28, 119);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 25);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Referência ";
+            // 
+            // CEPlabel7
+            // 
+            this.CEPlabel7.AutoSize = true;
+            this.CEPlabel7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.CEPlabel7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CEPlabel7.Location = new System.Drawing.Point(384, 23);
+            this.CEPlabel7.Name = "CEPlabel7";
+            this.CEPlabel7.Size = new System.Drawing.Size(95, 25);
+            this.CEPlabel7.TabIndex = 7;
+            this.CEPlabel7.Text = "Cep          ";
+            // 
+            // BairroTextBox3
+            // 
+            this.BairroTextBox3.Location = new System.Drawing.Point(162, 75);
+            this.BairroTextBox3.Name = "BairroTextBox3";
+            this.BairroTextBox3.Size = new System.Drawing.Size(196, 25);
+            this.BairroTextBox3.TabIndex = 6;
+            this.BairroTextBox3.Text = "";
+            // 
+            // CidadeTextBox3
+            // 
+            this.CidadeTextBox3.Location = new System.Drawing.Point(491, 75);
+            this.CidadeTextBox3.Name = "CidadeTextBox3";
+            this.CidadeTextBox3.Size = new System.Drawing.Size(224, 25);
+            this.CidadeTextBox3.TabIndex = 5;
+            this.CidadeTextBox3.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(384, 75);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 25);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Cidade    ";
+            // 
+            // CEPTextBox
+            // 
+            this.CEPTextBox.Location = new System.Drawing.Point(486, 23);
+            this.CEPTextBox.Name = "CEPTextBox";
+            this.CEPTextBox.Size = new System.Drawing.Size(229, 25);
+            this.CEPTextBox.TabIndex = 3;
+            this.CEPTextBox.Text = "";
+            // 
+            // Bairrolabel6
+            // 
+            this.Bairrolabel6.AutoSize = true;
+            this.Bairrolabel6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Bairrolabel6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bairrolabel6.Location = new System.Drawing.Point(28, 75);
+            this.Bairrolabel6.Name = "Bairrolabel6";
+            this.Bairrolabel6.Size = new System.Drawing.Size(109, 25);
+            this.Bairrolabel6.TabIndex = 2;
+            this.Bairrolabel6.Text = "Bairro         ";
+            // 
+            // EnderecoTextBox
+            // 
+            this.EnderecoTextBox.Location = new System.Drawing.Point(162, 23);
+            this.EnderecoTextBox.Name = "EnderecoTextBox";
+            this.EnderecoTextBox.Size = new System.Drawing.Size(196, 25);
+            this.EnderecoTextBox.TabIndex = 1;
+            this.EnderecoTextBox.Text = "";
+            // 
+            // RuaLabel
+            // 
+            this.RuaLabel.AutoSize = true;
+            this.RuaLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.RuaLabel.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RuaLabel.Location = new System.Drawing.Point(28, 23);
+            this.RuaLabel.Name = "RuaLabel";
+            this.RuaLabel.Size = new System.Drawing.Size(93, 25);
+            this.RuaLabel.TabIndex = 0;
+            this.RuaLabel.Text = "Endereço";
+            // 
+            // InfAdicionaisPessoatabPage
+            // 
+            this.InfAdicionaisPessoatabPage.Controls.Add(this.ObservacaoTextBox);
+            this.InfAdicionaisPessoatabPage.Location = new System.Drawing.Point(4, 22);
+            this.InfAdicionaisPessoatabPage.Name = "InfAdicionaisPessoatabPage";
+            this.InfAdicionaisPessoatabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.InfAdicionaisPessoatabPage.Size = new System.Drawing.Size(732, 157);
+            this.InfAdicionaisPessoatabPage.TabIndex = 1;
+            this.InfAdicionaisPessoatabPage.Text = "Inf Adicionais";
+            this.InfAdicionaisPessoatabPage.UseVisualStyleBackColor = true;
             // 
             // ObservacaoTextBox
             // 
@@ -361,12 +364,45 @@
             this.checkBox1.Text = "Jurídica";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // CancelarButton
+            // 
+            this.CancelarButton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelarButton.Location = new System.Drawing.Point(61, 455);
+            this.CancelarButton.Name = "CancelarButton";
+            this.CancelarButton.Size = new System.Drawing.Size(185, 44);
+            this.CancelarButton.TabIndex = 17;
+            this.CancelarButton.Text = "Cancelar";
+            this.CancelarButton.UseVisualStyleBackColor = true;
+            // 
+            // Cadastrarbutton
+            // 
+            this.Cadastrarbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cadastrarbutton.Location = new System.Drawing.Point(520, 455);
+            this.Cadastrarbutton.Name = "Cadastrarbutton";
+            this.Cadastrarbutton.Size = new System.Drawing.Size(185, 44);
+            this.Cadastrarbutton.TabIndex = 18;
+            this.Cadastrarbutton.Text = "Cadastrar";
+            this.Cadastrarbutton.UseVisualStyleBackColor = true;
+            // 
+            // Limparbutton
+            // 
+            this.Limparbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Limparbutton.Location = new System.Drawing.Point(290, 455);
+            this.Limparbutton.Name = "Limparbutton";
+            this.Limparbutton.Size = new System.Drawing.Size(185, 44);
+            this.Limparbutton.TabIndex = 18;
+            this.Limparbutton.Text = "Limpar";
+            this.Limparbutton.UseVisualStyleBackColor = true;
+            // 
+            // CadastroPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LJMSOFT.Properties.Resources.backgroundn;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(776, 511);
+            this.Controls.Add(this.Limparbutton);
+            this.Controls.Add(this.Cadastrarbutton);
+            this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.RGtextBox);
@@ -382,7 +418,7 @@
             this.Controls.Add(this.NomePessoatextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "CadastroPessoa";
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.Teal;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -428,5 +464,8 @@
         private System.Windows.Forms.RichTextBox BairroTextBox3;
         private System.Windows.Forms.RichTextBox ObservacaoTextBox;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button CancelarButton;
+        private System.Windows.Forms.Button Cadastrarbutton;
+        private System.Windows.Forms.Button Limparbutton;
     }
 }

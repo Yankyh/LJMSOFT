@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LJMSOFT.VIEW.CX_CAIXA;
 using LJMSOFT.VIEW.AG_AGENDA;
+using LJMSOFT.VIEW.PS_PESSOA;
 
 namespace LJMSOFT
 {
@@ -42,9 +43,10 @@ namespace LJMSOFT
 
         }
 
-        private void CadastraPessoa_Click(object sender, EventArgs e)
+        private void CadastrarNovaPessoapictureBox2_Click(object sender, EventArgs e)
         {
-
+            CadastroPessoa novoCadastro = new CadastroPessoa();
+            novoCadastro.ShowDialog();
         }
     }
 }

@@ -66,6 +66,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(65, 63);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // MenuTela
             // 

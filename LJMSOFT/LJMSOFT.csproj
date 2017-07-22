@@ -97,11 +97,11 @@
     <Compile Include="VIEW\PS_PESSOA\CadastraTarefa.Designer.cs">
       <DependentUpon>CadastraTarefa.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\PS_PESSOA\Form1.cs">
+    <Compile Include="VIEW\PS_PESSOA\CadastroPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\PS_PESSOA\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="VIEW\PS_PESSOA\CadastroPessoa.Designer.cs">
+      <DependentUpon>CadastroPessoa.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\RL_RELATORIO\Form1.cs">
       <SubType>Form</SubType>
@@ -140,8 +140,8 @@
     <EmbeddedResource Include="VIEW\PS_PESSOA\CadastraTarefa.resx">
       <DependentUpon>CadastraTarefa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\PS_PESSOA\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="VIEW\PS_PESSOA\CadastroPessoa.resx">
+      <DependentUpon>CadastroPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

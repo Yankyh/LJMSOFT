@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LJMSOFT.VIEW.PS_PESSOA
 {
-    public partial class Form1 : Form
+    public partial class CadastroPessoa : Form
     {
-        public Form1()
+        public CadastroPessoa()
         {
             InitializeComponent();
         }
