@@ -140,6 +140,9 @@
     <EmbeddedResource Include="VIEW\PS_PESSOA\CadastraTarefa.resx">
       <DependentUpon>CadastraTarefa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\PS_PESSOA\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

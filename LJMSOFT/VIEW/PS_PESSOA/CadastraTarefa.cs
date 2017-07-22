@@ -21,5 +21,10 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         {
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
