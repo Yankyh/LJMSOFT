@@ -84,7 +84,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                 juridica = 0;
             }
 
-            String query = "SELECT HANDLE FROM PS_PESSOA WHERE CPFCNPJ = '" + CPFCNPJ + "' OR RG = '" + RG + "'";
+            String query = "SELECT HANDLE, NOME FROM PS_PESSOA WHERE CPFCNPJ = '" + CPFCNPJ + "' OR RG = '" + RG + "'";
 
             SqlDataReader VerificaCPF = conexao.Pesquisa(query);
 
@@ -94,8 +94,11 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             }
             else
             {
+                
                 String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + nomePessoa + "'," + "'" + fone + "'," + "'" + email + "'," + "'" + CPFCNPJ + "'," + "'" + observacao + "'," + "'" + RG + "'," + "'" + juridica + "'" + ")";
                 conexao.Inserir(query1);
+                
+                
             }
 
             conexao.Desconectar();
