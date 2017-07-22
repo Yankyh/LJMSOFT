@@ -36,5 +36,15 @@ namespace LJMSOFT
             Agenda agenda = new Agenda();
             agenda.ShowDialog();
         }
+
+        private void MenuTela_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CadastraPessoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
