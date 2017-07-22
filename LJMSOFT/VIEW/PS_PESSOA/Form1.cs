@@ -14,7 +14,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); // Anderson
         }
     }
 }
