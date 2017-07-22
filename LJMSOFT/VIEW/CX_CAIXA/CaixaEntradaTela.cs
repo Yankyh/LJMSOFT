@@ -398,6 +398,16 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         }
 
+        private void itensCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tipoMovimentacaoCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void itemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

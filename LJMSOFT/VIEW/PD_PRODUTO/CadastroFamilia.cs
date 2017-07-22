@@ -29,31 +29,30 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
             if(nomeBox.Text != "")
             {
-                
+              
                 conexao.Conectar();
 
                 String query = "INSERT INTO PD_FAMILIA (NOME) VALUES ('"+nomeBox.Text+"')";
                 conexao.Inserir(query);
-
+            
+          
+              
                 MessageBox.Show("Cadastrado");
-                conexao.Desconectar();
-                conexao.Conectar();
-                String query2 = "SELECT MAX(HANDLE) FROM PD_FAMILIA";
-                conexao.Pesquisa(query2);
+                String query2 = "SELECT MAX(HANDLE) HANDLE FROM PD_FAMILIA";
                 SqlDataReader reader14 = conexao.Pesquisa(query2);
 
                 while (reader14.Read())
                 {
                     codigoBox.Text = reader14["HANDLE"].ToString();
-                  
+
                 }
                 reader14.Close();
 
                 conexao.Desconectar();
 
             }
-          
-
+     
+           
 
 
 

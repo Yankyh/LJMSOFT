@@ -31,14 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.codigoBox = new System.Windows.Forms.TextBox();
-            this.valorParcelaBox = new System.Windows.Forms.TextBox();
-            this.valorTotalPedidoBox = new System.Windows.Forms.TextBox();
+            this.nomeBox = new System.Windows.Forms.TextBox();
+            this.valorUnitarioBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.pessoaCombo = new System.Windows.Forms.ComboBox();
+            this.familiaCombo = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.tipoPagamentoCombo = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.fornecedorCombo = new System.Windows.Forms.ComboBox();
+            this.unidadeMedidaCombo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,21 +77,21 @@
             this.codigoBox.Size = new System.Drawing.Size(102, 39);
             this.codigoBox.TabIndex = 41;
             // 
-            // valorParcelaBox
+            // nomeBox
             // 
-            this.valorParcelaBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorParcelaBox.Location = new System.Drawing.Point(12, 49);
-            this.valorParcelaBox.Name = "valorParcelaBox";
-            this.valorParcelaBox.Size = new System.Drawing.Size(369, 39);
-            this.valorParcelaBox.TabIndex = 39;
+            this.nomeBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomeBox.Location = new System.Drawing.Point(12, 49);
+            this.nomeBox.Name = "nomeBox";
+            this.nomeBox.Size = new System.Drawing.Size(369, 39);
+            this.nomeBox.TabIndex = 39;
             // 
-            // valorTotalPedidoBox
+            // valorUnitarioBox
             // 
-            this.valorTotalPedidoBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorTotalPedidoBox.Location = new System.Drawing.Point(12, 141);
-            this.valorTotalPedidoBox.Name = "valorTotalPedidoBox";
-            this.valorTotalPedidoBox.Size = new System.Drawing.Size(233, 39);
-            this.valorTotalPedidoBox.TabIndex = 32;
+            this.valorUnitarioBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valorUnitarioBox.Location = new System.Drawing.Point(434, 141);
+            this.valorUnitarioBox.Name = "valorUnitarioBox";
+            this.valorUnitarioBox.Size = new System.Drawing.Size(233, 39);
+            this.valorUnitarioBox.TabIndex = 32;
             // 
             // label15
             // 
@@ -104,23 +104,25 @@
             this.label15.TabIndex = 36;
             this.label15.Text = "Família";
             // 
-            // pessoaCombo
+            // familiaCombo
             // 
-            this.pessoaCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pessoaCombo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pessoaCombo.FormattingEnabled = true;
-            this.pessoaCombo.Location = new System.Drawing.Point(387, 49);
-            this.pessoaCombo.Name = "pessoaCombo";
-            this.pessoaCombo.Size = new System.Drawing.Size(435, 40);
-            this.pessoaCombo.TabIndex = 35;
-            this.pessoaCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f3event);
+            this.familiaCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.familiaCombo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.familiaCombo.FormattingEnabled = true;
+            this.familiaCombo.Location = new System.Drawing.Point(387, 49);
+            this.familiaCombo.Name = "familiaCombo";
+            this.familiaCombo.Size = new System.Drawing.Size(435, 40);
+            this.familiaCombo.TabIndex = 35;
+            this.familiaCombo.DropDown += new System.EventHandler(this.listarFamilia);
+            this.familiaCombo.SelectedIndexChanged += new System.EventHandler(this.pessoaCombo_SelectedIndexChanged);
+            this.familiaCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f3event);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(12, 114);
+            this.label19.Location = new System.Drawing.Point(434, 114);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(131, 24);
             this.label19.TabIndex = 34;
@@ -131,37 +133,38 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(247, 114);
+            this.label20.Location = new System.Drawing.Point(8, 114);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(118, 24);
             this.label20.TabIndex = 33;
             this.label20.Text = "Fornecedor";
             this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
-            // tipoPagamentoCombo
+            // fornecedorCombo
             // 
-            this.tipoPagamentoCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tipoPagamentoCombo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tipoPagamentoCombo.FormattingEnabled = true;
-            this.tipoPagamentoCombo.Location = new System.Drawing.Point(251, 141);
-            this.tipoPagamentoCombo.Name = "tipoPagamentoCombo";
-            this.tipoPagamentoCombo.Size = new System.Drawing.Size(416, 40);
-            this.tipoPagamentoCombo.TabIndex = 31;
-            this.tipoPagamentoCombo.SelectedIndexChanged += new System.EventHandler(this.tipoPagamentoCombo_SelectedIndexChanged);
+            this.fornecedorCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.fornecedorCombo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fornecedorCombo.FormattingEnabled = true;
+            this.fornecedorCombo.Location = new System.Drawing.Point(12, 141);
+            this.fornecedorCombo.Name = "fornecedorCombo";
+            this.fornecedorCombo.Size = new System.Drawing.Size(416, 40);
+            this.fornecedorCombo.TabIndex = 31;
+            this.fornecedorCombo.DropDown += new System.EventHandler(this.listarFornecedor);
+            this.fornecedorCombo.SelectedIndexChanged += new System.EventHandler(this.tipoPagamentoCombo_SelectedIndexChanged);
             // 
-            // comboBox1
+            // unidadeMedidaCombo
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.unidadeMedidaCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unidadeMedidaCombo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unidadeMedidaCombo.FormattingEnabled = true;
+            this.unidadeMedidaCombo.Items.AddRange(new object[] {
             "KG",
             "UN",
             "PC"});
-            this.comboBox1.Location = new System.Drawing.Point(673, 141);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(257, 40);
-            this.comboBox1.TabIndex = 45;
+            this.unidadeMedidaCombo.Location = new System.Drawing.Point(673, 141);
+            this.unidadeMedidaCombo.Name = "unidadeMedidaCombo";
+            this.unidadeMedidaCombo.Size = new System.Drawing.Size(257, 40);
+            this.unidadeMedidaCombo.TabIndex = 45;
             // 
             // label3
             // 
@@ -203,6 +206,7 @@
             this.button1.TabIndex = 50;
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -224,19 +228,21 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.unidadeMedidaCombo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.codigoBox);
-            this.Controls.Add(this.valorParcelaBox);
-            this.Controls.Add(this.valorTotalPedidoBox);
+            this.Controls.Add(this.nomeBox);
+            this.Controls.Add(this.valorUnitarioBox);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.pessoaCombo);
+            this.Controls.Add(this.familiaCombo);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.tipoPagamentoCombo);
+            this.Controls.Add(this.fornecedorCombo);
             this.Name = "CadastroItem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar novo item";
+            this.Load += new System.EventHandler(this.CadastroItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,14 +253,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox codigoBox;
-        private System.Windows.Forms.TextBox valorParcelaBox;
-        private System.Windows.Forms.TextBox valorTotalPedidoBox;
+        private System.Windows.Forms.TextBox nomeBox;
+        private System.Windows.Forms.TextBox valorUnitarioBox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox pessoaCombo;
+        private System.Windows.Forms.ComboBox familiaCombo;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox tipoPagamentoCombo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox fornecedorCombo;
+        private System.Windows.Forms.ComboBox unidadeMedidaCombo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label2;

@@ -106,6 +106,7 @@
             this.Controls.Add(this.nomeBox);
             this.Controls.Add(this.cadastrarButton);
             this.Name = "CadastroFamilia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroFamilia";
             this.ResumeLayout(false);
             this.PerformLayout();
