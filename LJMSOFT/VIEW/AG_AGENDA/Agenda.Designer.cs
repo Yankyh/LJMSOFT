@@ -37,12 +37,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dateTimePickerDe = new System.Windows.Forms.DateTimePicker();
-            this.labelDe = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePickerAte = new System.Windows.Forms.DateTimePicker();
-            this.buttonPesquisar = new System.Windows.Forms.Button();
             this.buttonLimpar = new System.Windows.Forms.Button();
+            this.buttonPesquisar = new System.Windows.Forms.Button();
+            this.dateTimePickerAte = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelDe = new System.Windows.Forms.Label();
+            this.dateTimePickerDe = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -126,6 +126,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1043, 100);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -147,38 +148,25 @@
             this.panel2.Size = new System.Drawing.Size(200, 599);
             this.panel2.TabIndex = 0;
             // 
-            // dateTimePickerDe
+            // buttonLimpar
             // 
-            this.dateTimePickerDe.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePickerDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDe.Location = new System.Drawing.Point(72, 190);
-            this.dateTimePickerDe.Name = "dateTimePickerDe";
-            this.dateTimePickerDe.Size = new System.Drawing.Size(121, 26);
-            this.dateTimePickerDe.TabIndex = 6;
-            this.dateTimePickerDe.Value = new System.DateTime(2017, 7, 19, 1, 16, 29, 0);
-            this.dateTimePickerDe.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.buttonLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLimpar.Location = new System.Drawing.Point(7, 368);
+            this.buttonLimpar.Name = "buttonLimpar";
+            this.buttonLimpar.Size = new System.Drawing.Size(92, 33);
+            this.buttonLimpar.TabIndex = 11;
+            this.buttonLimpar.Text = "Limpar";
+            this.buttonLimpar.UseVisualStyleBackColor = true;
             // 
-            // labelDe
+            // buttonPesquisar
             // 
-            this.labelDe.AutoSize = true;
-            this.labelDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDe.Location = new System.Drawing.Point(3, 195);
-            this.labelDe.Name = "labelDe";
-            this.labelDe.Size = new System.Drawing.Size(38, 20);
-            this.labelDe.TabIndex = 7;
-            this.labelDe.Text = "De :";
-            this.labelDe.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 234);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Ate :";
+            this.buttonPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPesquisar.Location = new System.Drawing.Point(101, 368);
+            this.buttonPesquisar.Name = "buttonPesquisar";
+            this.buttonPesquisar.Size = new System.Drawing.Size(92, 33);
+            this.buttonPesquisar.TabIndex = 10;
+            this.buttonPesquisar.Text = "Pesquisar";
+            this.buttonPesquisar.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerAte
             // 
@@ -191,25 +179,38 @@
             this.dateTimePickerAte.TabIndex = 9;
             this.dateTimePickerAte.Value = new System.DateTime(2017, 7, 19, 1, 16, 29, 0);
             // 
-            // buttonPesquisar
+            // label2
             // 
-            this.buttonPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPesquisar.Location = new System.Drawing.Point(101, 368);
-            this.buttonPesquisar.Name = "buttonPesquisar";
-            this.buttonPesquisar.Size = new System.Drawing.Size(92, 33);
-            this.buttonPesquisar.TabIndex = 10;
-            this.buttonPesquisar.Text = "Pesquisar";
-            this.buttonPesquisar.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 234);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Ate :";
             // 
-            // buttonLimpar
+            // labelDe
             // 
-            this.buttonLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLimpar.Location = new System.Drawing.Point(7, 368);
-            this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(92, 33);
-            this.buttonLimpar.TabIndex = 11;
-            this.buttonLimpar.Text = "Limpar";
-            this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.labelDe.AutoSize = true;
+            this.labelDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDe.Location = new System.Drawing.Point(3, 195);
+            this.labelDe.Name = "labelDe";
+            this.labelDe.Size = new System.Drawing.Size(38, 20);
+            this.labelDe.TabIndex = 7;
+            this.labelDe.Text = "De :";
+            this.labelDe.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // dateTimePickerDe
+            // 
+            this.dateTimePickerDe.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePickerDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDe.Location = new System.Drawing.Point(72, 190);
+            this.dateTimePickerDe.Name = "dateTimePickerDe";
+            this.dateTimePickerDe.Size = new System.Drawing.Size(121, 26);
+            this.dateTimePickerDe.TabIndex = 6;
+            this.dateTimePickerDe.Value = new System.DateTime(2017, 7, 19, 1, 16, 29, 0);
+            this.dateTimePickerDe.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // Agenda
             // 

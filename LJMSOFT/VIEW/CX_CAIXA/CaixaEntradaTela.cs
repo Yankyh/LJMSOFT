@@ -45,7 +45,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         {
             conexao.Conectar();
 
-            quantidadeItem.ToString();
+            
             String item = itensCombo.Text;
             int quantidade = Convert.ToInt32(quantidadeBox.Text);
             valorTotal = valorTotalBox.Text.Replace(',','.');
@@ -95,13 +95,13 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 count++;
             
                 //Pega handle do item
-               String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PESSOA, PEDIDO, ITEMNOME) VALUES ("+item+", "+quantidadeItem+", "+valorTotal+", "+pessoaNome+", "+codigoBox.Text+", '"+nomeItem+"')";
+               String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PESSOA, PEDIDO, ITEMNOME) VALUES ("+item+", "+ quantidade + ", "+valorTotal+", "+pessoaNome+", "+codigoBox.Text+", '"+nomeItem+"')";
                 MessageBox.Show(query6);
                 conexao.Inserir(query6);
             }
             else
             {
-                String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PESSOA, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidadeItem + ", '" + valorTotal + "', " + pessoaNome + ", " + codigoBox.Text + ", '" + nomeItem + "')";
+                String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PESSOA, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidade + ", '" + valorTotal + "', " + pessoaNome + ", " + codigoBox.Text + ", '" + nomeItem + "')";
                 conexao.Inserir(query6);
             }
 
@@ -113,7 +113,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             Binding.DataSource = conexao.DataTable(query);
       
             itemDataGridView.DataSource = Binding;
-            itemDataGridView.Columns[0].Width = 507;
+            itemDataGridView.Columns[0].Width = 837;
             itemDataGridView.Columns[1].Width = 200;
             itemDataGridView.Columns[2].Width = 250;
             itemDataGridView.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -300,7 +300,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         private void recalcularValorr(object sender, EventArgs e)
         {
-            if(quantidadeBox.Text == "")
+            if(quantidadeBox.Text == "" )
             {
 
             }
@@ -313,6 +313,11 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 valorTotalBox.Text = total.ToString();
             }
     
+        }
+
+        private void CaixaEntradaTela_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void itemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

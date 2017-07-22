@@ -43,21 +43,21 @@
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxDescricao
@@ -203,46 +203,6 @@
             this.panel1.Size = new System.Drawing.Size(1092, 437);
             this.panel1.TabIndex = 15;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1096, 52);
-            this.panel2.TabIndex = 16;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(399, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(180, 29);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Agendar Tarefa";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1084, 45);
-            this.panel3.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(174, 20);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Informações da tarefa :";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -255,6 +215,63 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(564, 378);
             this.panel4.TabIndex = 18;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(102, 328);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(93, 36);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Criar outro";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(3, 328);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(93, 36);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Limpar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(367, 328);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 36);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(466, 328);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 36);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Salvar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1084, 45);
+            this.panel3.TabIndex = 16;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(174, 20);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Informações da tarefa :";
             // 
             // panel5
             // 
@@ -277,41 +294,25 @@
             this.panel5.Size = new System.Drawing.Size(514, 382);
             this.panel5.TabIndex = 19;
             // 
-            // button1
+            // panel2
             // 
-            this.button1.Location = new System.Drawing.Point(466, 328);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1096, 52);
+            this.panel2.TabIndex = 16;
             // 
-            // button2
+            // label8
             // 
-            this.button2.Location = new System.Drawing.Point(367, 328);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 36);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(3, 328);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 36);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Limpar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(102, 328);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(93, 36);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Criar outro";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(399, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(180, 29);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Agendar Tarefa";
             // 
             // CadastraTarefa
             // 
@@ -325,13 +326,13 @@
             this.Name = "CadastraTarefa";
             this.Text = "CadastraTarefa";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

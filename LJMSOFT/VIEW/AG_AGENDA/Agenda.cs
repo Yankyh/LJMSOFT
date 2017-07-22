@@ -26,5 +26,10 @@ namespace LJMSOFT.VIEW.AG_AGENDA
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
