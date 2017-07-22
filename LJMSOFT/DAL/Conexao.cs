@@ -30,7 +30,7 @@ namespace LJMSOFT.DAL
           
             this.cmd = new SqlCommand(query, this.conexao);
             this.resultSet = cmd.ExecuteReader();
-
+            
             return resultSet;
         }
 
@@ -113,6 +113,8 @@ namespace LJMSOFT.DAL
             }
 
         }
+
+     
 
         public void Desconectar()
         {

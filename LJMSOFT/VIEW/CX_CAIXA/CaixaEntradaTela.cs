@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LJMSOFT.DAL;
 using System.Data.SqlClient;
+using LJMSOFT.VIEW.PD_PRODUTO;
 
 namespace LJMSOFT.VIEW.CX_CAIXA
 {
@@ -24,6 +25,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             InitializeComponent();
             quantidadeItem = 1;
             count = 0;
+            conexao.Desconectar();
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -142,7 +144,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 valorTotalPedido = Convert.ToDecimal(reader4["VALORTOTAL"]);
                 valorTotalPedidoBox.Text = "R$ " + reader4["VALORTOTAL"].ToString();
             }
-            
+            reader4.Close();
             valorTotalPedido = valorTotalPedido / quantidadeParcela;
            
             valorParcelaBox.Text ="R$ "+ valorTotalPedido.ToString();
@@ -358,6 +360,36 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             conexao.Desconectar();
 
+        }
+
+        private void tipoMovimentacaoDrop(object sender, EventArgs e)
+        {
+            if(tipoMovimentacaoCombo.Text == "COMPOSTA")
+            {
+                pessoaCombo.Enabled = false;
+                tipoPagamentoCombo.Enabled = false;
+                formaPagamentoCombo.Enabled = false;
+                tipoPagamentoCombo.Enabled = false;
+            }
+            else
+            {
+                pessoaCombo.Enabled = true;
+                tipoPagamentoCombo.Enabled = true;
+                formaPagamentoCombo.Enabled = true;
+                tipoPagamentoCombo.Enabled = true;
+            }
+        }
+
+        private void keyDownf3Tipo(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.F3)
+            {
+                CadastroItem cadastroItem = new CadastroItem();
+                cadastroItem.ShowDialog();
+
+
+            }
         }
 
         private void itemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
