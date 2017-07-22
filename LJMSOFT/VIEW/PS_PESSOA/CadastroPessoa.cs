@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LJMSOFT.VIEW.PS_PESSOA
 {
-    public partial class Form1 : Form
+    public partial class CadastroPessoa : Form
     {
-        public Form1()
+        public CadastroPessoa()
         {
             InitializeComponent();
         }
@@ -33,6 +33,16 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNomePessoa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CPFCNPJlabel_Click(object sender, EventArgs e)
         {
 
         }
