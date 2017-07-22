@@ -36,5 +36,15 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         {
 
         }
+
+        private void textBoxNomePessoa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CPFCNPJlabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
