@@ -151,9 +151,9 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 valorTotalPedido = Convert.ToDecimal(reader4["VALORTOTAL"]);
                 valorTotalPedidoBox.Text = "R$ " + reader4["VALORTOTAL"].ToString();
             }
-            MessageBox.Show(valorTotalPedido.ToString());
+            
             valorTotalPedido = valorTotalPedido / quantidadeParcela;
-            MessageBox.Show(valorTotalPedido.ToString());
+            
            
             valorParcelaBox.Text ="R$ "+ valorTotalPedido.ToString();
     
@@ -332,6 +332,53 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         private void CaixaEntradaTela_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void atualizarTipoPagamento(object sender, EventArgs e)
+        {
+
+            conexao.Conectar();
+            //SELECIONA O TIPO DE PAGAMENTO
+            String tipoPagamento = tipoPagamentoCombo.Text;
+            int quantidadeParcela = 0;
+            String query5 = "SELECT * FROM CX_TIPOPAGAMENTO WHERE NOME = '" + tipoPagamento + "'";
+
+            SqlDataReader reader9 = conexao.Pesquisa(query5);
+
+            while (reader9.Read())
+            {
+                tipoPagamento = reader9["NOME"].ToString();
+                quantidadeParcela = Convert.ToInt32(reader9["NUMEROPARCELA"]);
+            }
+            reader9.Close();
+            decimal novoValor = 0;
+            if(valorTotalPedidoBox.Text == "")
+            {
+
+            }
+            else
+            {
+
+                String query8 = "SELECT SUM(VALORTOTAL) VALORTOTAL FROM CX_ITEMPEDIDO WHERE PEDIDO = " + codigoBox.Text;
+                SqlDataReader reader11 = conexao.Pesquisa(query8);
+                decimal valorTotalPedido = 0;
+                while (reader11.Read())
+                {
+                    valorTotalPedido = Convert.ToDecimal(reader11["VALORTOTAL"]);
+                    valorTotalPedidoBox.Text = "R$ " + reader11["VALORTOTAL"].ToString();
+                }
+                
+                valorTotalPedido = valorTotalPedido / quantidadeParcela;
+                
+
+                valorParcelaBox.Text = "R$ " + valorTotalPedido.ToString();
+                reader11.Close();
+            }
+
+            conexao.Desconectar();
+
+
 
         }
 

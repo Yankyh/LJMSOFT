@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.codigoBox = new System.Windows.Forms.TextBox();
             this.valorTotalBox = new System.Windows.Forms.TextBox();
@@ -48,10 +47,10 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.valorTotalPedidoBox = new System.Windows.Forms.TextBox();
             this.itensCombo = new System.Windows.Forms.ComboBox();
             this.itemDataGridView = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
+            this.valorTotalPedidoBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tipoPagamentoCombo = new System.Windows.Forms.ComboBox();
@@ -245,15 +244,6 @@
             this.checkBox1.Text = "Informar valor";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // valorTotalPedidoBox
-            // 
-            this.valorTotalPedidoBox.Enabled = false;
-            this.valorTotalPedidoBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorTotalPedidoBox.Location = new System.Drawing.Point(250, 137);
-            this.valorTotalPedidoBox.Name = "valorTotalPedidoBox";
-            this.valorTotalPedidoBox.Size = new System.Drawing.Size(176, 39);
-            this.valorTotalPedidoBox.TabIndex = 16;
-            // 
             // itensCombo
             // 
             this.itensCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -271,25 +261,18 @@
             this.itemDataGridView.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
             this.itemDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.itemDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.itemDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.itemDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.itemDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.itemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.itemDataGridView.Location = new System.Drawing.Point(4, 67);
             this.itemDataGridView.MultiSelect = false;
             this.itemDataGridView.Name = "itemDataGridView";
@@ -309,6 +292,15 @@
             this.button4.Text = "Adcionar Item";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // valorTotalPedidoBox
+            // 
+            this.valorTotalPedidoBox.Enabled = false;
+            this.valorTotalPedidoBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valorTotalPedidoBox.Location = new System.Drawing.Point(250, 137);
+            this.valorTotalPedidoBox.Name = "valorTotalPedidoBox";
+            this.valorTotalPedidoBox.Size = new System.Drawing.Size(176, 39);
+            this.valorTotalPedidoBox.TabIndex = 16;
             // 
             // label19
             // 
@@ -342,6 +334,7 @@
             this.tipoPagamentoCombo.Size = new System.Drawing.Size(313, 40);
             this.tipoPagamentoCombo.TabIndex = 15;
             this.tipoPagamentoCombo.DropDown += new System.EventHandler(this.listarTipoPagamento);
+            this.tipoPagamentoCombo.DropDownClosed += new System.EventHandler(this.atualizarTipoPagamento);
             // 
             // CaixaEntradaTela
             // 
