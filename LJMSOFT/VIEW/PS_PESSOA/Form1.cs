@@ -19,7 +19,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //ANDERSON
+            //AND
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
