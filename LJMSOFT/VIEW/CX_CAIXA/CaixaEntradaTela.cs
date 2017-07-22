@@ -45,7 +45,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         {
             conexao.Conectar();
 
-            
             String item = itensCombo.Text;
             int quantidade = Convert.ToInt32(quantidadeBox.Text);
             valorTotal = valorTotalBox.Text.Replace(',','.');
@@ -73,7 +72,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             }
             reader3.Close();
 
-
             //SELECIONA O TIPO DE PAGAMENTO
             String tipoPagamento = tipoPagamentoCombo.Text;
             int quantidadeParcela = 0;
@@ -87,8 +85,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 quantidadeParcela = Convert.ToInt32(reader5["NUMEROPARCELA"]);
             }
             reader5.Close();
-
-
 
             String codigoPedido = codigoBox.Text;
 
@@ -122,7 +118,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PESSOA, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidade + ", '" + valorTotal + "', " + pessoaNome + ", " + codigoBox.Text + ", '" + nomeItem + "')";
                 conexao.Inserir(query6);
             }
-
            
             BindingSource Binding = new BindingSource();
            // itemDataGridView.AutoGenerateColumns = true;
@@ -138,11 +133,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             itemDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             itemDataGridView.AllowUserToResizeRows = false;
 
-
-
-
-
-
+            //Seleciona a soma dos itens no banco
             String query8 = "SELECT SUM(VALORTOTAL) VALORTOTAL FROM CX_ITEMPEDIDO WHERE PEDIDO = " + codigoBox.Text;
             SqlDataReader reader4 = conexao.Pesquisa(query8);
             decimal valorTotalPedido = 0;
@@ -153,16 +144,10 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             }
             
             valorTotalPedido = valorTotalPedido / quantidadeParcela;
-            
            
             valorParcelaBox.Text ="R$ "+ valorTotalPedido.ToString();
-    
-
-
-
 
             conexao.Desconectar();
-
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -170,7 +155,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         }
        
-
         private void listarCliente(object sender, EventArgs e)
         {
             conexao.Conectar();
@@ -269,9 +253,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         private void itensCombo_DropDownClosed(object sender, EventArgs e)
         {
-          
             String item = "";
-
 
             Object selectedItem = itensCombo.SelectedItem;
             if (selectedItem == null)
@@ -301,11 +283,9 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 valorItemAntes = reader["VALOR"].ToString();
                 valorItemAntes = valorItemAntes.Replace(',','.');
             }
-            
 
             reader.Close();
             conexao.Desconectar();
-
         }
 
         private void recalcularValor(object sender, EventArgs e)
@@ -377,8 +357,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             }
 
             conexao.Desconectar();
-
-
 
         }
 
