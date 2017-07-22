@@ -48,5 +48,11 @@ namespace LJMSOFT
             CaixaTela caixaTela = new CaixaTela();
             caixaTela.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CadastroPessoa cadastrarPessoas = new CadastroPessoa();
+            cadastrarPessoas.ShowDialog();
+        }
     }
 }

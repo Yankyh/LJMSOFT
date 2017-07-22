@@ -393,6 +393,11 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void itemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

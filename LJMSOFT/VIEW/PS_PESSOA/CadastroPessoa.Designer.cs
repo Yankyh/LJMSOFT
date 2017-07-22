@@ -58,7 +58,7 @@
             this.RuaLabel = new System.Windows.Forms.Label();
             this.InfAdicionaisPessoatabPage = new System.Windows.Forms.TabPage();
             this.ObservacaoTextBox = new System.Windows.Forms.RichTextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.EhjuridicacheckBox = new System.Windows.Forms.CheckBox();
             this.CancelarButton = new System.Windows.Forms.Button();
             this.Cadastrarbutton = new System.Windows.Forms.Button();
             this.Limparbutton = new System.Windows.Forms.Button();
@@ -353,16 +353,16 @@
             this.ObservacaoTextBox.TabIndex = 0;
             this.ObservacaoTextBox.Text = "";
             // 
-            // checkBox1
+            // EhjuridicacheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(520, 256);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 20);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Jurídica";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.EhjuridicacheckBox.AutoSize = true;
+            this.EhjuridicacheckBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EhjuridicacheckBox.Location = new System.Drawing.Point(520, 256);
+            this.EhjuridicacheckBox.Name = "EhjuridicacheckBox";
+            this.EhjuridicacheckBox.Size = new System.Drawing.Size(72, 20);
+            this.EhjuridicacheckBox.TabIndex = 16;
+            this.EhjuridicacheckBox.Text = "Jurídica";
+            this.EhjuridicacheckBox.UseVisualStyleBackColor = true;
             // 
             // CancelarButton
             // 
@@ -383,6 +383,7 @@
             this.Cadastrarbutton.TabIndex = 18;
             this.Cadastrarbutton.Text = "Cadastrar";
             this.Cadastrarbutton.UseVisualStyleBackColor = true;
+            this.Cadastrarbutton.Click += new System.EventHandler(this.Cadastrarbutton_Click_1);
             // 
             // Limparbutton
             // 
@@ -403,7 +404,7 @@
             this.Controls.Add(this.Limparbutton);
             this.Controls.Add(this.Cadastrarbutton);
             this.Controls.Add(this.CancelarButton);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.EhjuridicacheckBox);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.RGtextBox);
             this.Controls.Add(this.label5);
@@ -463,7 +464,7 @@
         private System.Windows.Forms.Label CEPlabel7;
         private System.Windows.Forms.RichTextBox BairroTextBox3;
         private System.Windows.Forms.RichTextBox ObservacaoTextBox;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox EhjuridicacheckBox;
         private System.Windows.Forms.Button CancelarButton;
         private System.Windows.Forms.Button Cadastrarbutton;
         private System.Windows.Forms.Button Limparbutton;
