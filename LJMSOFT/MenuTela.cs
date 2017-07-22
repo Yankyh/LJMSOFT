@@ -43,10 +43,5 @@ namespace LJMSOFT
 
         }
 
-        private void CadastrarNovaPessoapictureBox2_Click(object sender, EventArgs e)
-        {
-            CadastroPessoa novoCadastro = new CadastroPessoa();
-            novoCadastro.ShowDialog();
-        }
     }
 }

@@ -181,5 +181,8 @@
   <ItemGroup>
     <None Include="Resources\backgroundn.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictureBox2.BackgroundImage.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
