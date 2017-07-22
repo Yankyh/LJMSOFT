@@ -100,7 +100,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                         if(unidadeMedidaCombo.Text != "")
                         {
 
-                            String query = "INSERT INTO PD_PRODUTO (NOME";
+                            String query = "INSERT INTO CX_ITEM (NOME";
 
 
 

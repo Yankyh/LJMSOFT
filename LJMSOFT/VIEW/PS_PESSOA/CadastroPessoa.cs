@@ -66,6 +66,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
         private void Cadastrarbutton_Click_1(object sender, EventArgs e)
         {
+            int count = 0;
             conexao.Conectar();
             nomePessoa = NomePessoatextBox.Text;
             CPFCNPJ = CNJPCPFtextBox.Text;
@@ -89,7 +90,10 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             SqlDataReader VerificaCPF = conexao.Pesquisa(query);
 
             while (VerificaCPF.Read())
-            if (VerificaCPF.Read() != null)
+            {
+                count++;
+            }
+            if (count > 0)
             {
                 MessageBox.Show("CPF/CNPJ ou RG já cadastrados para outra Pessoa"
                                + "\n Pessoa que possui estes dados: " );
