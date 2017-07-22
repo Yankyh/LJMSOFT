@@ -72,6 +72,24 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 pessoaNome = reader3["HANDLE"].ToString();
             }
             reader3.Close();
+
+
+            //SELECIONA O TIPO DE PAGAMENTO
+            String tipoPagamento = tipoPagamentoCombo.Text;
+            int quantidadeParcela = 0;
+            String query5 = "SELECT * FROM CX_TIPOPAGAMENTO WHERE NOME = '" + tipoPagamento + "'";
+
+            SqlDataReader reader5 = conexao.Pesquisa(query5);
+
+            while (reader5.Read())
+            {
+                tipoPagamento = reader5["NOME"].ToString();
+                quantidadeParcela = Convert.ToInt32(reader5["NUMEROPARCELA"]);
+            }
+            reader5.Close();
+
+
+
             String codigoPedido = codigoBox.Text;
 
             if (count == 0)
@@ -96,7 +114,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             
                 //Pega handle do item
                String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PESSOA, PEDIDO, ITEMNOME) VALUES ("+item+", "+ quantidade + ", "+valorTotal+", "+pessoaNome+", "+codigoBox.Text+", '"+nomeItem+"')";
-                MessageBox.Show(query6);
+               
                 conexao.Inserir(query6);
             }
             else
@@ -127,24 +145,21 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             String query8 = "SELECT SUM(VALORTOTAL) VALORTOTAL FROM CX_ITEMPEDIDO WHERE PEDIDO = " + codigoBox.Text;
             SqlDataReader reader4 = conexao.Pesquisa(query8);
-
+            decimal valorTotalPedido = 0;
             while (reader4.Read())
             {
-                valorTotalPedidoBox.Text = reader4["VALORTOTAL"].ToString();
+                valorTotalPedido = Convert.ToDecimal(reader4["VALORTOTAL"]);
+                valorTotalPedidoBox.Text = "R$ " + reader4["VALORTOTAL"].ToString();
             }
-            
+            MessageBox.Show(valorTotalPedido.ToString());
+            valorTotalPedido = valorTotalPedido / quantidadeParcela;
+            MessageBox.Show(valorTotalPedido.ToString());
+           
+            valorParcelaBox.Text ="R$ "+ valorTotalPedido.ToString();
+    
 
 
-             
-            //Adiciona o primeiro item 
 
-
-            /*BindingSource Binding = new BindingSource();
-            itemDataGridView.AutoGenerateColumns = true;
-            String query = "SELECT * FROM US_PESSOA";
-            Binding.DataSource = conexao.DataTable(query);
-            itemDataGridView.DataSource = Binding;
-            itemDataGridView.AllowUserToResizeRows = false;*/
 
             conexao.Desconectar();
 
