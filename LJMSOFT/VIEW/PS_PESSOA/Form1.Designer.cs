@@ -58,6 +58,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.NumeroEnderecoTextBox = new System.Windows.Forms.RichTextBox();
             this.ObservacaoTextBox = new System.Windows.Forms.RichTextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.PessoaEnderecoTabpage.SuspendLayout();
@@ -80,7 +81,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 65);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 65);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -349,12 +350,24 @@
             this.ObservacaoTextBox.TabIndex = 0;
             this.ObservacaoTextBox.Text = "";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(520, 256);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(72, 20);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "Jurídica";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LJMSOFT.Properties.Resources.backgroundn;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.RGtextBox);
             this.Controls.Add(this.label5);
@@ -414,5 +427,6 @@
         private System.Windows.Forms.Label CEPlabel7;
         private System.Windows.Forms.RichTextBox BairroTextBox3;
         private System.Windows.Forms.RichTextBox ObservacaoTextBox;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
