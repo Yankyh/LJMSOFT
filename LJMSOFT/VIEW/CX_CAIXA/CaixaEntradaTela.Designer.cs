@@ -54,6 +54,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tipoPagamentoCombo = new System.Windows.Forms.ComboBox();
+            this.tipoMovimentacaoCombo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).BeginInit();
@@ -64,7 +66,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1231, 19);
+            this.label12.Location = new System.Drawing.Point(1227, 11);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(88, 27);
             this.label12.TabIndex = 28;
@@ -74,7 +76,7 @@
             // 
             this.codigoBox.Enabled = false;
             this.codigoBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoBox.Location = new System.Drawing.Point(1236, 50);
+            this.codigoBox.Location = new System.Drawing.Point(1232, 42);
             this.codigoBox.Name = "codigoBox";
             this.codigoBox.Size = new System.Drawing.Size(102, 39);
             this.codigoBox.TabIndex = 27;
@@ -92,9 +94,9 @@
             // 
             this.valorParcelaBox.Enabled = false;
             this.valorParcelaBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorParcelaBox.Location = new System.Drawing.Point(15, 137);
+            this.valorParcelaBox.Location = new System.Drawing.Point(334, 113);
             this.valorParcelaBox.Name = "valorParcelaBox";
-            this.valorParcelaBox.Size = new System.Drawing.Size(229, 39);
+            this.valorParcelaBox.Size = new System.Drawing.Size(231, 39);
             this.valorParcelaBox.TabIndex = 24;
             // 
             // button3
@@ -113,7 +115,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(11, 110);
+            this.label13.Location = new System.Drawing.Point(330, 86);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(167, 24);
             this.label13.TabIndex = 25;
@@ -124,7 +126,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(487, 22);
+            this.label14.Location = new System.Drawing.Point(806, 15);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(208, 24);
             this.label14.TabIndex = 23;
@@ -135,7 +137,7 @@
             this.formaPagamentoCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.formaPagamentoCombo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.formaPagamentoCombo.FormattingEnabled = true;
-            this.formaPagamentoCombo.Location = new System.Drawing.Point(491, 49);
+            this.formaPagamentoCombo.Location = new System.Drawing.Point(810, 42);
             this.formaPagamentoCombo.Name = "formaPagamentoCombo";
             this.formaPagamentoCombo.Size = new System.Drawing.Size(313, 40);
             this.formaPagamentoCombo.TabIndex = 22;
@@ -146,7 +148,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(11, 22);
+            this.label15.Location = new System.Drawing.Point(330, 15);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 24);
             this.label15.TabIndex = 21;
@@ -157,7 +159,7 @@
             this.pessoaCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.pessoaCombo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pessoaCombo.FormattingEnabled = true;
-            this.pessoaCombo.Location = new System.Drawing.Point(15, 49);
+            this.pessoaCombo.Location = new System.Drawing.Point(334, 42);
             this.pessoaCombo.Name = "pessoaCombo";
             this.pessoaCombo.Size = new System.Drawing.Size(470, 40);
             this.pessoaCombo.TabIndex = 20;
@@ -255,6 +257,7 @@
             this.itensCombo.TabIndex = 15;
             this.itensCombo.DropDown += new System.EventHandler(this.listarItens);
             this.itensCombo.DropDownClosed += new System.EventHandler(this.itensCombo_DropDownClosed);
+            this.itensCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyDownf3Tipo);
             // 
             // itemDataGridView
             // 
@@ -297,9 +300,9 @@
             // 
             this.valorTotalPedidoBox.Enabled = false;
             this.valorTotalPedidoBox.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorTotalPedidoBox.Location = new System.Drawing.Point(250, 137);
+            this.valorTotalPedidoBox.Location = new System.Drawing.Point(571, 113);
             this.valorTotalPedidoBox.Name = "valorTotalPedidoBox";
-            this.valorTotalPedidoBox.Size = new System.Drawing.Size(176, 39);
+            this.valorTotalPedidoBox.Size = new System.Drawing.Size(233, 39);
             this.valorTotalPedidoBox.TabIndex = 16;
             // 
             // label19
@@ -307,7 +310,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(246, 110);
+            this.label19.Location = new System.Drawing.Point(571, 86);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(102, 24);
             this.label19.TabIndex = 18;
@@ -318,7 +321,7 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(805, 22);
+            this.label20.Location = new System.Drawing.Point(11, 85);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(187, 24);
             this.label20.TabIndex = 16;
@@ -329,12 +332,40 @@
             this.tipoPagamentoCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoPagamentoCombo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tipoPagamentoCombo.FormattingEnabled = true;
-            this.tipoPagamentoCombo.Location = new System.Drawing.Point(809, 49);
+            this.tipoPagamentoCombo.Location = new System.Drawing.Point(15, 112);
             this.tipoPagamentoCombo.Name = "tipoPagamentoCombo";
             this.tipoPagamentoCombo.Size = new System.Drawing.Size(313, 40);
             this.tipoPagamentoCombo.TabIndex = 15;
             this.tipoPagamentoCombo.DropDown += new System.EventHandler(this.listarTipoPagamento);
             this.tipoPagamentoCombo.DropDownClosed += new System.EventHandler(this.atualizarTipoPagamento);
+            // 
+            // tipoMovimentacaoCombo
+            // 
+            this.tipoMovimentacaoCombo.AutoCompleteCustomSource.AddRange(new string[] {
+            "SIMPLES",
+            "VENDA"});
+            this.tipoMovimentacaoCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tipoMovimentacaoCombo.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tipoMovimentacaoCombo.FormattingEnabled = true;
+            this.tipoMovimentacaoCombo.Items.AddRange(new object[] {
+            "SIMPLES",
+            "COMPOSTA"});
+            this.tipoMovimentacaoCombo.Location = new System.Drawing.Point(15, 42);
+            this.tipoMovimentacaoCombo.Name = "tipoMovimentacaoCombo";
+            this.tipoMovimentacaoCombo.Size = new System.Drawing.Size(313, 40);
+            this.tipoMovimentacaoCombo.TabIndex = 29;
+            this.tipoMovimentacaoCombo.DropDown += new System.EventHandler(this.tipoMovimentacaoDrop);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(220, 24);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Tipo de movimentação";
             // 
             // CaixaEntradaTela
             // 
@@ -342,6 +373,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LJMSOFT.Properties.Resources.backgroundn;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tipoMovimentacaoCombo);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.codigoBox);
             this.Controls.Add(this.valorParcelaBox);
@@ -395,5 +428,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox tipoPagamentoCombo;
+        private System.Windows.Forms.ComboBox tipoMovimentacaoCombo;
+        private System.Windows.Forms.Label label1;
     }
 }
