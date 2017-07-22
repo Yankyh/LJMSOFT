@@ -27,7 +27,8 @@ namespace LJMSOFT.DAL
 
         public SqlDataReader Pesquisa(String query)
         {
-          
+            this.Desconectar();
+            this.Conectar();
             this.cmd = new SqlCommand(query, this.conexao);
             this.resultSet = cmd.ExecuteReader();
             

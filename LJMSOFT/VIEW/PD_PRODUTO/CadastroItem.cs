@@ -32,6 +32,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         {
             if (e.KeyCode == Keys.F3)
             {
+                this.Close();
                 CadastroFamilia cadastroFamilia = new CadastroFamilia();
                 cadastroFamilia.ShowDialog();
 

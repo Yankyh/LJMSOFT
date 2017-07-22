@@ -18,6 +18,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         public CadastroFamilia()
         {
             InitializeComponent();
+
         }
 
         private void cadastrarButton_Click(object sender, EventArgs e)
@@ -39,14 +40,14 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                 conexao.Conectar();
                 String query2 = "SELECT MAX(HANDLE) FROM PD_FAMILIA";
                 conexao.Pesquisa(query2);
-                SqlDataReader reader12 = conexao.Pesquisa(query2);
+                SqlDataReader reader14 = conexao.Pesquisa(query2);
 
-                while (reader12.Read())
+                while (reader14.Read())
                 {
-                    codigoBox.Text = reader12["HANDLE"].ToString();
+                    codigoBox.Text = reader14["HANDLE"].ToString();
                   
                 }
-                reader12.Close();
+                reader14.Close();
 
                 conexao.Desconectar();
 

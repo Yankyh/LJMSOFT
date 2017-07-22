@@ -33,6 +33,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Close();
             CaixaEntradaTela caixaSaidaTela = new CaixaEntradaTela();
             caixaSaidaTela.ShowDialog();
         }
