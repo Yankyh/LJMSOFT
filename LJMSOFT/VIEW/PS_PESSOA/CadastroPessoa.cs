@@ -119,9 +119,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                         this.Hide();
                         BotoesGerais bg = new BotoesGerais();
                         bg.ShowDialog();
-                        this.Close();
-
-                        
+                        this.Close();         
                         
                     }
                     else
@@ -150,6 +148,35 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         private void EnderecoTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CancelarButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuTela mt = new MenuTela();
+            mt.ShowDialog();
+            this.Close();
+
+        }
+
+        private void Limparbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CadastroPessoa cp = new CadastroPessoa();
+            cp.ShowDialog();
+            this.Close();
+        }
+
+        private void EhjuridicacheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (EhjuridicacheckBox.Checked)
+            {
+                RGtextBox.Enabled = false;
+            }
+            else
+            {
+                RGtextBox.Enabled = true;
+            }
         }
     }
 }

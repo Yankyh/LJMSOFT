@@ -371,6 +371,7 @@
             this.EhjuridicacheckBox.TabIndex = 16;
             this.EhjuridicacheckBox.Text = "Jurídica";
             this.EhjuridicacheckBox.UseVisualStyleBackColor = false;
+            this.EhjuridicacheckBox.CheckedChanged += new System.EventHandler(this.EhjuridicacheckBox_CheckedChanged);
             // 
             // CancelarButton
             // 
@@ -381,6 +382,7 @@
             this.CancelarButton.TabIndex = 17;
             this.CancelarButton.Text = "Cancelar";
             this.CancelarButton.UseVisualStyleBackColor = true;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
             // Cadastrarbutton
             // 
@@ -402,6 +404,7 @@
             this.Limparbutton.TabIndex = 18;
             this.Limparbutton.Text = "Limpar";
             this.Limparbutton.UseVisualStyleBackColor = true;
+            this.Limparbutton.Click += new System.EventHandler(this.Limparbutton_Click);
             // 
             // CadastroPessoa
             // 
