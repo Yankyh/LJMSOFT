@@ -68,7 +68,22 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
         }
 
-        private void Cadastrarbutton_Click_1(object sender, EventArgs e)
+        public void limparCampos()
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EnderecoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cadastrarbutton_Click_1(object sender, EventArgs e)   
         {
            
             conexao.Conectar();
@@ -78,19 +93,9 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             fone = FonetextBox.Text;
             email = EmailtextBox.Text;
             observacao = ObservacaoTextBox.Text;
-
             String handlePessoa;
 
-
-
-            if (EhjuridicacheckBox.Checked)
-            {
-                juridica = 1;
-            }
-            else
-            {
-                juridica = 0;
-            }
+            verificaJuridica(EhjuridicacheckBox);
 
             String query = "SELECT HANDLE, NOME FROM PS_PESSOA WHERE CPFCNPJ = '" + CPFCNPJ + "' OR RG = '" + RG + "'";
             SqlDataReader reader = conexao.Pesquisa(query);
@@ -113,14 +118,21 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                 {
                     if (CPFCNPJ != "")
                     {
-                        String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + nomePessoa + "'," + "'" + fone + "'," + "'" + email + "'," + "'" + CPFCNPJ + "'," + "'" + observacao + "'," + "'" + RG + "'," + "'" + juridica + "'" + ")";
-                        conexao.Inserir(query1);
+                        int valida = validaCPF(CPFCNPJ); 
+                        if (valida == 1)
+                        {
+                            String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + nomePessoa + "'," + "'" + fone + "'," + "'" + email + "'," + "'" + CPFCNPJ + "'," + "'" + observacao + "'," + "'" + RG + "'," + "'" + juridica + "'" + ")";
+                            conexao.Inserir(query1);
 
-                        this.Hide();
-                        BotoesGerais bg = new BotoesGerais();
-                        bg.ShowDialog();
-                        this.Close();         
-                        
+                            this.Hide();
+                            BotoesGerais bg = new BotoesGerais();
+                            bg.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("CPF não contem 11 digitos");
+                        }
                     }
                     else
                     {
@@ -133,21 +145,6 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                 }
             }
             conexao.Desconectar();
-        }
-
-        public void limparCampos()
-        {
-            
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EnderecoTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void CancelarButton_Click(object sender, EventArgs e)
@@ -178,5 +175,34 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                 RGtextBox.Enabled = true;
             }
         }
+
+        private int validaCPF(String cpf)
+        {
+            long cpfInteiro = 0;
+            cpfInteiro = Convert.ToInt64(cpf);
+
+            if (cpf.Length != 11)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+
+        private void verificaJuridica(CheckBox ehjuridica)
+        {
+            if (ehjuridica.Checked)
+            {
+                juridica = 1;
+            }
+            else
+            {
+                juridica = 0;
+            }
+            
+        }
+
     }
 }
