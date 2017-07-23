@@ -217,6 +217,7 @@
             this.cancelarButton.TabIndex = 51;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.UseVisualStyleBackColor = true;
+            this.cancelarButton.Click += new System.EventHandler(this.cancelarButton_Click);
             // 
             // CadastroItem
             // 

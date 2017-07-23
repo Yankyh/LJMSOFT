@@ -511,6 +511,11 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         }
 
+        private void itemDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void checkEvent(object sender, EventArgs e)
         {
             if (checkBox.Checked)

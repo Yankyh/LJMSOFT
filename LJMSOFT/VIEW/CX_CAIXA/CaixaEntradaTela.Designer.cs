@@ -286,6 +286,7 @@
             this.itemDataGridView.RowHeadersVisible = false;
             this.itemDataGridView.Size = new System.Drawing.Size(1305, 360);
             this.itemDataGridView.TabIndex = 1;
+            this.itemDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemDataGridView_CellContentClick_1);
             // 
             // button4
             // 

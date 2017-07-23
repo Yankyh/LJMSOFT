@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using LJMSOFT.VIEW.CX_CAIXA;
 using LJMSOFT.VIEW.AG_AGENDA;
 using LJMSOFT.VIEW.PS_PESSOA;
+using LJMSOFT.VIEW.PD_PRODUTO;
 
 namespace LJMSOFT
 {
@@ -34,8 +35,7 @@ namespace LJMSOFT
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Agenda agenda = new Agenda();
-            agenda.ShowDialog();
+        
         }
 
         private void MenuTela_Load(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace LJMSOFT
 
         private void treeView1_Click(object sender, EventArgs e)
         {
-           if( menuTreeView.SelectedNode.Text == null)
+           if( menuTreeView.SelectedNode == null)
             {
 
             }
@@ -71,16 +71,25 @@ namespace LJMSOFT
                 }
                 else
                 {
-                    if (node == "Item")
+                    if (node == "Produto")
                     {
-
+                        ListaProduto listaProduto = new ListaProduto();
+                        listaProduto.ShowDialog();
                     }
                     else
                     {
-                        if (node == "Pedido")
+                        if (node == "Entrada")
                         {
-                            CaixaTela caixaTela = new CaixaTela();
-                            caixaTela.ShowDialog();
+                            CaixaEntradaTela caixaEntradaTela = new CaixaEntradaTela();
+                            caixaEntradaTela.ShowDialog();
+                        }
+                        else
+                        {
+                            if(node == "Agenda")
+                            {
+                                Agenda agenda = new Agenda();
+                                agenda.ShowDialog();
+                            }
                         }
                     }
                 }

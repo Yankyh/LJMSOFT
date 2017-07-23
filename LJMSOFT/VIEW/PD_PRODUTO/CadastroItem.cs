@@ -162,5 +162,10 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
 
         }
+
+        private void cancelarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

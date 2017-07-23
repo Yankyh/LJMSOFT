@@ -28,18 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Pessoa");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Pedido");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("ERP", new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Item");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("PRODUTO", new System.Windows.Forms.TreeNode[] {
-            treeNode9});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Pessoa");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Entrada");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Saída");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Caixa", new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Agenda");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("ERP", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode4,
+            treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Produto");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Serviço");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("ITEM", new System.Windows.Forms.TreeNode[] {
+            treeNode7,
+            treeNode8});
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuTreeView = new System.Windows.Forms.TreeView();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,42 +61,42 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::LJMSOFT.Properties.Resources.notepad_icon_29008;
-            this.pictureBox1.Location = new System.Drawing.Point(864, 227);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 133);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // menuTreeView
             // 
             this.menuTreeView.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuTreeView.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuTreeView.Location = new System.Drawing.Point(51, -1);
             this.menuTreeView.Name = "menuTreeView";
-            treeNode6.Name = "Nó3";
-            treeNode6.NodeFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode6.Text = "Pessoa";
+            treeNode1.Name = "Nó3";
+            treeNode1.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode1.Text = "Pessoa";
+            treeNode2.Name = "Nó0";
+            treeNode2.NodeFont = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode2.Text = "Entrada";
+            treeNode3.Name = "Nó1";
+            treeNode3.NodeFont = new System.Drawing.Font("Arial", 15.75F);
+            treeNode3.Text = "Saída";
+            treeNode4.Name = "Nó4";
+            treeNode4.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode4.Text = "Caixa";
+            treeNode5.Name = "Nó2";
+            treeNode5.NodeFont = new System.Drawing.Font("Arial", 20.25F);
+            treeNode5.Text = "Agenda";
+            treeNode6.Name = "Nó0";
+            treeNode6.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode6.Text = "ERP";
             treeNode7.Name = "Nó4";
-            treeNode7.NodeFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode7.Text = "Pedido";
-            treeNode8.Name = "Nó0";
-            treeNode8.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode8.Text = "ERP";
-            treeNode9.Name = "Nó2";
-            treeNode9.NodeFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode9.Text = "Item";
-            treeNode10.Name = "Nó1";
-            treeNode10.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode10.Text = "PRODUTO";
+            treeNode7.NodeFont = new System.Drawing.Font("Arial", 15.75F);
+            treeNode7.Text = "Produto";
+            treeNode8.Name = "Nó6";
+            treeNode8.NodeFont = new System.Drawing.Font("Arial", 15.75F);
+            treeNode8.Text = "Serviço";
+            treeNode9.Name = "Nó1";
+            treeNode9.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode9.Text = "ITEM";
             this.menuTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode10});
+            treeNode6,
+            treeNode9});
             this.menuTreeView.Size = new System.Drawing.Size(317, 733);
             this.menuTreeView.TabIndex = 3;
             this.menuTreeView.Visible = false;
@@ -104,6 +112,18 @@
             this.button2.Text = "Menu";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::LJMSOFT.Properties.Resources.notepad_icon_29008;
+            this.pictureBox1.Location = new System.Drawing.Point(864, 227);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 133);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MenuTela
             // 

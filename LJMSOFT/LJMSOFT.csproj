@@ -97,6 +97,12 @@
     <Compile Include="VIEW\PD_PRODUTO\CadastroItem.Designer.cs">
       <DependentUpon>CadastroItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\PD_PRODUTO\ListaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\PD_PRODUTO\ListaProduto.Designer.cs">
+      <DependentUpon>ListaProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\PS_PESSOA\CadastroPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\PD_PRODUTO\CadastroItem.resx">
       <DependentUpon>CadastroItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\PD_PRODUTO\ListaProduto.resx">
+      <DependentUpon>ListaProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\PS_PESSOA\BotoesGerais.resx">
       <DependentUpon>BotoesGerais.cs</DependentUpon>
