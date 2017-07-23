@@ -16,9 +16,67 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
     public partial class CadastroItem : Form
     {
         Conexao conexao = new Conexao();
+        public static int ehNovo = 0;
         public CadastroItem()
         {
             InitializeComponent();
+            conexao.Conectar();
+
+            //Preenche o combo box fornecedor
+            String query = "SELECT NOME FROM PS_PESSOA";
+            SqlDataReader reader1 = conexao.Pesquisa(query);
+            while (reader1.Read())
+            {
+                fornecedorCombo.Items.Add((reader1["NOME"].ToString()));
+            }
+            reader1.Close();
+
+            query = "SELECT NOME FROM PD_FAMILIA";
+            SqlDataReader reader2 = conexao.Pesquisa(query);
+            while (reader2.Read())
+            {
+                familiaCombo.Items.Add((reader2["NOME"].ToString()));
+            }
+            reader2.Close();
+
+
+
+            int itemHandle = ListaProduto.getItemHandle();
+            if(itemHandle > -1)
+            {
+                ehNovo = 1;
+                 query = "SELECT A.HANDLE CÓDIGO, A.NOME NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
+"FROM CX_ITEM A " +
+" INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
+" INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA" +
+" WHERE A.HANDLE = " + itemHandle;
+                SqlDataReader reader = conexao.Pesquisa(query);
+
+                while (reader.Read())
+                {
+                    nomeBox.Text = reader["NOME"].ToString();
+                    fornecedorCombo.Text = reader["FORNECEDOR"].ToString();
+                    valorUnitarioBox.Text = reader["VALOR"].ToString();
+                    familiaCombo.Text = reader["FAMÍLIA"].ToString();
+                    unidadeMedidaCombo.Text = reader["UN"].ToString();
+                    observacaoBox.Text = reader["OBSERVAÇÃO"].ToString();
+                    codigoBox.Text = reader["CÓDIGO"].ToString(); 
+                }
+
+                cadastrarButton.Visible = false;
+                editarButton.Visible = true;
+                nomeBox.Enabled = false;
+                fornecedorCombo.Enabled = false;
+                valorUnitarioBox.Enabled = false;
+                familiaCombo.Enabled = false;
+                unidadeMedidaCombo.Enabled = false;
+                observacaoBox.Enabled = false;
+             
+
+
+                reader.Close();
+                conexao.Desconectar();
+            }
         }
 
         private void label20_Click(object sender, EventArgs e)
@@ -117,9 +175,26 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                             }
                             reader.Close();
                             String valorUnitario = valorUnitarioBox.Text.Replace(",", ".");
-                            query = "INSERT INTO CX_ITEM (NOME, FAMILIA, VALORUNITARIO, FORNECEDOR, UNIDADEMEDIDA, OBSERVACAO) VALUES ('"+nomeBox.Text+"', "+familiaHandle+", " + valorUnitario + ", '"+fornecedorHandle+"', '"+unidadeMedidaCombo.Text+"', '"+ observacaoBox.Text+"')";
-                            conexao.Inserir(query);
-                            MessageBox.Show("Item cadastrado com sucesso");
+                            if(ehNovo == 1)
+                            {
+                                query = "UPDATE CX_ITEM SET NOME = '" + nomeBox.Text + "', FAMILIA = "+familiaHandle+", VALORUNITARIO = "+valorUnitario+", FORNECEDOR = '"+fornecedorHandle+"', UNIDADEMEDIDA = '"+unidadeMedidaCombo.Text+ "', OBSERVACAO = '"+observacaoBox.Text+"' WHERE HANDLE = "+codigoBox.Text;
+                                MessageBox.Show(query);
+                                conexao.Inserir(query);
+                            }
+                            else
+                            {
+                                query = "INSERT INTO CX_ITEM (NOME, FAMILIA, VALORUNITARIO, FORNECEDOR, UNIDADEMEDIDA, OBSERVACAO) VALUES ('" + nomeBox.Text + "', " + familiaHandle + ", " + valorUnitario + ", '" + fornecedorHandle + "', '" + unidadeMedidaCombo.Text + "', '" + observacaoBox.Text + "')";
+                                conexao.Inserir(query);
+                                MessageBox.Show("Item cadastrado com sucesso");
+                                String query3 = "SELECT MAX(HANDLE) HANDLE FROM CX_ITEM";
+                                SqlDataReader reader2 = conexao.Pesquisa(query3);
+                                while (reader2.Read())
+                                {
+                                    codigoBox.Text = reader2["HANDLE"].ToString();
+                                }
+                                reader2.Close();
+                            }
+                        
 
                             nomeBox.Enabled = false;
                             familiaCombo.Enabled = false;
@@ -127,17 +202,12 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                             unidadeMedidaCombo.Enabled = false;
                             fornecedorCombo.Enabled = false;
                             observacaoBox.Enabled = false;
-                            cadastrarButton.Enabled = false;
-                            cancelarButton.Enabled = false;
-                            
+                            cadastrarButton.Visible = false;
+                            editarButton.Visible = false;
 
-                            String query3 = "SELECT MAX(HANDLE) HANDLE FROM CX_ITEM";
-                            SqlDataReader reader2 = conexao.Pesquisa(query3);
-                            while (reader2.Read())
-                            {
-                                codigoBox.Text = reader2["HANDLE"].ToString();
-                            }
-                            reader2.Close();
+
+
+
                             conexao.Desconectar();
                         }
                         else
@@ -166,6 +236,20 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void cancelarButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void editarButton_Click(object sender, EventArgs e)
+        {
+            cadastrarButton.Visible = true;
+            editarButton.Visible = false;
+
+            nomeBox.Enabled = true;
+            familiaCombo.Enabled = true;
+            valorUnitarioBox.Enabled = true;
+            unidadeMedidaCombo.Enabled = true;
+            fornecedorCombo.Enabled = true;
+            observacaoBox.Enabled = true;
+
         }
     }
 }

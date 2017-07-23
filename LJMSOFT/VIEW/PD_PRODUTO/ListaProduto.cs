@@ -14,21 +14,28 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
     {
         Conexao conexao = new Conexao();
         private static String row = "";
+        public static int itemHandle = -1;
 
         public ListaProduto()
         {
             InitializeComponent();
+            this.Refresh();
+          
+           
+        }
 
+
+        //metodo refresh
+        public void Refresh()
+        {
             //Mostra a tabela
             conexao.Conectar();
 
             BindingSource Binding = new BindingSource();
-            // itemDataGridView.AutoGenerateColumns = true;
             String query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
                 "FROM CX_ITEM A " +
                 " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
                 " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA";
-
 
             Binding.DataSource = conexao.DataTable(query);
 
@@ -47,8 +54,10 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             itemDataGridView.AllowUserToResizeRows = false;
 
             conexao.Desconectar();
-           
+
         }
+
+
 
         private void ListaProduto_Load(object sender, EventArgs e)
         {
@@ -67,26 +76,35 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             String pesquisa = pesquisaBox.Text;
             String query = "";
 
-            if (row == "CÓDIGO")
+            if(pesquisa == "")
             {
-                row = "A.HANDLE";
-       
+                query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
+               "FROM CX_ITEM A " +
+               " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
+               " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA";
             }
             else
             {
-                if(row == "NOME")
-                {
-                    row = "A.NOME";
-                    pesquisa = "'" + pesquisa + "'";
-                }
+
+          
+
+            if (row == "NOME")
+            {
+                row = "A.NOME";
+                pesquisa = "'" + pesquisa + "'";
+
+            }
+            else
+            {
+                row = "A.HANDLE";
             }
             query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
 "FROM CX_ITEM A " +
 " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
 " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA" +
 " WHERE " + row + " = " + pesquisa;
-
-            MessageBox.Show(query);
+            }
+          
 
             BindingSource Binding = new BindingSource();
             Binding.DataSource = conexao.DataTable(query);
@@ -112,6 +130,24 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         {
             CadastroItem cadastroItem = new CadastroItem();
             cadastroItem.ShowDialog();
+        }
+
+        private void cellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            itemHandle  = Convert.ToInt32(itemDataGridView.CurrentRow.Cells[0].Value);
+            CadastroItem cadastroItem = new CadastroItem();
+            cadastroItem.ShowDialog();
+        }
+
+        //Passar o handle
+        public static int getItemHandle()
+        {
+            return itemHandle;
+        }
+
+        private void ListaProduto_Activated(object sender, EventArgs e)
+        {
+            this.Refresh();
         }
     }
 }

@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cadastrarButton = new System.Windows.Forms.Button();
             this.cancelarButton = new System.Windows.Forms.Button();
+            this.editarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -219,11 +220,23 @@
             this.cancelarButton.UseVisualStyleBackColor = true;
             this.cancelarButton.Click += new System.EventHandler(this.cancelarButton_Click);
             // 
+            // editarButton
+            // 
+            this.editarButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editarButton.Location = new System.Drawing.Point(817, 375);
+            this.editarButton.Name = "editarButton";
+            this.editarButton.Size = new System.Drawing.Size(112, 34);
+            this.editarButton.TabIndex = 52;
+            this.editarButton.Text = "Editar";
+            this.editarButton.UseVisualStyleBackColor = true;
+            this.editarButton.Click += new System.EventHandler(this.editarButton_Click);
+            // 
             // CadastroItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 412);
+            this.Controls.Add(this.editarButton);
             this.Controls.Add(this.cancelarButton);
             this.Controls.Add(this.cadastrarButton);
             this.Controls.Add(this.label2);
@@ -267,5 +280,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button cadastrarButton;
         private System.Windows.Forms.Button cancelarButton;
+        private System.Windows.Forms.Button editarButton;
     }
 }
