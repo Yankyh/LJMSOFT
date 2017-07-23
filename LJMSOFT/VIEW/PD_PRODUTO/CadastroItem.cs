@@ -91,6 +91,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         {
             //cadastrar novo item
             //VALIDAÇÕES
+            int familiaHandle = 0, fornecedorHandle = 0;
             if(nomeBox.Text != "")
             {
                 if(familiaCombo.Text != "")
@@ -99,11 +100,27 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                     {
                         if(unidadeMedidaCombo.Text != "")
                         {
+                            conexao.Conectar();
+                            String query = "SELECT HANDLE FROM PD_FAMILIA WHERE NOME = '"+familiaCombo.Text+"'";
+                            SqlDataReader reader = conexao.Pesquisa(query);
+                            while (reader.Read())
+                            {
+                                familiaHandle = Convert.ToInt32(reader["HANDLE"]);
+                            }
+                            reader.Close();
 
-                            String query = "INSERT INTO CX_ITEM (NOME";
-
-
-
+                            query = "SELECT HANDLE FROM PS_PESSOA WHERE NOME = '" + fornecedorCombo.Text + "'";
+                            reader = conexao.Pesquisa(query);
+                            while (reader.Read())
+                            {
+                                fornecedorHandle = Convert.ToInt32(reader["HANDLE"]);
+                            }
+                            reader.Close();
+                            String valorUnitario = valorUnitarioBox.Text.Replace(",", ".");
+                            query = "INSERT INTO CX_ITEM (NOME, FAMILIA, VALORUNITARIO, FORNECEDOR, UNIDADEMEDIDA, OBSERVACAO) VALUES ('"+nomeBox.Text+"', "+familiaHandle+", " + valorUnitario + ", '"+fornecedorHandle+"', '"+unidadeMedidaCombo.Text+"', '"+ observacaoBox.Text+"')";
+                            conexao.Inserir(query);
+                            MessageBox.Show("Item cadastrado com sucesso");
+                            conexao.Desconectar();
                         }
                         else
                         {

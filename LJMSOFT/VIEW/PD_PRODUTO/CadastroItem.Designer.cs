@@ -40,7 +40,7 @@
             this.fornecedorCombo = new System.Windows.Forms.ComboBox();
             this.unidadeMedidaCombo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.observacaoBox = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -177,14 +177,14 @@
             this.label3.TabIndex = 47;
             this.label3.Text = "Unidade de medida";
             // 
-            // richTextBox1
+            // observacaoBox
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 244);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(918, 125);
-            this.richTextBox1.TabIndex = 48;
-            this.richTextBox1.Text = "";
+            this.observacaoBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.observacaoBox.Location = new System.Drawing.Point(12, 244);
+            this.observacaoBox.Name = "observacaoBox";
+            this.observacaoBox.Size = new System.Drawing.Size(918, 125);
+            this.observacaoBox.TabIndex = 48;
+            this.observacaoBox.Text = "";
             // 
             // label2
             // 
@@ -226,7 +226,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.observacaoBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.unidadeMedidaCombo);
             this.Controls.Add(this.label1);
@@ -262,7 +262,7 @@
         private System.Windows.Forms.ComboBox fornecedorCombo;
         private System.Windows.Forms.ComboBox unidadeMedidaCombo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox observacaoBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
