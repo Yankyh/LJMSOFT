@@ -15,18 +15,12 @@ namespace LJMSOFT.VIEW.PS_PESSOA
     public partial class CadastroPessoa : Form
     {
         Conexao conexao = new Conexao();
-        static private String nomePessoa;
-        static private String CPFCNPJ;
-        static private String RG;
-        static private String fone;
-        static private String email;
-        static private String observacao;
-        static private int juridica;
-        static private String nomeIgual;
-        
 
+        static private Boolean validaCPFCNPJ = true;
+        static private int juridica; // Juridica = 1 e Física = 0
         // 1 = CPF/CNPJ ja cadastrado; 2 = Campo obrigatório não preenchido NOME; 3 = Campo obrigatório não preenchido CNPJ/CPF; 4 = Erro não especificado
         static private Boolean ok = true;
+        static private String nomeIgual; 
 
         public CadastroPessoa()
         {
@@ -85,43 +79,35 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
         private void Cadastrarbutton_Click_1(object sender, EventArgs e)   
         {
+            conexao.Conectar();                      
+            int x = verificaMesmoCPF();
            
-            conexao.Conectar();
-            nomePessoa = NomePessoatextBox.Text;
-            CPFCNPJ = CNJPCPFtextBox.Text;
-            RG = RGtextBox.Text;
-            fone = FonetextBox.Text;
-            email = EmailtextBox.Text;
-            observacao = ObservacaoTextBox.Text;
-            String handlePessoa;
-
-            verificaJuridica(EhjuridicacheckBox);
-
-            String query = "SELECT HANDLE, NOME FROM PS_PESSOA WHERE CPFCNPJ = '" + CPFCNPJ + "' OR RG = '" + RG + "'";
-            SqlDataReader reader = conexao.Pesquisa(query);
-
-            while (reader.Read())
-            {
-                ok = false;
-                nomeIgual = reader["NOME"].ToString();
-            }
-
-            if (ok.Equals(false))
+            if (x == 1)
             {
                 MessageBox.Show("CPF/CNPJ ou RG já cadastrados para outra Pessoa"
-                               + "\n Pessoa que possui estes dados: " + nomeIgual);  
+                               + "\n Pessoa que possui estes dados: " + nomeIgual);
+                x = 0; 
             }
             else
             {
-                reader.Close();
-                if (nomePessoa != "")
+                if (NomePessoatextBox.Text != "")
                 {
-                    if (CPFCNPJ != "")
-                    {
-                        int valida = validaCPF(CPFCNPJ); 
-                        if (valida == 1)
+                    if (CNJPCPFtextBox.Text != "")
+                    {                        
+                        if (EhjuridicacheckBox.Checked)
                         {
-                            String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + nomePessoa + "'," + "'" + fone + "'," + "'" + email + "'," + "'" + CPFCNPJ + "'," + "'" + observacao + "'," + "'" + RG + "'," + "'" + juridica + "'" + ")";
+                             validaCNPJ();
+                             juridica = 1;
+                        }
+                        else 
+                        {
+                            validaCPF();
+                            juridica = 0;
+                        }
+
+                        if (validaCPFCNPJ != false)
+                        {
+                            String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + NomePessoatextBox.Text + "'," + "'" + FonetextBox.Text + "'," + "'" + EmailtextBox.Text + "'," + "'" + CNJPCPFtextBox.Text + "'," + "'" + ObservacaoTextBox.Text + "'," + "'" + RGtextBox.Text + "'," + "'" + juridica + "'" + ")";
                             conexao.Inserir(query1);
 
                             this.Hide();
@@ -129,10 +115,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                             bg.ShowDialog();
                             this.Close();
                         }
-                        else
-                        {
-                            MessageBox.Show("CPF não contem 11 digitos");
-                        }
+
                     }
                     else
                     {
@@ -169,40 +152,55 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             if (EhjuridicacheckBox.Checked)
             {
                 RGtextBox.Enabled = false;
+                
             }
             else
             {
                 RGtextBox.Enabled = true;
+                
             }
         }
 
-        private int validaCPF(String cpf)
+        private void validaCPF()
         {
-            long cpfInteiro = 0;
-            cpfInteiro = Convert.ToInt64(cpf);
+            String CPF = CNJPCPFtextBox.Text;
 
-            if (cpf.Length != 11)
+            if (CPF.Length != 11)
             {
-                return 0;
-            }
-            else
-            {
-                return 1;
-            }
-        }
-
-        private void verificaJuridica(CheckBox ehjuridica)
-        {
-            if (ehjuridica.Checked)
-            {
-                juridica = 1;
-            }
-            else
-            {
-                juridica = 0;
+                MessageBox.Show("CPF inválido, não possui 11 caracteres");
+                validaCPFCNPJ = false;
+                
             }
             
         }
 
+        private void validaCNPJ()
+        {
+            String cnpj = CNJPCPFtextBox.Text;
+
+            if (cnpj.Length != 14)
+            {
+                MessageBox.Show("CNPJ inválido, não possui 14 caracteres");
+                validaCPFCNPJ = false;
+            }
+            
+                
+        }
+
+        private int verificaMesmoCPF()
+        {
+            String query = "SELECT HANDLE, NOME FROM PS_PESSOA WHERE CPFCNPJ = '" + CNJPCPFtextBox.Text + "'";
+            SqlDataReader reader = conexao.Pesquisa(query);
+
+            while (reader.Read())
+            {
+                nomeIgual = reader["NOME"].ToString();
+                return 1;
+                reader.Close();
+            }
+            reader.Close();
+            return 0;
+            
+        }
     }
 }
