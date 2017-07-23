@@ -22,7 +22,11 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         static private String email;
         static private String observacao;
         static private int juridica;
+        static private String nomeIgual;
+        
 
+        // 1 = CPF/CNPJ ja cadastrado; 2 = Campo obrigatório não preenchido NOME; 3 = Campo obrigatório não preenchido CNPJ/CPF; 4 = Erro não especificado
+        static private Boolean ok = true;
 
         public CadastroPessoa()
         {
@@ -66,7 +70,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
         private void Cadastrarbutton_Click_1(object sender, EventArgs e)
         {
-            int count = 0;
+           
             conexao.Conectar();
             nomePessoa = NomePessoatextBox.Text;
             CPFCNPJ = CNJPCPFtextBox.Text;
@@ -74,6 +78,9 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             fone = FonetextBox.Text;
             email = EmailtextBox.Text;
             observacao = ObservacaoTextBox.Text;
+
+            String handlePessoa;
+
 
 
             if (EhjuridicacheckBox.Checked)
@@ -86,29 +93,88 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             }
 
             String query = "SELECT HANDLE, NOME FROM PS_PESSOA WHERE CPFCNPJ = '" + CPFCNPJ + "' OR RG = '" + RG + "'";
+            SqlDataReader reader = conexao.Pesquisa(query);
 
-            SqlDataReader VerificaCPF = conexao.Pesquisa(query);
-
-            while (VerificaCPF.Read())
+            while (reader.Read())
             {
-                count++;
+                ok = false;
+                nomeIgual = reader["NOME"].ToString();
             }
-            if (count > 0)
+
+            if (ok.Equals(false))
             {
                 MessageBox.Show("CPF/CNPJ ou RG já cadastrados para outra Pessoa"
-                               + "\n Pessoa que possui estes dados: " );
-                
+                               + "\n Pessoa que possui estes dados: " + nomeIgual);  
             }
             else
             {
-                
-                String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + nomePessoa + "'," + "'" + fone + "'," + "'" + email + "'," + "'" + CPFCNPJ + "'," + "'" + observacao + "'," + "'" + RG + "'," + "'" + juridica + "'" + ")";
-                conexao.Inserir(query1);
-                MessageBox.Show("teste");
-                
+                reader.Close();
+                if (nomePessoa != "")
+                {
+                    if (CPFCNPJ != "")
+                    {
+                        String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + nomePessoa + "'," + "'" + fone + "'," + "'" + email + "'," + "'" + CPFCNPJ + "'," + "'" + observacao + "'," + "'" + RG + "'," + "'" + juridica + "'" + ")";
+                        conexao.Inserir(query1);
+
+                        //Inserindo o endereço
+                        String query2 = "SELECT MAX(HANDLE) FROM PS_PESSOA";
+                        conexao.Pesquisa(query2);
+
+                        SqlDataReader reader1 = conexao.Pesquisa(query);
+                        handlePessoa = reader1["HANDLE"].ToString();
+                        reader1.Close();
+
+                        Convert.ToInt32(handlePessoa);
+
+                        
+
+                        String endereco = EnderecoTextBox.Text;
+                        String cep = CEPTextBox.Text;
+                        String bairro = BairroTextBox3.Text;
+                        String cidade = CidadeTextBox3.Text;
+                        String referencia = ReferenciaTextBox.Text;
+                        String num = NumeroEnderecoTextBox.Text;
+
+                        String query3= "INSERT INTO PS_PESSOAENDERECO VALUES(" + "'" + bairro + "'," + "'" + cidade + "'," + "'" + cep + "'," + "'" + handlePessoa + "'," + "'" + referencia + "'," + "'" + num + ")";
+                        conexao.Inserir(query3);
+
+                        
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Campo Obrigatório não preenchido:  CPF/CNPJ ");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Campo obrigatório não preenchido: NOME ");
+                }
             }
 
+
+
+
+
+
+
+
+
+
+                
+            
+
             conexao.Desconectar();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EnderecoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

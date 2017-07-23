@@ -91,9 +91,9 @@
             // NomePessoatextBox
             // 
             this.NomePessoatextBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NomePessoatextBox.Location = new System.Drawing.Point(142, 117);
+            this.NomePessoatextBox.Location = new System.Drawing.Point(142, 120);
             this.NomePessoatextBox.Name = "NomePessoatextBox";
-            this.NomePessoatextBox.Size = new System.Drawing.Size(610, 32);
+            this.NomePessoatextBox.Size = new System.Drawing.Size(606, 32);
             this.NomePessoatextBox.TabIndex = 2;
             this.NomePessoatextBox.TextChanged += new System.EventHandler(this.textBoxNomePessoa_TextChanged);
             // 
@@ -108,12 +108,14 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 120);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 29);
+            this.label3.Size = new System.Drawing.Size(88, 33);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Nome        ";
+            this.label3.Text = "Nome ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // CNJPCPFtextBox
             // 
@@ -126,10 +128,11 @@
             // CPFCNPJlabel
             // 
             this.CPFCNPJlabel.AutoSize = true;
-            this.CPFCNPJlabel.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPFCNPJlabel.Location = new System.Drawing.Point(10, 165);
+            this.CPFCNPJlabel.BackColor = System.Drawing.Color.Transparent;
+            this.CPFCNPJlabel.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPFCNPJlabel.Location = new System.Drawing.Point(19, 165);
             this.CPFCNPJlabel.Name = "CPFCNPJlabel";
-            this.CPFCNPJlabel.Size = new System.Drawing.Size(109, 29);
+            this.CPFCNPJlabel.Size = new System.Drawing.Size(124, 31);
             this.CPFCNPJlabel.TabIndex = 6;
             this.CPFCNPJlabel.Text = "CPF/CPNJ";
             this.CPFCNPJlabel.Click += new System.EventHandler(this.CPFCNPJlabel_Click);
@@ -137,22 +140,24 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 215);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(23, 215);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 29);
+            this.label4.Size = new System.Drawing.Size(136, 33);
             this.label4.TabIndex = 8;
             this.label4.Text = "Fone         ";
             // 
             // Emaillabel5
             // 
             this.Emaillabel5.AutoSize = true;
-            this.Emaillabel5.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Emaillabel5.Location = new System.Drawing.Point(400, 218);
+            this.Emaillabel5.BackColor = System.Drawing.Color.Transparent;
+            this.Emaillabel5.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Emaillabel5.Location = new System.Drawing.Point(427, 215);
             this.Emaillabel5.Name = "Emaillabel5";
-            this.Emaillabel5.Size = new System.Drawing.Size(97, 29);
+            this.Emaillabel5.Size = new System.Drawing.Size(87, 33);
             this.Emaillabel5.TabIndex = 10;
-            this.Emaillabel5.Text = "E-mail     ";
+            this.Emaillabel5.Text = "E-mail";
             // 
             // FonetextBox
             // 
@@ -173,12 +178,13 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(400, 168);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(456, 168);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 29);
+            this.label5.Size = new System.Drawing.Size(58, 33);
             this.label5.TabIndex = 13;
-            this.label5.Text = "RG           ";
+            this.label5.Text = "RG ";
             // 
             // RGtextBox
             // 
@@ -231,7 +237,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(606, 119);
             this.label8.Name = "label8";
@@ -250,7 +256,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(28, 119);
             this.label7.Name = "label7";
@@ -261,7 +267,7 @@
             // CEPlabel7
             // 
             this.CEPlabel7.AutoSize = true;
-            this.CEPlabel7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.CEPlabel7.BackColor = System.Drawing.Color.Transparent;
             this.CEPlabel7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CEPlabel7.Location = new System.Drawing.Point(384, 23);
             this.CEPlabel7.Name = "CEPlabel7";
@@ -288,7 +294,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(384, 75);
             this.label6.Name = "label6";
@@ -307,7 +313,7 @@
             // Bairrolabel6
             // 
             this.Bairrolabel6.AutoSize = true;
-            this.Bairrolabel6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Bairrolabel6.BackColor = System.Drawing.Color.Transparent;
             this.Bairrolabel6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bairrolabel6.Location = new System.Drawing.Point(28, 75);
             this.Bairrolabel6.Name = "Bairrolabel6";
@@ -322,11 +328,12 @@
             this.EnderecoTextBox.Size = new System.Drawing.Size(196, 25);
             this.EnderecoTextBox.TabIndex = 1;
             this.EnderecoTextBox.Text = "";
+            this.EnderecoTextBox.TextChanged += new System.EventHandler(this.EnderecoTextBox_TextChanged);
             // 
             // RuaLabel
             // 
             this.RuaLabel.AutoSize = true;
-            this.RuaLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.RuaLabel.BackColor = System.Drawing.Color.Transparent;
             this.RuaLabel.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RuaLabel.Location = new System.Drawing.Point(28, 23);
             this.RuaLabel.Name = "RuaLabel";
@@ -356,13 +363,14 @@
             // EhjuridicacheckBox
             // 
             this.EhjuridicacheckBox.AutoSize = true;
+            this.EhjuridicacheckBox.BackColor = System.Drawing.Color.Transparent;
             this.EhjuridicacheckBox.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EhjuridicacheckBox.Location = new System.Drawing.Point(520, 256);
             this.EhjuridicacheckBox.Name = "EhjuridicacheckBox";
             this.EhjuridicacheckBox.Size = new System.Drawing.Size(72, 20);
             this.EhjuridicacheckBox.TabIndex = 16;
             this.EhjuridicacheckBox.Text = "Jurídica";
-            this.EhjuridicacheckBox.UseVisualStyleBackColor = true;
+            this.EhjuridicacheckBox.UseVisualStyleBackColor = false;
             // 
             // CancelarButton
             // 
