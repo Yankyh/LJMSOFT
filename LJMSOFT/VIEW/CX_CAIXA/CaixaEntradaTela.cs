@@ -491,11 +491,8 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             if (e.KeyCode == Keys.F3)
             {
-                this.Close();
                 CadastroItem cadastroItem = new CadastroItem();
                 cadastroItem.ShowDialog();
-
-
             }
         }
 

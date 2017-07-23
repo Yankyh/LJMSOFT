@@ -120,6 +120,24 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                             query = "INSERT INTO CX_ITEM (NOME, FAMILIA, VALORUNITARIO, FORNECEDOR, UNIDADEMEDIDA, OBSERVACAO) VALUES ('"+nomeBox.Text+"', "+familiaHandle+", " + valorUnitario + ", '"+fornecedorHandle+"', '"+unidadeMedidaCombo.Text+"', '"+ observacaoBox.Text+"')";
                             conexao.Inserir(query);
                             MessageBox.Show("Item cadastrado com sucesso");
+
+                            nomeBox.Enabled = false;
+                            familiaCombo.Enabled = false;
+                            valorUnitarioBox.Enabled = false;
+                            unidadeMedidaCombo.Enabled = false;
+                            fornecedorCombo.Enabled = false;
+                            observacaoBox.Enabled = false;
+                            cadastrarButton.Enabled = false;
+                            cancelarButton.Enabled = false;
+                            
+
+                            String query3 = "SELECT MAX(HANDLE) HANDLE FROM CX_ITEM";
+                            SqlDataReader reader2 = conexao.Pesquisa(query3);
+                            while (reader2.Read())
+                            {
+                                codigoBox.Text = reader2["HANDLE"].ToString();
+                            }
+                            reader2.Close();
                             conexao.Desconectar();
                         }
                         else
