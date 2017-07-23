@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Pessoa");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Pedido");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("ERP", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Item");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("PRODUTO", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Pessoa");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Pedido");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("ERP", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Item");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("PRODUTO", new System.Windows.Forms.TreeNode[] {
+            treeNode9});
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.menuTreeView = new System.Windows.Forms.TreeView();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,47 +65,53 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button2
-            // 
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(766, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(262, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "CadastrarPessoa(PROVISÓRIO)";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // menuTreeView
             // 
-            this.menuTreeView.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.menuTreeView.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuTreeView.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuTreeView.Location = new System.Drawing.Point(0, 0);
+            this.menuTreeView.Location = new System.Drawing.Point(51, -1);
             this.menuTreeView.Name = "menuTreeView";
-            treeNode1.Name = "Nó3";
-            treeNode1.Text = "Pessoa";
-            treeNode2.Name = "Nó4";
-            treeNode2.Text = "Pedido";
-            treeNode3.Name = "Nó0";
-            treeNode3.Text = "ERP";
-            treeNode4.Name = "Nó2";
-            treeNode4.Text = "Item";
-            treeNode5.Name = "Nó1";
-            treeNode5.Text = "PRODUTO";
+            treeNode6.Name = "Nó3";
+            treeNode6.NodeFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode6.Text = "Pessoa";
+            treeNode7.Name = "Nó4";
+            treeNode7.NodeFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode7.Text = "Pedido";
+            treeNode8.Name = "Nó0";
+            treeNode8.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode8.Text = "ERP";
+            treeNode9.Name = "Nó2";
+            treeNode9.NodeFont = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode9.Text = "Item";
+            treeNode10.Name = "Nó1";
+            treeNode10.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode10.Text = "PRODUTO";
             this.menuTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode5});
+            treeNode8,
+            treeNode10});
             this.menuTreeView.Size = new System.Drawing.Size(317, 733);
             this.menuTreeView.TabIndex = 3;
-            this.menuTreeView.Click += new System.EventHandler(this.treeView1_Click);
+            this.menuTreeView.Visible = false;
+            this.menuTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.menuTreeView_AfterSelect);
+            this.menuTreeView.DoubleClick += new System.EventHandler(this.treeView1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(-2, -1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(54, 733);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Menu";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // MenuTela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.menuTreeView);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.menuTreeView);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Name = "MenuTela";
@@ -122,8 +128,8 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TreeView menuTreeView;
+        private System.Windows.Forms.Button button2;
     }
 }
 

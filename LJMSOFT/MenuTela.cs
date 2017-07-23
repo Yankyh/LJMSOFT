@@ -45,22 +45,66 @@ namespace LJMSOFT
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            CaixaTela caixaTela = new CaixaTela();
-            caixaTela.ShowDialog();
+         
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            CadastroPessoa cadastrarPessoas = new CadastroPessoa();
-            cadastrarPessoas.ShowDialog();
-            this.Close();
+        
         }
 
         private void treeView1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(menuTreeView.Nodes[0].ToString());
-        
+           if( menuTreeView.SelectedNode.Text == null)
+            {
+
+            }
+            else
+            {
+                String node = menuTreeView.SelectedNode.Text;
+
+
+                if (node == "Pessoa")
+                {
+                    CadastroPessoa cadastrarPessoas = new CadastroPessoa();
+                    cadastrarPessoas.ShowDialog();
+                }
+                else
+                {
+                    if (node == "Item")
+                    {
+
+                    }
+                    else
+                    {
+                        if (node == "Pedido")
+                        {
+                            CaixaTela caixaTela = new CaixaTela();
+                            caixaTela.ShowDialog();
+                        }
+                    }
+                }
+            }
+    
+
+        }
+
+        private void menuTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if(menuTreeView.Visible == false)
+            {
+                menuTreeView.Visible = true;
+            }
+            else
+            {
+                menuTreeView.Visible = false;
+            }
+          
         }
     }
 }
