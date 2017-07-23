@@ -57,5 +57,10 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
 
         }
+
+        private void CadastroFamilia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
