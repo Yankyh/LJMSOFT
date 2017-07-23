@@ -58,10 +58,7 @@ namespace LJMSOFT
         private void treeView1_Click(object sender, EventArgs e)
         {
             MessageBox.Show(menuTreeView.Nodes[0].ToString());
-            if(menuTreeView.SelectedNode[1])
-            {
-
-            }
+        
         }
     }
 }
