@@ -97,23 +97,29 @@
     <Compile Include="VIEW\PD_PRODUTO\CadastroItem.Designer.cs">
       <DependentUpon>CadastroItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\PS_PESSOA\CadastraTarefa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VIEW\PS_PESSOA\CadastraTarefa.Designer.cs">
-      <DependentUpon>CadastraTarefa.cs</DependentUpon>
-    </Compile>
     <Compile Include="VIEW\PS_PESSOA\CadastroPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEW\PS_PESSOA\CadastroPessoa.Designer.cs">
       <DependentUpon>CadastroPessoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\PS_PESSOA\BotoesGerais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\PS_PESSOA\BotoesGerais.Designer.cs">
+      <DependentUpon>BotoesGerais.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\RL_RELATORIO\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEW\RL_RELATORIO\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\TR_TAREFA\CadastraTarefa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\TR_TAREFA\CadastraTarefa.Designer.cs">
+      <DependentUpon>CadastraTarefa.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MenuTela.resx">
       <DependentUpon>MenuTela.cs</DependentUpon>
@@ -146,11 +152,14 @@
     <EmbeddedResource Include="VIEW\PD_PRODUTO\CadastroItem.resx">
       <DependentUpon>CadastroItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\PS_PESSOA\CadastraTarefa.resx">
-      <DependentUpon>CadastraTarefa.cs</DependentUpon>
+    <EmbeddedResource Include="VIEW\PS_PESSOA\BotoesGerais.resx">
+      <DependentUpon>BotoesGerais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\PS_PESSOA\CadastroPessoa.resx">
       <DependentUpon>CadastroPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\TR_TAREFA\CadastraTarefa.resx">
+      <DependentUpon>CadastraTarefa.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

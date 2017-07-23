@@ -116,30 +116,13 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                         String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + nomePessoa + "'," + "'" + fone + "'," + "'" + email + "'," + "'" + CPFCNPJ + "'," + "'" + observacao + "'," + "'" + RG + "'," + "'" + juridica + "'" + ")";
                         conexao.Inserir(query1);
 
-                        //Inserindo o endereço
-                        String query2 = "SELECT MAX(HANDLE) FROM PS_PESSOA";
-                        conexao.Pesquisa(query2);
-
-                        SqlDataReader reader1 = conexao.Pesquisa(query);
-                        handlePessoa = reader1["HANDLE"].ToString();
-                        reader1.Close();
-
-                        Convert.ToInt32(handlePessoa);
+                        this.Hide();
+                        BotoesGerais bg = new BotoesGerais();
+                        bg.ShowDialog();
+                        this.Close();
 
                         
-
-                        String endereco = EnderecoTextBox.Text;
-                        String cep = CEPTextBox.Text;
-                        String bairro = BairroTextBox3.Text;
-                        String cidade = CidadeTextBox3.Text;
-                        String referencia = ReferenciaTextBox.Text;
-                        String num = NumeroEnderecoTextBox.Text;
-
-                        String query3= "INSERT INTO PS_PESSOAENDERECO VALUES(" + "'" + bairro + "'," + "'" + cidade + "'," + "'" + cep + "'," + "'" + handlePessoa + "'," + "'" + referencia + "'," + "'" + num + ")";
-                        conexao.Inserir(query3);
-
                         
-
                     }
                     else
                     {
@@ -151,20 +134,12 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                     MessageBox.Show("Campo obrigatório não preenchido: NOME ");
                 }
             }
-
-
-
-
-
-
-
-
-
-
-                
-            
-
             conexao.Desconectar();
+        }
+
+        public void limparCampos()
+        {
+            
         }
 
         private void label3_Click(object sender, EventArgs e)

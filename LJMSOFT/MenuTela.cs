@@ -51,8 +51,10 @@ namespace LJMSOFT
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             CadastroPessoa cadastrarPessoas = new CadastroPessoa();
             cadastrarPessoas.ShowDialog();
+            this.Close();
         }
 
         private void treeView1_Click(object sender, EventArgs e)
