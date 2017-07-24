@@ -48,6 +48,7 @@
             this.menuTreeView = new System.Windows.Forms.TreeView();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Provisoriobutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,11 +126,22 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // Provisoriobutton
+            // 
+            this.Provisoriobutton.Location = new System.Drawing.Point(687, 373);
+            this.Provisoriobutton.Name = "Provisoriobutton";
+            this.Provisoriobutton.Size = new System.Drawing.Size(77, 27);
+            this.Provisoriobutton.TabIndex = 5;
+            this.Provisoriobutton.Text = "Provisório apgar";
+            this.Provisoriobutton.UseVisualStyleBackColor = true;
+            this.Provisoriobutton.Click += new System.EventHandler(this.Provisoriobutton_Click);
+            // 
             // MenuTela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.Provisoriobutton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.menuTreeView);
             this.Controls.Add(this.pictureBox1);
@@ -150,6 +162,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TreeView menuTreeView;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Provisoriobutton;
     }
 }
 

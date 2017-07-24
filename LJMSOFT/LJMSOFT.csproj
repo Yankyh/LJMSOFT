@@ -115,6 +115,12 @@
     <Compile Include="VIEW\PS_PESSOA\BotoesGerais.Designer.cs">
       <DependentUpon>BotoesGerais.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\PS_PESSOA\ListaPessoas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\PS_PESSOA\ListaPessoas.Designer.cs">
+      <DependentUpon>ListaPessoas.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\RL_RELATORIO\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\PS_PESSOA\CadastroPessoa.resx">
       <DependentUpon>CadastroPessoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\PS_PESSOA\ListaPessoas.resx">
+      <DependentUpon>ListaPessoas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\TR_TAREFA\CadastraTarefa.resx">
       <DependentUpon>CadastraTarefa.cs</DependentUpon>
