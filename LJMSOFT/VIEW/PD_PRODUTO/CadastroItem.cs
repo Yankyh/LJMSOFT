@@ -178,7 +178,6 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                             if(ehNovo == 1)
                             {
                                 query = "UPDATE CX_ITEM SET NOME = '" + nomeBox.Text + "', FAMILIA = "+familiaHandle+", VALORUNITARIO = "+valorUnitario+", FORNECEDOR = '"+fornecedorHandle+"', UNIDADEMEDIDA = '"+unidadeMedidaCombo.Text+ "', OBSERVACAO = '"+observacaoBox.Text+"' WHERE HANDLE = "+codigoBox.Text;
-                                MessageBox.Show(query);
                                 conexao.Inserir(query);
                             }
                             else

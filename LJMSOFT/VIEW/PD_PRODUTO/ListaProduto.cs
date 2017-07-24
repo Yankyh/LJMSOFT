@@ -150,9 +150,9 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             this.Refresh();
         }
 
-        private void itemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Refresh();
         }
     }
 }
