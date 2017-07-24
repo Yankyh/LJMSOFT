@@ -114,7 +114,6 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                             bg.ShowDialog();
                             this.Close();
                         }
-
                     }
                     else
                     {
@@ -132,8 +131,6 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         private void CancelarButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MenuTela mt = new MenuTela();
-            mt.ShowDialog();
             this.Close();
 
         }

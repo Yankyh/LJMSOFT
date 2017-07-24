@@ -23,13 +23,12 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
         public void refresh()
         {
-
             //Mostra a tabela
             conecta.Conectar();
 
             BindingSource Binding = new BindingSource();
-            String query = "SELECT TOP 100 A.NOME, A.CPFCNPJ 'CPF OU CNPJ', A.TELEFONE, A.EMAIL, A.RG, B.BAIRRO, B.CEP FROM PS_PESSOA A " +
-                                "LEFT JOIN PS_PESSOAENDERECO B ON B.PESSOA = A.HANDLE";
+            String query = "SELECT TOP 100 A.NOME, A.CPFCNPJ 'CPF OU CNPJ', A.TELEFONE, A.EMAIL, A.RG FROM PS_PESSOA A ";
+                                
 
             Binding.DataSource = conecta.DataTable(query);
 
@@ -38,9 +37,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             dataGridView1.Columns[1].Width = 120;
             dataGridView1.Columns[2].Width = 100;
             dataGridView1.Columns[3].Width = 250;
-            dataGridView1.Columns[4].Width = 100;
-            dataGridView1.Columns[5].Width = 180;
-            dataGridView1.Columns[6].Width = 102;
+            dataGridView1.Columns[4].Width = 172;
             dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -48,6 +45,23 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             dataGridView1.AllowUserToResizeRows = false;
 
             conecta.Desconectar();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            CadastroPessoa cp = new CadastroPessoa();
+            cp.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
         }
     }
 }

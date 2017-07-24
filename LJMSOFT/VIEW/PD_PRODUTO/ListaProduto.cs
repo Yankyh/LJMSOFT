@@ -79,9 +79,9 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             if(pesquisa == "")
             {
                 query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
-               "FROM CX_ITEM A " +
-               " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
-               " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA";
+                               "FROM CX_ITEM A " +
+                               " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
+                               " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA";
             }
             else
             {
@@ -99,10 +99,10 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                 row = "A.HANDLE";
             }
             query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
-"FROM CX_ITEM A " +
-" INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
-" INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA" +
-" WHERE " + row + " = " + pesquisa;
+                        "FROM CX_ITEM A " +
+                        " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
+                        " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA" +
+                        " WHERE " + row + " = " + pesquisa;
             }
           
 
@@ -153,6 +153,11 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void button3_Click(object sender, EventArgs e)
         {
             this.Refresh();
+        }
+
+        private void itemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

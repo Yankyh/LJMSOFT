@@ -66,8 +66,8 @@ namespace LJMSOFT
 
                 if (node == "Pessoa")
                 {
-                    CadastroPessoa cadastrarPessoas = new CadastroPessoa();
-                    cadastrarPessoas.ShowDialog();
+                    ListaPessoas listaPessoas = new ListaPessoas();
+                    listaPessoas.ShowDialog();
                 }
                 else
                 {
