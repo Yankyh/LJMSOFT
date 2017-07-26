@@ -42,6 +42,9 @@
             // 
             // itemDataGridView
             // 
+            this.itemDataGridView.AllowUserToAddRows = false;
+            this.itemDataGridView.AllowUserToDeleteRows = false;
+            this.itemDataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
             this.itemDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.itemDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;

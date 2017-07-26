@@ -22,6 +22,8 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             InitializeComponent();
             conexao.Conectar();
 
+            editarButton.Visible = false;
+            ehNovo = 0;
             //Preenche o combo box fornecedor
             String query = "SELECT NOME FROM PS_PESSOA";
             SqlDataReader reader1 = conexao.Pesquisa(query);
@@ -44,6 +46,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             int itemHandle = ListaProduto.getItemHandle();
             if(itemHandle > -1)
             {
+                
                 ehNovo = 1;
                  query = "SELECT A.HANDLE CÓDIGO, A.NOME NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
 "FROM CX_ITEM A " +
@@ -108,6 +111,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void listarFamilia(object sender, EventArgs e)
         {
             familiaCombo.Items.Clear();
+            conexao.Desconectar();
             conexao.Conectar();
             String query = "SELECT NOME FROM PD_FAMILIA";
             SqlDataReader reader = conexao.Pesquisa(query);

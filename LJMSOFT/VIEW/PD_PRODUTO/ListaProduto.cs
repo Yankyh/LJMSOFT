@@ -123,7 +123,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             itemDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             itemDataGridView.AllowUserToResizeRows = false;
-
+            itemDataGridView.AllowUserToAddRows = false;
 
             conexao.Desconectar();
         }
