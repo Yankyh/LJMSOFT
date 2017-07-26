@@ -67,7 +67,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void selecionaRow(object sender, DataGridViewCellMouseEventArgs e)
         {
             row = itemDataGridView.Columns[e.ColumnIndex].HeaderText;
-            MessageBox.Show(row);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
