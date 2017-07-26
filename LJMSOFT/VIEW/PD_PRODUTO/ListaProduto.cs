@@ -67,6 +67,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void selecionaRow(object sender, DataGridViewCellMouseEventArgs e)
         {
             row = itemDataGridView.Columns[e.ColumnIndex].HeaderText;
+            MessageBox.Show(row);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -103,6 +104,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
 " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA" +
 " WHERE " + row + " = " + pesquisa;
+                MessageBox.Show(query);
             }
           
 
@@ -148,6 +150,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void ListaProduto_Activated(object sender, EventArgs e)
         {
             this.Refresh();
+            itemHandle = -1;
         }
 
         private void button3_Click(object sender, EventArgs e)
