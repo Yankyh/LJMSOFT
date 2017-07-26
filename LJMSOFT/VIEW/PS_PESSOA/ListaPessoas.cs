@@ -63,5 +63,10 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             this.Hide();
             this.Close();
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

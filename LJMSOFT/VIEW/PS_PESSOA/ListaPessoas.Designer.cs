@@ -32,7 +32,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.PesquisaPessoaRightBox = new System.Windows.Forms.RichTextBox();
             this.Pesquisabutton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,13 +69,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Novo";
             // 
-            // richTextBox1
+            // PesquisaPessoaRightBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(806, 41);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(201, 26);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.PesquisaPessoaRightBox.Location = new System.Drawing.Point(806, 41);
+            this.PesquisaPessoaRightBox.Name = "PesquisaPessoaRightBox";
+            this.PesquisaPessoaRightBox.Size = new System.Drawing.Size(201, 26);
+            this.PesquisaPessoaRightBox.TabIndex = 3;
+            this.PesquisaPessoaRightBox.Text = "";
+            this.PesquisaPessoaRightBox.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Pesquisabutton
             // 
@@ -114,7 +115,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Pesquisabutton);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.PesquisaPessoaRightBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
@@ -134,7 +135,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox PesquisaPessoaRightBox;
         private System.Windows.Forms.Button Pesquisabutton;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
