@@ -148,7 +148,7 @@
             this.Controls.Add(this.button1);
             this.Name = "MenuTela";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuTela_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
