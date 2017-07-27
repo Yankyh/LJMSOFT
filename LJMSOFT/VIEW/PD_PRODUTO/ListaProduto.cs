@@ -71,6 +71,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
         private void button2_Click(object sender, EventArgs e)
         {
+            conexao.Desconectar();
             conexao.Conectar();
 
             String pesquisa = pesquisaBox.Text;
@@ -103,7 +104,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
 " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA" +
 " WHERE " + row + " = " + pesquisa;
-                MessageBox.Show(query);
+                
             }
           
 
