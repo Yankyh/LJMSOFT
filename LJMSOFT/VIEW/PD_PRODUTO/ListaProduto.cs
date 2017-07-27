@@ -20,8 +20,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         {
             InitializeComponent();
             this.Refresh();
-          
-           
+            
         }
 
 
@@ -156,6 +155,16 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void button3_Click(object sender, EventArgs e)
         {
             this.Refresh();
+        }
+
+        private void itemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void itemDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
