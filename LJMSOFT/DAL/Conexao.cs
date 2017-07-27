@@ -86,8 +86,16 @@ namespace LJMSOFT.DAL
 
         public void Inserir(String query)
         {
-            this.cmd = new SqlCommand(query, this.conexao);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                this.cmd = new SqlCommand(query, this.conexao);
+                cmd.ExecuteNonQuery();
+            }
+            catch(InvalidCastException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+       
         }
 
         //DATATABLE

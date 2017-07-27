@@ -129,6 +129,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
         private void button1_Click(object sender, EventArgs e)
         {
+            itemHandle = -1;
             CadastroItem cadastroItem = new CadastroItem();
             cadastroItem.ShowDialog();
         }
@@ -149,7 +150,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void ListaProduto_Activated(object sender, EventArgs e)
         {
             this.Refresh();
-            itemHandle = -1;
+         //   itemHandle = -1;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -165,6 +166,30 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void itemDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Você realmente deseja excluir este item?", "Excluir Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if(result == DialogResult.No)
+            {
+              
+            }
+            else
+            {
+                conexao.Conectar();
+                String query = "DELETE CX_ITEM WHERE HANDLE = " + itemHandle;
+                conexao.Inserir(query);
+                conexao.Desconectar();
+                this.Refresh();
+            }
+        }
+
+        private void itemDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            itemHandle = Convert.ToInt32(itemDataGridView.CurrentRow.Cells[0].Value);
+            
         }
     }
 }
