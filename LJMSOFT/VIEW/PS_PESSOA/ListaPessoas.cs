@@ -13,7 +13,8 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 {
     public partial class ListaPessoas : Form
     {
-
+        private static int handlePessoa = -1;
+        private static String row = "";
         Conexao conecta = new Conexao();
         public ListaPessoas()
         {
@@ -27,22 +28,22 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             conecta.Conectar();
 
             BindingSource Binding = new BindingSource();
-            String query = "SELECT TOP 100 A.NOME, A.CPFCNPJ 'CPF OU CNPJ', A.TELEFONE, A.EMAIL, A.RG FROM PS_PESSOA A ";
+            String query = "SELECT TOP 100 A.HANDLE CODIGO, A.NOME, A.CPFCNPJ 'CPF OU CNPJ', A.TELEFONE, A.EMAIL, A.RG FROM PS_PESSOA A ";
                                 
 
             Binding.DataSource = conecta.DataTable(query);
 
-            dataGridView1.DataSource = Binding;
-            dataGridView1.Columns[0].Width = 300;
-            dataGridView1.Columns[1].Width = 120;
-            dataGridView1.Columns[2].Width = 100;
-            dataGridView1.Columns[3].Width = 250;
-            dataGridView1.Columns[4].Width = 172;
-            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            PessoadataGridView1.DataSource = Binding;
+            PessoadataGridView1.Columns[0].Width = 300;
+            PessoadataGridView1.Columns[1].Width = 120;
+            PessoadataGridView1.Columns[2].Width = 100;
+            PessoadataGridView1.Columns[3].Width = 250;
+            PessoadataGridView1.Columns[4].Width = 172;
+            PessoadataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            PessoadataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            PessoadataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dataGridView1.AllowUserToResizeRows = false;
+            PessoadataGridView1.AllowUserToResizeRows = false;
 
             conecta.Desconectar();
         }
@@ -62,6 +63,33 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         {
             this.Hide();
             this.Close();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ListaPessoas_doubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            handlePessoa = Convert.ToInt32(PessoadataGridView1.CurrentRow.Cells[0].Value);
+            CadastroPessoa cp = new CadastroPessoa();
+            cp.ShowDialog();
+        }
+
+        private void selecionaRow(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            row = PessoadataGridView1.Columns[e.ColumnIndex].HeaderText;
+        }
+
+        public static int getHandlePessoa()
+        {
+            return handlePessoa;
+        }
+
+        private void buttonAtualizar_Click(object sender, EventArgs e)
+        {
+            this.refresh();
         }
     }
 }

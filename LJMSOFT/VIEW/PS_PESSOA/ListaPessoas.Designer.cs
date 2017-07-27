@@ -29,26 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaPessoas));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PessoadataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.PesquisaPessoaRightBox = new System.Windows.Forms.RichTextBox();
             this.Pesquisabutton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.buttonAtualizar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.PessoadataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // PessoadataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(983, 451);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.PessoadataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PessoadataGridView1.Location = new System.Drawing.Point(24, 87);
+            this.PessoadataGridView1.Name = "PessoadataGridView1";
+            this.PessoadataGridView1.Size = new System.Drawing.Size(983, 451);
+            this.PessoadataGridView1.TabIndex = 0;
+            this.PessoadataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.PessoadataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListaPessoas_doubleClick);
             // 
             // pictureBox1
             // 
@@ -69,13 +71,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Novo";
             // 
-            // richTextBox1
+            // PesquisaPessoaRightBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(806, 41);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(201, 26);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.PesquisaPessoaRightBox.Location = new System.Drawing.Point(806, 41);
+            this.PesquisaPessoaRightBox.Name = "PesquisaPessoaRightBox";
+            this.PesquisaPessoaRightBox.Size = new System.Drawing.Size(201, 26);
+            this.PesquisaPessoaRightBox.TabIndex = 3;
+            this.PesquisaPessoaRightBox.Text = "";
+            this.PesquisaPessoaRightBox.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Pesquisabutton
             // 
@@ -106,22 +109,34 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Sair";
             // 
+            // buttonAtualizar
+            // 
+            this.buttonAtualizar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAtualizar.Location = new System.Drawing.Point(193, 12);
+            this.buttonAtualizar.Name = "buttonAtualizar";
+            this.buttonAtualizar.Size = new System.Drawing.Size(97, 62);
+            this.buttonAtualizar.TabIndex = 7;
+            this.buttonAtualizar.Text = "Atualizar";
+            this.buttonAtualizar.UseVisualStyleBackColor = true;
+            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
+            // 
             // ListaPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 546);
+            this.Controls.Add(this.buttonAtualizar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Pesquisabutton);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.PesquisaPessoaRightBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.PessoadataGridView1);
             this.Name = "ListaPessoas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PessoadataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -131,12 +146,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView PessoadataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox PesquisaPessoaRightBox;
         private System.Windows.Forms.Button Pesquisabutton;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonAtualizar;
     }
 }
