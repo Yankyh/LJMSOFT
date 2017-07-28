@@ -29,7 +29,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
             BindingSource Binding = new BindingSource();
             String query = "SELECT TOP 100 A.HANDLE CODIGO, A.NOME, A.CPFCNPJ 'CPF OU CNPJ', A.TELEFONE, A.EMAIL, A.RG FROM PS_PESSOA A ";
-                                
+
 
             Binding.DataSource = conecta.DataTable(query);
 
@@ -67,7 +67,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ListaPessoas_doubleClick(object sender, DataGridViewCellEventArgs e)
@@ -90,6 +90,11 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
             this.refresh();
+        }
+
+        private void ListaPessoas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

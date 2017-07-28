@@ -44,11 +44,11 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
 
             int itemHandle = ListaProduto.getItemHandle();
-            if(itemHandle > -1)
+            if (itemHandle > -1)
             {
-                
+
                 ehNovo = 1;
-                 query = "SELECT A.HANDLE CÓDIGO, A.NOME NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
+                query = "SELECT A.HANDLE CÓDIGO, A.NOME NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
 "FROM CX_ITEM A " +
 " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
 " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA" +
@@ -63,7 +63,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                     familiaCombo.Text = reader["FAMÍLIA"].ToString();
                     unidadeMedidaCombo.Text = reader["UN"].ToString();
                     observacaoBox.Text = reader["OBSERVAÇÃO"].ToString();
-                    codigoBox.Text = reader["CÓDIGO"].ToString(); 
+                    codigoBox.Text = reader["CÓDIGO"].ToString();
                 }
 
                 cadastrarButton.Visible = false;
@@ -74,7 +74,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                 familiaCombo.Enabled = false;
                 unidadeMedidaCombo.Enabled = false;
                 observacaoBox.Enabled = false;
-             
+
 
 
                 reader.Close();
@@ -96,7 +96,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         {
             if (e.KeyCode == Keys.F3)
             {
-                
+
                 CadastroFamilia cadastroFamilia = new CadastroFamilia();
                 cadastroFamilia.ShowDialog();
 
@@ -154,16 +154,16 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             //cadastrar novo item
             //VALIDAÇÕES
             int familiaHandle = 0, fornecedorHandle = 0;
-            if(nomeBox.Text != "")
+            if (nomeBox.Text != "")
             {
-                if(familiaCombo.Text != "")
+                if (familiaCombo.Text != "")
                 {
-                    if(valorUnitarioBox.Text != "")
+                    if (valorUnitarioBox.Text != "")
                     {
-                        if(unidadeMedidaCombo.Text != "")
+                        if (unidadeMedidaCombo.Text != "")
                         {
                             conexao.Conectar();
-                            String query = "SELECT HANDLE FROM PD_FAMILIA WHERE NOME = '"+familiaCombo.Text+"'";
+                            String query = "SELECT HANDLE FROM PD_FAMILIA WHERE NOME = '" + familiaCombo.Text + "'";
                             SqlDataReader reader = conexao.Pesquisa(query);
                             while (reader.Read())
                             {
@@ -179,9 +179,9 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                             }
                             reader.Close();
                             String valorUnitario = valorUnitarioBox.Text.Replace(",", ".");
-                            if(ehNovo == 1)
+                            if (ehNovo == 1)
                             {
-                                query = "UPDATE CX_ITEM SET NOME = '" + nomeBox.Text + "', FAMILIA = "+familiaHandle+", VALORUNITARIO = "+valorUnitario+", FORNECEDOR = '"+fornecedorHandle+"', UNIDADEMEDIDA = '"+unidadeMedidaCombo.Text+ "', OBSERVACAO = '"+observacaoBox.Text+"' WHERE HANDLE = "+codigoBox.Text;
+                                query = "UPDATE CX_ITEM SET NOME = '" + nomeBox.Text + "', FAMILIA = " + familiaHandle + ", VALORUNITARIO = " + valorUnitario + ", FORNECEDOR = '" + fornecedorHandle + "', UNIDADEMEDIDA = '" + unidadeMedidaCombo.Text + "', OBSERVACAO = '" + observacaoBox.Text + "' WHERE HANDLE = " + codigoBox.Text;
                                 conexao.Inserir(query);
                             }
                             else
@@ -197,7 +197,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                                 }
                                 reader2.Close();
                             }
-                        
+
 
                             nomeBox.Enabled = false;
                             familiaCombo.Enabled = false;

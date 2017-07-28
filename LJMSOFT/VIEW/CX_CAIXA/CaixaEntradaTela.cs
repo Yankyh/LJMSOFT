@@ -19,7 +19,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         static float valorItem = 0;
         static int quantidadeItem = 1, count = 0, antValor = 0;
         String item, valorTotal = "";
-       
+
 
         public CaixaEntradaTela()
         {
@@ -51,7 +51,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             String item = itensCombo.Text;
             int quantidade = Convert.ToInt32(quantidadeBox.Text);
-            valorTotal = valorTotalBox.Text.Replace(',','.');
+            valorTotal = valorTotalBox.Text.Replace(',', '.');
 
             //Busca o handle pelo nome
             String query3 = "SELECT HANDLE, NOME FROM CX_ITEM WHERE NOME = '" + item + "'";
@@ -94,17 +94,17 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             if (count == 0)
             {
-                if(tipoMovimentacaoCombo.Text != "")
+                if (tipoMovimentacaoCombo.Text != "")
                 {
-                    if(pessoaCombo.Text != "")
+                    if (pessoaCombo.Text != "")
                     {
                         if (formaPagamentoCombo.Text != "")
                         {
-                            if(tipoPagamentoCombo.Text != "")
+                            if (tipoPagamentoCombo.Text != "")
                             {
-                                if(itensCombo.Text != "")
+                                if (itensCombo.Text != "")
                                 {
-                                    if(quantidadeBox.Text != "")
+                                    if (quantidadeBox.Text != "")
                                     {
                                         pessoaCombo.Enabled = false;
                                         formaPagamentoCombo.Enabled = false;
@@ -167,7 +167,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                                     {
                                         MessageBox.Show("Preencha o campo unidade");
                                     }
-                                   
+
                                 }
                                 else
                                 {
@@ -184,7 +184,8 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                             MessageBox.Show("Preencha o campo forma de pagamento");
                         }
                     }
-                    else{
+                    else
+                    {
                         MessageBox.Show("Preencha o campo cliente");
                     }
                 }
@@ -192,7 +193,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 {
                     MessageBox.Show("Preencha o campo tipo de movimentação");
                 }
-             
+
             }
             else
             {
@@ -237,10 +238,10 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 {
                     MessageBox.Show("Preencha o campo unidade");
                 }
-                
+
             }
-           
-       
+
+
 
             conexao.Desconectar();
         }
@@ -249,7 +250,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         {
 
         }
-       
+
         private void listarCliente(object sender, EventArgs e)
         {
             conexao.Conectar();
@@ -258,7 +259,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             //Lista os tipos
             String query1 = "SELECT NOME FROM PS_PESSOA";
-           
+
 
 
             SqlDataReader reader = conexao.Pesquisa(query1);
@@ -279,20 +280,20 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         private void listarFormaPagamento(object sender, EventArgs e)
         {
-            
+
             conexao.Conectar();
             //Limpa a combo box
             formaPagamentoCombo.Items.Clear();
 
             //Lista os tipos
             String query1 = "SELECT NOME FROM CX_FORMAPAGAMENTO";
-          
+
             SqlDataReader reader = conexao.Pesquisa(query1);
 
             while (reader.Read())
             {
                 formaPagamentoCombo.Items.Add((reader["NOME"].ToString()));
-              
+
             }
 
             reader.Close();
@@ -343,7 +344,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         private void selecionarItem(object sender, EventArgs e)
         {
-          
+
         }
 
         private void itensCombo_DropDownClosed(object sender, EventArgs e)
@@ -381,17 +382,17 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 conexao.Desconectar();
             }
 
-          
+
         }
 
         private void recalcularValor(object sender, EventArgs e)
         {
-  
+
         }
 
         private void recalcularValorr(object sender, EventArgs e)
         {
-            if(quantidadeBox.Text == "")
+            if (quantidadeBox.Text == "")
             {
 
             }
@@ -415,7 +416,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                     valorTotalBox.Text = total.ToString();
                 }
             }
-    
+
         }
 
         private void CaixaEntradaTela_Load(object sender, EventArgs e)
@@ -441,7 +442,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             }
             reader9.Close();
             decimal novoValor = 0;
-            if(valorTotalPedidoBox.Text == "")
+            if (valorTotalPedidoBox.Text == "")
             {
 
             }
@@ -456,9 +457,9 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                     valorTotalPedido = Convert.ToDecimal(reader11["VALORTOTAL"]);
                     valorTotalPedidoBox.Text = "R$ " + reader11["VALORTOTAL"].ToString();
                 }
-                
+
                 valorTotalPedido = valorTotalPedido / quantidadeParcela;
-                
+
 
                 valorParcelaBox.Text = "R$ " + valorTotalPedido.ToString();
                 reader11.Close();
@@ -470,7 +471,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         private void tipoMovimentacaoDrop(object sender, EventArgs e)
         {
-            if(tipoMovimentacaoCombo.Text == "COMPOSTA")
+            if (tipoMovimentacaoCombo.Text == "COMPOSTA")
             {
                 pessoaCombo.Enabled = false;
                 tipoPagamentoCombo.Enabled = false;
@@ -535,7 +536,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
         private void informarValorCheck(object sender, EventArgs e)
         {
-           if(checkBox.Checked == true)
+            if (checkBox.Checked == true)
             {
                 valorTotalBox.Enabled = true;
             }

@@ -19,16 +19,16 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         static private Boolean validaCPFCNPJ = true;
         static private int juridica; // Juridica = 1 e Física = 0
         static private Boolean ok = true; // 1 = CPF/CNPJ ja cadastrado; 2 = Campo obrigatório não preenchido NOME; 3 = Campo obrigatório não preenchido CNPJ/CPF; 4 = Erro não especificado
-        static private String nomeIgual; 
+        static private String nomeIgual;
 
         public CadastroPessoa()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e) 
+        private void Form1_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -76,29 +76,29 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
         }
 
-        private void Cadastrarbutton_Click_1(object sender, EventArgs e)   
+        private void Cadastrarbutton_Click_1(object sender, EventArgs e)
         {
-            conexao.Conectar();                      
+            conexao.Conectar();
             int x = verificaMesmoCPF();
-           
+
             if (x == 1)
             {
                 MessageBox.Show("CPF/CNPJ ou RG já cadastrados para outra Pessoa"
                                + "\n Pessoa que possui estes dados: " + nomeIgual);
-                x = 0; 
+                x = 0;
             }
             else
             {
                 if (NomePessoatextBox.Text != "")
                 {
                     if (CNJPCPFtextBox.Text != "")
-                    {                        
+                    {
                         if (EhjuridicacheckBox.Checked)
                         {
-                             validaCNPJ();
-                             juridica = 1;
+                            validaCNPJ();
+                            juridica = 1;
                         }
-                        else 
+                        else
                         {
                             validaCPF();
                             juridica = 0;
@@ -148,12 +148,12 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             if (EhjuridicacheckBox.Checked)
             {
                 RGtextBox.Enabled = false;
-                
+
             }
             else
             {
                 RGtextBox.Enabled = true;
-                
+
             }
         }
 
@@ -165,9 +165,9 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             {
                 MessageBox.Show("CPF inválido, não possui 11 caracteres");
                 validaCPFCNPJ = false;
-                
+
             }
-            
+
         }
 
         private void validaCNPJ()
@@ -179,8 +179,8 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                 MessageBox.Show("CNPJ inválido, não possui 14 caracteres");
                 validaCPFCNPJ = false;
             }
-            
-                
+
+
         }
 
         private int verificaMesmoCPF()
@@ -196,7 +196,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             }
             reader.Close();
             return 0;
-            
+
         }
     }
 }

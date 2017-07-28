@@ -28,10 +28,10 @@ namespace LJMSOFT.DAL
 
         public SqlDataReader Pesquisa(String query)
         {
-           
+
             this.cmd2 = new SqlCommand(query, this.conexao);
             this.resultSet = cmd2.ExecuteReader();
-                     
+
             return resultSet;
         }
         public void LimparCommand()
@@ -56,17 +56,17 @@ namespace LJMSOFT.DAL
             i = Convert.ToInt32(nomeTipo);
             return i;
         }
-        public void AdicionarNovoUsuario(String login, String senha,int Pessoa)
+        public void AdicionarNovoUsuario(String login, String senha, int Pessoa)
         {
 
             String dataAtual = DateTime.Now.ToString();
             DateTime teste = Convert.ToDateTime(dataAtual);
             dataAtual = teste.ToString("yyyy/MM/dd");
-            
+
             MessageBox.Show(dataAtual);
             String query = "declare @nome varchar(30),@senha varchar(20)," +
                  "@aux varbinary(100) set @nome ='" + login + "' set @senha ='" + senha + "' set @aux=Convert(varbinary(100),pwdEncrypt(@senha))" +
-                 "INSERT INTO US_USUARIO(USUARIO,SENHA,PESSOA,DATAALTERACAO) VALUES(@nome,@aux,"+Pessoa+","+dataAtual+")";
+                 "INSERT INTO US_USUARIO(USUARIO,SENHA,PESSOA,DATAALTERACAO) VALUES(@nome,@aux," + Pessoa + "," + dataAtual + ")";
             try
             {
                 Pesquisa(query);
@@ -91,11 +91,11 @@ namespace LJMSOFT.DAL
                 this.cmd = new SqlCommand(query, this.conexao);
                 cmd.ExecuteNonQuery();
             }
-            catch(InvalidCastException e)
+            catch (InvalidCastException e)
             {
                 MessageBox.Show(e.Message);
             }
-       
+
         }
 
         //DATATABLE
@@ -127,7 +127,7 @@ namespace LJMSOFT.DAL
 
         }
 
-     
+
 
         public void Desconectar()
         {

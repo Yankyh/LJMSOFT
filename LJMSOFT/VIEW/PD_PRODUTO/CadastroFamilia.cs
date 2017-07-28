@@ -27,16 +27,16 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             cadastrarButton.Enabled = false;
             cancelarButton.Enabled = false;
 
-            if(nomeBox.Text != "")
+            if (nomeBox.Text != "")
             {
-              
+
                 conexao.Conectar();
 
-                String query = "INSERT INTO PD_FAMILIA (NOME) VALUES ('"+nomeBox.Text+"')";
+                String query = "INSERT INTO PD_FAMILIA (NOME) VALUES ('" + nomeBox.Text + "')";
                 conexao.Inserir(query);
-            
-          
-              
+
+
+
                 MessageBox.Show("Cadastrado");
                 String query2 = "SELECT MAX(HANDLE) HANDLE FROM PD_FAMILIA";
                 SqlDataReader reader14 = conexao.Pesquisa(query2);
@@ -51,8 +51,8 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                 conexao.Desconectar();
 
             }
-     
-           
+
+
 
 
 
