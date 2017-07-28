@@ -73,6 +73,26 @@ namespace LJMSOFT.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_to_shopping_cart_e_commerce_symbol {
+            get {
+                object obj = ResourceManager.GetObject("add-to-shopping-cart-e-commerce-symbol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_to_shopping_cart_e_commerce_symbol__1_ {
+            get {
+                object obj = ResourceManager.GetObject("add-to-shopping-cart-e-commerce-symbol (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agenda {
             get {
                 object obj = ResourceManager.GetObject("agenda", resourceCulture);

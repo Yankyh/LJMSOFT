@@ -19,13 +19,13 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         public ListaProduto()
         {
             InitializeComponent();
-            this.Refresh();
+            this.RefreshGrid();
 
         }
 
 
         //metodo refresh
-        public void Refresh()
+        public void RefreshGrid()
         {
             //Mostra a tabela
             conexao.Conectar();
@@ -150,14 +150,14 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
         private void ListaProduto_Activated(object sender, EventArgs e)
         {
-            this.Refresh();
+            this.RefreshGrid();
            
             //   itemHandle = -1;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Refresh();
+            this.RefreshGrid();
         }
 
         private void itemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -184,7 +184,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                 String query = "DELETE CX_ITEM WHERE HANDLE = " + itemHandle;
                 conexao.Inserir(query);
                 conexao.Desconectar();
-                this.Refresh();
+                this.RefreshGrid();
             }
         }
 

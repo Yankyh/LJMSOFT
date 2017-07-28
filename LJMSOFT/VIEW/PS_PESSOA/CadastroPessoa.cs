@@ -192,8 +192,8 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             while (reader.Read())
             {
                 nomeIgual = reader["NOME"].ToString();
-                return 1;
                 reader.Close();
+                return 1;
             }
             reader.Close();
             return 0;

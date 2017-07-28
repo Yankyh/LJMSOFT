@@ -16,12 +16,14 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
     public partial class CadastroItem : Form
     {
         Conexao conexao = new Conexao();
+        //Variaveis
         public static int ehNovo = 0;
+        //
         public CadastroItem()
         {
             InitializeComponent();
             conexao.Conectar();
-
+            //Inicializa o Form
             editarButton.Visible = false;
             ehNovo = 0;
             //Preenche o combo box fornecedor
@@ -35,18 +37,16 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
             query = "SELECT NOME FROM PD_FAMILIA";
             SqlDataReader reader2 = conexao.Pesquisa(query);
+
             while (reader2.Read())
             {
                 familiaCombo.Items.Add((reader2["NOME"].ToString()));
             }
             reader2.Close();
 
-
-
             int itemHandle = ListaProduto.getItemHandle();
             if (itemHandle > -1)
             {
-
                 ehNovo = 1;
                 query = "SELECT A.HANDLE CÓDIGO, A.NOME NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
 "FROM CX_ITEM A " +
@@ -66,6 +66,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                     codigoBox.Text = reader["CÓDIGO"].ToString();
                 }
 
+                //Atualiza os Buttons
                 cadastrarButton.Visible = false;
                 editarButton.Visible = true;
                 nomeBox.Enabled = false;
@@ -75,37 +76,18 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                 unidadeMedidaCombo.Enabled = false;
                 observacaoBox.Enabled = false;
 
-
-
                 reader.Close();
                 conexao.Desconectar();
             }
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tipoPagamentoCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void f3event(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F3)
             {
-
                 CadastroFamilia cadastroFamilia = new CadastroFamilia();
                 cadastroFamilia.ShowDialog();
-
             }
-        }
-
-        private void CadastroItem_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void listarFamilia(object sender, EventArgs e)
@@ -122,12 +104,8 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
             }
             reader.Close();
+
             conexao.Desconectar();
-        }
-
-        private void pessoaCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void listarFornecedor(object sender, EventArgs e)
@@ -144,8 +122,8 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             {
                 fornecedorCombo.Items.Add((reader["NOME"].ToString()));
             }
-
             reader.Close();
+
             conexao.Desconectar();
         }
 
@@ -165,6 +143,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                             conexao.Conectar();
                             String query = "SELECT HANDLE FROM PD_FAMILIA WHERE NOME = '" + familiaCombo.Text + "'";
                             SqlDataReader reader = conexao.Pesquisa(query);
+
                             while (reader.Read())
                             {
                                 familiaHandle = Convert.ToInt32(reader["HANDLE"]);
@@ -173,11 +152,13 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
                             query = "SELECT HANDLE FROM PS_PESSOA WHERE NOME = '" + fornecedorCombo.Text + "'";
                             reader = conexao.Pesquisa(query);
+
                             while (reader.Read())
                             {
                                 fornecedorHandle = Convert.ToInt32(reader["HANDLE"]);
                             }
                             reader.Close();
+
                             String valorUnitario = valorUnitarioBox.Text.Replace(",", ".");
                             if (ehNovo == 1)
                             {
@@ -198,7 +179,6 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                                 reader2.Close();
                             }
 
-
                             nomeBox.Enabled = false;
                             familiaCombo.Enabled = false;
                             valorUnitarioBox.Enabled = false;
@@ -207,9 +187,6 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                             observacaoBox.Enabled = false;
                             cadastrarButton.Visible = false;
                             editarButton.Visible = false;
-
-
-
 
                             conexao.Desconectar();
                         }
@@ -243,9 +220,9 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
         private void editarButton_Click(object sender, EventArgs e)
         {
+            //Atualiza os Buttons
             cadastrarButton.Visible = true;
             editarButton.Visible = false;
-
             nomeBox.Enabled = true;
             familiaCombo.Enabled = true;
             valorUnitarioBox.Enabled = true;
