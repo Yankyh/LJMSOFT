@@ -107,6 +107,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                         if (validaCPFCNPJ != false)
                         {
                             String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + NomePessoatextBox.Text + "'," + "'" + FonetextBox.Text + "'," + "'" + EmailtextBox.Text + "'," + "'" + CNJPCPFtextBox.Text + "'," + "'" + ObservacaoTextBox.Text + "'," + "'" + RGtextBox.Text + "'," + "'" + juridica + "'" + ")";
+                            
                             conexao.Inserir(query1);
 
                             this.Hide();

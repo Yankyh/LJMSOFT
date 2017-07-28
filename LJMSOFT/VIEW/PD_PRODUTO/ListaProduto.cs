@@ -151,6 +151,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void ListaProduto_Activated(object sender, EventArgs e)
         {
             this.Refresh();
+           
             //   itemHandle = -1;
         }
 
