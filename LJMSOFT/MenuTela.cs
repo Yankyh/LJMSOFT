@@ -12,16 +12,45 @@ using LJMSOFT.VIEW.AG_AGENDA;
 using LJMSOFT.VIEW.PS_PESSOA;
 using LJMSOFT.VIEW.PD_PRODUTO;
 using LJMSOFT.VIEW.RL_RELATORIO;
+using LJMSOFT.DAL;
 
 namespace LJMSOFT
 {
     public partial class MenuTela : Form
     {
+        Conexao conexao = new Conexao();
         public MenuTela()
         {
             InitializeComponent();
             menuPanel.Visible = false;
+            CreateDashBoard1();
         }
+
+        public void CreateDashBoard1()
+        {
+            conexao.Conectar();
+            //Cria o dashboard1
+            String query = "SELECT B.NOME PESSOA, A.VALORTOTAL VALOR, C.NOME PAGAMENTO, D.NOME FORMA" +
+                             " FROM CX_PEDIDO A " +
+                            " INNER JOIN PS_PESSOA B ON B.HANDLE = A.PESSOA" +
+                            " INNER JOIN CX_TIPOPAGAMENTO C ON C.HANDLE = A.TIPOPAGAMENTO" +
+                            " INNER JOIN CX_FORMAPAGAMENTO D ON D.HANDLE = A.FORMAPAGAMENTO";
+           
+
+            BindingSource Binding = new BindingSource();
+            Binding.DataSource = conexao.DataTable(query);
+            dashBoard1.DataSource = Binding;
+            dashBoard1.Columns[0].Width = 350;
+            dashBoard1.Columns[2].Width = 153;
+            dashBoard1.Columns[3].Width = 170;
+            dashBoard1.AllowUserToResizeRows = false;
+            dashBoard1.AllowUserToAddRows = false;
+
+            conexao.Desconectar();
+        }
+
+
+
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
@@ -34,25 +63,6 @@ namespace LJMSOFT
             caixaTela.ShowDialog();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuTela_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void treeView1_Click(object sender, EventArgs e)
         {

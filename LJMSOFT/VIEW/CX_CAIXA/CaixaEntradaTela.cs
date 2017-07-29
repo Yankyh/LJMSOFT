@@ -521,6 +521,19 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         private void button3_Click(object sender, EventArgs e)
         {
             conexao.Conectar();
+
+            //pega o handle da forma de pagamento
+            int formaPagamentoHandle = -1;
+
+            String query2 = "SELECT HANDLE FROM CX_FORMAPAGAMENTO WHERE NOME = '" + formaPagamentoCombo.Text + "'";
+            SqlDataReader reader = conexao.Pesquisa(query2);
+            while (reader.Read())
+            {
+                formaPagamentoHandle = Convert.ToInt32(reader["HANDLE"]);
+            }
+            reader.Close();
+
+
             //Desabilita o form e encerra o pedido
             pessoaCombo.Enabled = false;
             formaPagamentoCombo.Enabled = false;
@@ -537,7 +550,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             String query1;
 
-            query1 = "UPDATE CX_PEDIDO SET STATUS = 3, TIPOPAGAMENTO = "+tipoPagamentoHandle+", VALORTOTAL = "+ valorTotalPedidoBox.Text.Replace(',','.').Replace('R', ' ').Replace('$', ' ') +" WHERE HANDLE = "+codigoBox.Text;
+            query1 = "UPDATE CX_PEDIDO SET STATUS = 3, TIPOPAGAMENTO = "+tipoPagamentoHandle+", FORMAPAGAMENTO = "+formaPagamentoHandle+", VALORTOTAL = "+ valorTotalPedidoBox.Text.Replace(',','.').Replace('R', ' ').Replace('$', ' ') +" WHERE HANDLE = "+codigoBox.Text;
             conexao.Inserir(query1);
             this.Text = "Pedido - Encerrado";
             conexao.Desconectar();
