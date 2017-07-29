@@ -25,7 +25,8 @@ namespace LJMSOFT
         {
             InitializeComponent();
             menuPanel.Visible = false;
-            CreateDashBoard1(); 
+            CreateDashBoard1();
+            CreateDashBoard2();
         }
 
         public void CreateDashBoard1()
@@ -47,6 +48,31 @@ namespace LJMSOFT
             dashBoard1.Columns[4].Width = 170;
             dashBoard1.AllowUserToResizeRows = false;
             dashBoard1.AllowUserToAddRows = false;
+
+            conexao.Desconectar();
+        }
+        public void CreateDashBoard2()
+        {
+            conexao.Conectar();
+            //Cria o dashboard1
+            String query = "SELECT SUM(A.VALORTOTAL) HOJE" +
+                " FROM CX_PEDIDO A WHERE A.DATAPEDIDO LIKE FORMAT(GETDATE(), 'yyyy-MM-dd', 'en-us') + '%'";
+            String query2 = "SELECT SUM(A.VALORTOTAL) ONTEM " +
+                " FROM CX_PEDIDO A WHERE A.DATAPEDIDO LIKE FORMAT(GETDATE() - 1, 'yyyy-MM-dd', 'en-us') + '%'";
+
+            BindingSource Binding = new BindingSource();
+            Binding.DataSource = conexao.DataTable(query);
+            dashBoard2.DataSource = Binding;
+            dashBoard2.AllowUserToResizeRows = false;
+            dashBoard2.AllowUserToAddRows = false;
+            dashBoard2.Columns[0].Width = 262;
+
+            BindingSource Binding2 = new BindingSource();
+            Binding2.DataSource = conexao.DataTable(query2);
+            dashBoard3.DataSource = Binding2;
+            dashBoard3.AllowUserToResizeRows = false;
+            dashBoard3.AllowUserToAddRows = false;
+            dashBoard3.Columns[0].Width = 262;
 
             conexao.Desconectar();
         }
@@ -125,6 +151,16 @@ namespace LJMSOFT
         }
 
         private void MenuTela_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dashBoard2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
