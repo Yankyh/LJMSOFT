@@ -113,7 +113,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                             this.Hide();
                             BotoesGerais bg = new BotoesGerais();
                             bg.ShowDialog();
-                            this.Close();
+                            
                         }
                     }
                     else
