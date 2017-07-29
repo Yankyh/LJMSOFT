@@ -19,7 +19,7 @@ namespace LJMSOFT
         public MenuTela()
         {
             InitializeComponent();
-
+            menuPanel.Visible = false;
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
@@ -108,10 +108,12 @@ namespace LJMSOFT
             if (menuTreeView.Visible == false)
             {
                 menuTreeView.Visible = true;
+                menuPanel.Visible = true;
             }
             else
             {
                 menuTreeView.Visible = false;
+                menuPanel.Visible = false;
             }
 
         }
