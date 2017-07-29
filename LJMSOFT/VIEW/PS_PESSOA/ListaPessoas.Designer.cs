@@ -36,10 +36,12 @@
             this.Pesquisabutton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonAtualizar = new System.Windows.Forms.Button();
+            this.RefreshpictureBox = new System.Windows.Forms.PictureBox();
+            this.Atualizar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PessoadataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RefreshpictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // PessoadataGridView1
@@ -109,23 +111,32 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Sair";
             // 
-            // buttonAtualizar
+            // RefreshpictureBox
             // 
-            this.buttonAtualizar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAtualizar.Location = new System.Drawing.Point(193, 12);
-            this.buttonAtualizar.Name = "buttonAtualizar";
-            this.buttonAtualizar.Size = new System.Drawing.Size(97, 62);
-            this.buttonAtualizar.TabIndex = 7;
-            this.buttonAtualizar.Text = "Atualizar";
-            this.buttonAtualizar.UseVisualStyleBackColor = true;
-            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
+            this.RefreshpictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshpictureBox.BackgroundImage")));
+            this.RefreshpictureBox.Location = new System.Drawing.Point(194, 15);
+            this.RefreshpictureBox.Name = "RefreshpictureBox";
+            this.RefreshpictureBox.Size = new System.Drawing.Size(65, 63);
+            this.RefreshpictureBox.TabIndex = 8;
+            this.RefreshpictureBox.TabStop = false;
+            this.RefreshpictureBox.Click += new System.EventHandler(this.RefreshpictureBox_Click);
+            // 
+            // Atualizar
+            // 
+            this.Atualizar.AutoSize = true;
+            this.Atualizar.Location = new System.Drawing.Point(203, 7);
+            this.Atualizar.Name = "Atualizar";
+            this.Atualizar.Size = new System.Drawing.Size(47, 13);
+            this.Atualizar.TabIndex = 9;
+            this.Atualizar.Text = "Atualizar";
             // 
             // ListaPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 546);
-            this.Controls.Add(this.buttonAtualizar);
+            this.Controls.Add(this.Atualizar);
+            this.Controls.Add(this.RefreshpictureBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Pesquisabutton);
@@ -140,6 +151,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PessoadataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RefreshpictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +166,7 @@
         private System.Windows.Forms.Button Pesquisabutton;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonAtualizar;
+        private System.Windows.Forms.PictureBox RefreshpictureBox;
+        private System.Windows.Forms.Label Atualizar;
     }
 }

@@ -89,12 +89,17 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
-            this.refresh();
+            
         }
 
         private void ListaPessoas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void RefreshpictureBox_Click(object sender, EventArgs e)
+        {
+              this.refresh();
         }
     }
 }

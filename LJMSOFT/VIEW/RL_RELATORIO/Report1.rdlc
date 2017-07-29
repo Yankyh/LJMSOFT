@@ -1,64 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
-    <ReportItems>
-      <Image Name="Image2">
-        <Source>Embedded</Source>
-        <Value>CasadasChavesCentralLogo</Value>
-        <Sizing>FitProportional</Sizing>
-        <Top>3.13021cm</Top>
-        <Left>9.18104cm</Left>
-        <Height>1.28833cm</Height>
-        <Width>4.83375cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Image>
-    </ReportItems>
-    <Height>2in</Height>
+    <Height>3.20833in</Height>
     <Style />
   </Body>
-  <Width>8.89263in</Width>
+  <Width>7.52619in</Width>
   <Page>
     <PageHeader>
       <Height>1.92016cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox1">
+        <Textbox Name="Textbox2">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Orçamento</Value>
+                  <Value>Orçamento p/ serviços</Value>
                   <Style>
-                    <FontStyle>Italic</FontStyle>
-                    <FontSize>26pt</FontSize>
-                    <Color>DimGray</Color>
+                    <FontSize>36pt</FontSize>
+                    <Color>DarkBlue</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.48203cm</Top>
-          <Left>9.89611cm</Left>
-          <Height>1.10271cm</Height>
-          <Width>8.40021cm</Width>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Left>2.27611cm</Left>
+          <Height>1.92016cm</Height>
+          <Width>15.57042cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -69,21 +42,6 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Image Name="Image3">
-          <Source>Embedded</Source>
-          <Value>orçamento</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.28773cm</Top>
-          <Left>7.48453cm</Left>
-          <Height>1.29701cm</Height>
-          <Width>2.02917cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
       </ReportItems>
       <Style>
         <Border>
@@ -92,9 +50,25 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>8.54604cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="Image2">
+          <Source>Embedded</Source>
+          <Value>CasadasChavesCentralLogo</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>6.25299cm</Top>
+          <Left>13.33028cm</Left>
+          <Height>2.02917cm</Height>
+          <Width>5.78625cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
