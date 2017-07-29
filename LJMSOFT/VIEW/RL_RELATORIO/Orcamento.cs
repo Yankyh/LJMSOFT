@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace LJMSOFT.VIEW.RL_RELATORIO
 {
-    public partial class Form1 : Form
+    public partial class Orcamento : Form
     {
-        public Form1()
+        public Orcamento()
         {
             InitializeComponent();
+        }
+
+        private void Orcamento_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }

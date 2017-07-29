@@ -11,6 +11,7 @@ using LJMSOFT.VIEW.CX_CAIXA;
 using LJMSOFT.VIEW.AG_AGENDA;
 using LJMSOFT.VIEW.PS_PESSOA;
 using LJMSOFT.VIEW.PD_PRODUTO;
+using LJMSOFT.VIEW.RL_RELATORIO;
 
 namespace LJMSOFT
 {
@@ -122,6 +123,12 @@ namespace LJMSOFT
         {
             CadastroPessoa cp = new CadastroPessoa();
             cp.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Orcamento orcamento = new Orcamento();
+            orcamento.ShowDialog();
         }
     }
 }
