@@ -59,13 +59,12 @@
             this.tipoMovimentacaoCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.cancelarButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label12
@@ -113,7 +112,7 @@
             this.finalizarButton.FlatAppearance.BorderSize = 3;
             this.finalizarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.finalizarButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finalizarButton.Location = new System.Drawing.Point(1174, 0);
+            this.finalizarButton.Location = new System.Drawing.Point(1194, 671);
             this.finalizarButton.Name = "finalizarButton";
             this.finalizarButton.Size = new System.Drawing.Size(144, 49);
             this.finalizarButton.TabIndex = 10;
@@ -185,7 +184,7 @@
             // 
             this.tabControl3.Controls.Add(this.tabPage4);
             this.tabControl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl3.Location = new System.Drawing.Point(13, 193);
+            this.tabControl3.Location = new System.Drawing.Point(13, 185);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(1325, 473);
@@ -443,21 +442,10 @@
             this.panel1.Controls.Add(this.valorTotalPedidoBox);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Location = new System.Drawing.Point(13, 15);
+            this.panel1.Location = new System.Drawing.Point(13, 7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1323, 172);
             this.panel1.TabIndex = 31;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.cancelarButton);
-            this.panel2.Controls.Add(this.finalizarButton);
-            this.panel2.Location = new System.Drawing.Point(13, 671);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1325, 53);
-            this.panel2.TabIndex = 32;
             // 
             // cancelarButton
             // 
@@ -466,13 +454,22 @@
             this.cancelarButton.FlatAppearance.BorderSize = 3;
             this.cancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelarButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelarButton.Location = new System.Drawing.Point(3, 0);
+            this.cancelarButton.Location = new System.Drawing.Point(13, 671);
             this.cancelarButton.Name = "cancelarButton";
             this.cancelarButton.Size = new System.Drawing.Size(144, 49);
             this.cancelarButton.TabIndex = 11;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.UseVisualStyleBackColor = false;
             this.cancelarButton.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Location = new System.Drawing.Point(163, 681);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1025, 29);
+            this.panel2.TabIndex = 32;
             // 
             // CaixaEntradaTela
             // 
@@ -481,6 +478,8 @@
             this.BackgroundImage = global::LJMSOFT.Properties.Resources.backgroundn;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.cancelarButton);
+            this.Controls.Add(this.finalizarButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -493,7 +492,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -527,8 +525,8 @@
         private System.Windows.Forms.ComboBox tipoMovimentacaoCombo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button cancelarButton;
         private System.Windows.Forms.Button deletarButton;
+        private System.Windows.Forms.Panel panel2;
     }
 }

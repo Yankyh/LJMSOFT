@@ -73,6 +73,16 @@ namespace LJMSOFT.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add__1_ {
+            get {
+                object obj = ResourceManager.GetObject("add (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_to_shopping_cart_e_commerce_symbol {
             get {
                 object obj = ResourceManager.GetObject("add-to-shopping-cart-e-commerce-symbol", resourceCulture);
@@ -193,6 +203,16 @@ namespace LJMSOFT.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap forbidden_mark {
+            get {
+                object obj = ResourceManager.GetObject("forbidden-mark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap letter_i {
             get {
                 object obj = ResourceManager.GetObject("letter-i", resourceCulture);
@@ -236,6 +256,26 @@ namespace LJMSOFT.Properties {
         internal static System.Drawing.Bitmap refresh_icon {
             get {
                 object obj = ResourceManager.GetObject("refresh-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("refresh-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_icon__2_ {
+            get {
+                object obj = ResourceManager.GetObject("refresh-icon (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -37,14 +37,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cadastrarButton
             // 
             this.cadastrarButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.cadastrarButton.FlatAppearance.BorderColor = System.Drawing.Color.SeaGreen;
+            this.cadastrarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cadastrarButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cadastrarButton.Location = new System.Drawing.Point(395, 0);
+            this.cadastrarButton.Location = new System.Drawing.Point(404, 112);
             this.cadastrarButton.Name = "cadastrarButton";
             this.cadastrarButton.Size = new System.Drawing.Size(114, 37);
             this.cadastrarButton.TabIndex = 0;
@@ -96,8 +97,10 @@
             // cancelarButton
             // 
             this.cancelarButton.BackColor = System.Drawing.Color.IndianRed;
+            this.cancelarButton.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.cancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelarButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelarButton.Location = new System.Drawing.Point(0, 0);
+            this.cancelarButton.Location = new System.Drawing.Point(6, 112);
             this.cancelarButton.Name = "cancelarButton";
             this.cancelarButton.Size = new System.Drawing.Size(114, 37);
             this.cancelarButton.TabIndex = 5;
@@ -121,12 +124,11 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.cancelarButton);
-            this.panel2.Controls.Add(this.cadastrarButton);
-            this.panel2.Location = new System.Drawing.Point(6, 103);
+            this.panel2.Location = new System.Drawing.Point(6, 92);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(512, 41);
+            this.panel2.Size = new System.Drawing.Size(512, 13);
             this.panel2.TabIndex = 7;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // CadastroFamilia
             // 
@@ -134,6 +136,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LJMSOFT.Properties.Resources.backgroundn;
             this.ClientSize = new System.Drawing.Size(523, 152);
+            this.Controls.Add(this.cancelarButton);
+            this.Controls.Add(this.cadastrarButton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "CadastroFamilia";
@@ -142,7 +146,6 @@
             this.Load += new System.EventHandler(this.CadastroFamilia_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

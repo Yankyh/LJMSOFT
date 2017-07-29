@@ -33,11 +33,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             conexao.Conectar();
 
             BindingSource Binding = new BindingSource();
-            String query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
-                "FROM CX_ITEM A " +
-                " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
-                " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA";
-
+            String query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO  FROM CX_ITEM A  LEFT JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA";
             Binding.DataSource = conexao.DataTable(query);
 
             itemDataGridView.DataSource = Binding;
@@ -47,7 +43,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             itemDataGridView.Columns[3].Width = 75;
             itemDataGridView.Columns[4].Width = 150;
             itemDataGridView.Columns[5].Width = 300;
-            itemDataGridView.Columns[6].Width = 300;
+            itemDataGridView.Columns[6].Width = 500;
             itemDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             itemDataGridView.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             itemDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -76,10 +72,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
             if (pesquisa == "")
             {
-                query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
-               "FROM CX_ITEM A " +
-               " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
-               " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA";
+                query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO  FROM CX_ITEM A  LEFT JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA";
             }
             else
             {
@@ -114,7 +107,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             itemDataGridView.Columns[3].Width = 75;
             itemDataGridView.Columns[4].Width = 150;
             itemDataGridView.Columns[5].Width = 300;
-            itemDataGridView.Columns[6].Width = 300;
+            itemDataGridView.Columns[6].Width = 500;
             itemDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             itemDataGridView.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             itemDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -208,6 +201,21 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ListaProduto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void treeView1_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 }

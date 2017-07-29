@@ -149,15 +149,21 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                                 familiaHandle = Convert.ToInt32(reader["HANDLE"]);
                             }
                             reader.Close();
-
-                            query = "SELECT HANDLE FROM PS_PESSOA WHERE NOME = '" + fornecedorCombo.Text + "'";
-                            reader = conexao.Pesquisa(query);
-
-                            while (reader.Read())
+                            if(fornecedorCombo.Text == "")
                             {
-                                fornecedorHandle = Convert.ToInt32(reader["HANDLE"]);
+                                fornecedorHandle = 3;
                             }
-                            reader.Close();
+                            else
+                            {
+                                query = "SELECT HANDLE FROM PS_PESSOA WHERE NOME = '" + fornecedorCombo.Text + "'";
+                                reader = conexao.Pesquisa(query);
+
+                                while (reader.Read())
+                                {
+                                    fornecedorHandle = Convert.ToInt32(reader["HANDLE"]);
+                                }
+                                reader.Close();
+                            }
 
                             String valorUnitario = valorUnitarioBox.Text.Replace(",", ".");
                             if (ehNovo == 1)

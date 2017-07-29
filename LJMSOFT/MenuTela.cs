@@ -13,6 +13,7 @@ using LJMSOFT.VIEW.PS_PESSOA;
 using LJMSOFT.VIEW.PD_PRODUTO;
 using LJMSOFT.VIEW.RL_RELATORIO;
 using LJMSOFT.DAL;
+using LJMSOFT.VIEW;
 
 namespace LJMSOFT
 {
@@ -69,6 +70,7 @@ namespace LJMSOFT
 
         private void treeView1_Click(object sender, EventArgs e)
         {
+            MenuControl menuControl = new MenuControl();
             if (menuTreeView.SelectedNode == null)
             {
 
@@ -76,37 +78,7 @@ namespace LJMSOFT
             else
             {
                 String node = menuTreeView.SelectedNode.Text;
-
-
-                if (node == "Pessoa")
-                {
-                    ListaPessoas listaPessoas = new ListaPessoas();
-                    listaPessoas.ShowDialog();
-                }
-                else
-                {
-                    if (node == "Produto")
-                    {
-                        ListaProduto listaProduto = new ListaProduto();
-                        listaProduto.ShowDialog();
-                    }
-                    else
-                    {
-                        if (node == "Entrada")
-                        {
-                            CaixaEntradaTela caixaEntradaTela = new CaixaEntradaTela();
-                            caixaEntradaTela.ShowDialog();
-                        }
-                        else
-                        {
-                            if (node == "Agenda")
-                            {
-                                Agenda agenda = new Agenda();
-                                agenda.ShowDialog();
-                            }
-                        }
-                    }
-                }
+                menuControl.Menu(node);
             }
 
 

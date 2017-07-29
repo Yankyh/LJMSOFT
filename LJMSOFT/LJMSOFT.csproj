@@ -114,6 +114,7 @@
     <Compile Include="VIEW\CX_CAIXA\CaixaTela.Designer.cs">
       <DependentUpon>CaixaTela.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\MenuControl.cs" />
     <Compile Include="VIEW\PD_PRODUTO\CadastroFamilia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +303,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\add %281%29.png" />
+    <None Include="Resources\refresh-icon %281%29.png" />
+    <None Include="Resources\refresh-icon %282%29.png" />
+    <None Include="Resources\forbidden-mark.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
