@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LJMSOFT.DAL;
+using System.Drawing.Drawing2D;
+
 namespace LJMSOFT.VIEW.PD_PRODUTO
 {
     public partial class ListaProduto : Form
@@ -57,11 +59,6 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         }
 
 
-
-        private void ListaProduto_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void selecionaRow(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -191,6 +188,25 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         private void itemDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             itemHandle = Convert.ToInt32(itemDataGridView.CurrentRow.Cells[0].Value);
+
+        }
+
+
+        //
+      
+
+        //Arendondar button
+      public void teste()
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(28, 54, 198, 198, 0, 360);
+            //path.AddString("MB!!!",Font.FontFamily, 1, 75, new Point(0, 0), new StringFormat());
+            Region = new Region(path);
+        }
+        
+
+            private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
