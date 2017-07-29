@@ -548,9 +548,13 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             cancelarButton.Enabled = false;
             itemDataGridView.Enabled = false;
 
+            //Pega a data atual do pc
+            DateTime dateTime = DateTime.Now;
+            String data = dateTime.ToString("yyyyMMdd HH:mm:ss");
+
             String query1;
 
-            query1 = "UPDATE CX_PEDIDO SET STATUS = 3, TIPOPAGAMENTO = "+tipoPagamentoHandle+", FORMAPAGAMENTO = "+formaPagamentoHandle+", VALORTOTAL = "+ valorTotalPedidoBox.Text.Replace(',','.').Replace('R', ' ').Replace('$', ' ') +" WHERE HANDLE = "+codigoBox.Text;
+            query1 = "UPDATE CX_PEDIDO SET STATUS = 3, TIPOPAGAMENTO = "+tipoPagamentoHandle+", FORMAPAGAMENTO = "+formaPagamentoHandle+", DATAPEDIDO = '"+data+"' ,VALORTOTAL = "+ valorTotalPedidoBox.Text.Replace(',','.').Replace('R', ' ').Replace('$', ' ') +" WHERE HANDLE = "+codigoBox.Text;
             conexao.Inserir(query1);
             this.Text = "Pedido - Encerrado";
             conexao.Desconectar();

@@ -14,6 +14,7 @@ using LJMSOFT.VIEW.PD_PRODUTO;
 using LJMSOFT.VIEW.RL_RELATORIO;
 using LJMSOFT.DAL;
 using LJMSOFT.VIEW;
+using System.Globalization;
 
 namespace LJMSOFT
 {
@@ -24,29 +25,26 @@ namespace LJMSOFT
         {
             InitializeComponent();
             menuPanel.Visible = false;
-            CreateDashBoard1();
+            CreateDashBoard1(); 
         }
 
         public void CreateDashBoard1()
         {
             conexao.Conectar();
             //Cria o dashboard1
-            String query = "SELECT B.NOME PESSOA, A.VALORTOTAL VALOR, C.NOME PAGAMENTO, D.NOME FORMA" +
+            String query = "SELECT B.NOME PESSOA, A.VALORTOTAL VALOR, C.NOME TIPO, D.NOME FORMA, A.DATAPEDIDO DATA" +
                              " FROM CX_PEDIDO A " +
-                            " INNER JOIN PS_PESSOA B ON B.HANDLE = A.PESSOA" +
+                            " LEFT JOIN PS_PESSOA B ON B.HANDLE = A.PESSOA" +
                             " INNER JOIN CX_TIPOPAGAMENTO C ON C.HANDLE = A.TIPOPAGAMENTO" +
-                            " INNER JOIN CX_FORMAPAGAMENTO D ON D.HANDLE = A.FORMAPAGAMENTO" +
-                            " AND B.NOME IS NOT NULL";
-           
+                            " INNER JOIN CX_FORMAPAGAMENTO D ON D.HANDLE = A.FORMAPAGAMENTO";
 
             BindingSource Binding = new BindingSource();
             Binding.DataSource = conexao.DataTable(query);
             dashBoard1.DataSource = Binding;
-       
-            dashBoard1.ClearSelection();
-            dashBoard1.Columns[0].Width = 350;
-            dashBoard1.Columns[2].Width = 153;
-            dashBoard1.Columns[3].Width = 170;
+            dashBoard1.Columns[0].Width = 250;
+            dashBoard1.Columns[2].Width = 123;
+            dashBoard1.Columns[3].Width = 130;
+            dashBoard1.Columns[4].Width = 170;
             dashBoard1.AllowUserToResizeRows = false;
             dashBoard1.AllowUserToAddRows = false;
 
@@ -119,6 +117,16 @@ namespace LJMSOFT
         private void refreshDashboards(object sender, EventArgs e)
         {
             CreateDashBoard1();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuTela_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
