@@ -118,8 +118,8 @@ namespace LJMSOFT
 
         private void Provisoriobutton_Click(object sender, EventArgs e)
         {
-            ListaPessoas lp = new ListaPessoas();
-            lp.ShowDialog();
+            CadastroPessoa cp = new CadastroPessoa();
+            cp.ShowDialog();
         }
     }
 }

@@ -77,7 +77,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         }
 
         private void Cadastrarbutton_Click_1(object sender, EventArgs e)   
-        {
+        {          
             conexao.Conectar();                      
             int x = verificaMesmoCPF();
            
@@ -113,6 +113,10 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                             BotoesGerais bg = new BotoesGerais();
                             bg.ShowDialog();
                             this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("ERRO DESCONHECIDO");
                         }
                     }
                     else
