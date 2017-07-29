@@ -26,60 +26,11 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxNomePessoa_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CPFCNPJlabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Cadastrarbutton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void limparCampos()
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EnderecoTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        // Métodos referente aos botões
         private void Cadastrarbutton_Click_1(object sender, EventArgs e)
         {
             conexao.Conectar();
-            int x = verificaMesmoCPF();
+            int x = existeCNPJCPF();
 
             if (x == 1)
             {
@@ -89,53 +40,44 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             }
             else
             {
-                if (NomePessoatextBox.Text != "")
-                {
-                    if (CNJPCPFtextBox.Text != "")
-                    {
+
+                Boolean teste = campoVazio();
+                if (teste = false) { 
                         if (EhjuridicacheckBox.Checked)
                         {
-                            validaCNPJ();
+                            onzeDigitosCNPJ();
                             juridica = 1;
                         }
                         else
                         {
-                            validaCPF();
+                            onzeDigitosCPF();
                             juridica = 0;
                         }
 
-                        if (validaCPFCNPJ != false)
-                        {
-                            String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + NomePessoatextBox.Text + "'," + "'" + FonetextBox.Text + "'," + "'" + EmailtextBox.Text + "'," + "'" + CNJPCPFtextBox.Text + "'," + "'" + ObservacaoTextBox.Text + "'," + "'" + RGtextBox.Text + "'," + "'" + juridica + "'" + ")";
-                            
-                            conexao.Inserir(query1);
-
-                            this.Hide();
-                            BotoesGerais bg = new BotoesGerais();
-                            bg.ShowDialog();
-                            
-                        }
-                    }
-                    else
+                    if (validaCPFCNPJ != false)
                     {
-                        MessageBox.Show("Campo Obrigatório não preenchido:  CPF/CNPJ ");
-                    }
+                        String query1 = "INSERT INTO PS_PESSOA VALUES(" + "'" + NomePessoatextBox.Text + "'," + "'" + FonetextBox.Text + "'," + "'" + EmailtextBox.Text + "'," + "'" + CNJPCPFtextBox.Text + "'," + "'" + ObservacaoTextBox.Text + "'," + "'" + RGtextBox.Text + "'," + "'" + juridica + "'" + ")";
+
+                        conexao.Inserir(query1);
+
+                        this.Hide();
+                        BotoesGerais bg = new BotoesGerais();
+                        bg.ShowDialog();
+                    }                
                 }
                 else
                 {
-                    MessageBox.Show("Campo obrigatório não preenchido: NOME ");
+                    MessageBox.Show("Campo obrigatório");
                 }
             }
             conexao.Desconectar();
         }
-
         private void CancelarButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Close();
 
         }
-
         private void Limparbutton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -144,21 +86,8 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             this.Close();
         }
 
-        private void EhjuridicacheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (EhjuridicacheckBox.Checked)
-            {
-                RGtextBox.Enabled = false;
-
-            }
-            else
-            {
-                RGtextBox.Enabled = true;
-
-            }
-        }
-
-        private void validaCPF()
+        // Métodos de validações
+        private void onzeDigitosCPF()
         {
             String CPF = CNJPCPFtextBox.Text;
 
@@ -170,8 +99,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             }
 
         }
-
-        private void validaCNPJ()
+        private void onzeDigitosCNPJ()
         {
             String cnpj = CNJPCPFtextBox.Text;
 
@@ -183,8 +111,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
 
         }
-
-        private int verificaMesmoCPF()
+        private int    existeCNPJCPF()
         {
             String query = "SELECT HANDLE, NOME FROM PS_PESSOA WHERE CPFCNPJ = '" + CNJPCPFtextBox.Text + "'";
             SqlDataReader reader = conexao.Pesquisa(query);
@@ -199,5 +126,61 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             return 0;
 
         }
+        private void EhjuridicacheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (EhjuridicacheckBox.Checked)
+            {
+                RGtextBox.Enabled = false;
+
+            }
+            else
+            {
+                RGtextBox.Enabled = true;
+
+            }
+        }
+        private Boolean campoVazio()
+        {
+            if (NomePessoatextBox is null || CNJPCPFtextBox is null)
+            {
+                return true;
+            }
+            else
+                return false;
+
+
+        }
+
+        // Métodos não utilizados mas obrigatórios p/ o FORM
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void textBoxNomePessoa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void CPFCNPJlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Cadastrarbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void EnderecoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
+
 }
