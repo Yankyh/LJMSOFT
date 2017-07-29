@@ -127,7 +127,7 @@ namespace LJMSOFT
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Orcamento orcamento = new Orcamento();
+            formOrcamentoRelatorio orcamento = new formOrcamentoRelatorio();
             orcamento.ShowDialog();
         }
     }

@@ -150,11 +150,11 @@
     <Compile Include="VIEW\PS_PESSOA\ListaPessoas.Designer.cs">
       <DependentUpon>ListaPessoas.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\RL_RELATORIO\Orcamento.cs">
+    <Compile Include="VIEW\RL_RELATORIO\formOrcamentoRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\RL_RELATORIO\Orcamento.Designer.cs">
-      <DependentUpon>Orcamento.cs</DependentUpon>
+    <Compile Include="VIEW\RL_RELATORIO\formOrcamentoRelatorio.Designer.cs">
+      <DependentUpon>formOrcamentoRelatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\TR_TAREFA\CadastraTarefa.cs">
       <SubType>Form</SubType>
@@ -205,8 +205,8 @@
     <EmbeddedResource Include="VIEW\PS_PESSOA\ListaPessoas.resx">
       <DependentUpon>ListaPessoas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\RL_RELATORIO\Orcamento.resx">
-      <DependentUpon>Orcamento.cs</DependentUpon>
+    <EmbeddedResource Include="VIEW\RL_RELATORIO\formOrcamentoRelatorio.resx">
+      <DependentUpon>formOrcamentoRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\RL_RELATORIO\Report1.rdlc" />
     <EmbeddedResource Include="VIEW\TR_TAREFA\CadastraTarefa.resx">

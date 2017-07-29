@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LJMSOFT.VIEW.RL_RELATORIO
 {
-    public partial class Orcamento : Form
+    public partial class formOrcamentoRelatorio : Form
     {
-        public Orcamento()
+        public formOrcamentoRelatorio()
         {
             InitializeComponent();
         }
