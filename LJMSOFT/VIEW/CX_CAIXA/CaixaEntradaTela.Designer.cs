@@ -35,7 +35,7 @@
             this.codigoBox = new System.Windows.Forms.TextBox();
             this.valorTotalBox = new System.Windows.Forms.TextBox();
             this.valorParcelaBox = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.finalizarButton = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.formaPagamentoCombo = new System.Windows.Forms.ComboBox();
@@ -43,7 +43,7 @@
             this.pessoaCombo = new System.Windows.Forms.ComboBox();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.deletarButton = new System.Windows.Forms.Button();
             this.quantidadeBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.checkBox = new System.Windows.Forms.CheckBox();
             this.itensCombo = new System.Windows.Forms.ComboBox();
             this.itemDataGridView = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
+            this.adicionarItemButton = new System.Windows.Forms.Button();
             this.valorTotalPedidoBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cancelarButton = new System.Windows.Forms.Button();
             this.tabControl3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).BeginInit();
@@ -106,20 +106,20 @@
             this.valorParcelaBox.Size = new System.Drawing.Size(231, 35);
             this.valorParcelaBox.TabIndex = 24;
             // 
-            // button3
+            // finalizarButton
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.SeaGreen;
-            this.button3.FlatAppearance.BorderSize = 3;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1174, -1);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 49);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Finalizar";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.finalizarButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.finalizarButton.FlatAppearance.BorderColor = System.Drawing.Color.SeaGreen;
+            this.finalizarButton.FlatAppearance.BorderSize = 3;
+            this.finalizarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.finalizarButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finalizarButton.Location = new System.Drawing.Point(1174, 0);
+            this.finalizarButton.Name = "finalizarButton";
+            this.finalizarButton.Size = new System.Drawing.Size(144, 49);
+            this.finalizarButton.TabIndex = 10;
+            this.finalizarButton.Text = "Finalizar";
+            this.finalizarButton.UseVisualStyleBackColor = false;
+            this.finalizarButton.Click += new System.EventHandler(this.button3_Click);
             // 
             // label13
             // 
@@ -195,7 +195,7 @@
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.tabPage4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.deletarButton);
             this.tabPage4.Controls.Add(this.quantidadeBox);
             this.tabPage4.Controls.Add(this.label16);
             this.tabPage4.Controls.Add(this.valorTotalBox);
@@ -204,7 +204,7 @@
             this.tabPage4.Controls.Add(this.checkBox);
             this.tabPage4.Controls.Add(this.itensCombo);
             this.tabPage4.Controls.Add(this.itemDataGridView);
-            this.tabPage4.Controls.Add(this.button4);
+            this.tabPage4.Controls.Add(this.adicionarItemButton);
             this.tabPage4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Name = "tabPage4";
@@ -213,21 +213,21 @@
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Itens";
             // 
-            // button2
+            // deletarButton
             // 
-            this.button2.BackColor = System.Drawing.Color.Gray;
-            this.button2.BackgroundImage = global::LJMSOFT.Properties.Resources.cross;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1239, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 61);
-            this.button2.TabIndex = 9;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.deletarButton.BackColor = System.Drawing.Color.Gray;
+            this.deletarButton.BackgroundImage = global::LJMSOFT.Properties.Resources.cross;
+            this.deletarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.deletarButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.deletarButton.FlatAppearance.BorderSize = 3;
+            this.deletarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deletarButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletarButton.Location = new System.Drawing.Point(1239, 2);
+            this.deletarButton.Name = "deletarButton";
+            this.deletarButton.Size = new System.Drawing.Size(68, 61);
+            this.deletarButton.TabIndex = 9;
+            this.deletarButton.UseVisualStyleBackColor = false;
+            this.deletarButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // quantidadeBox
             // 
@@ -333,21 +333,21 @@
             this.itemDataGridView.TabIndex = 1;
             this.itemDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.itemHandleClick);
             // 
-            // button4
+            // adicionarItemButton
             // 
-            this.button4.BackColor = System.Drawing.Color.Tomato;
-            this.button4.BackgroundImage = global::LJMSOFT.Properties.Resources.add_to_shopping_cart_e_commerce_symbol__1_;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
-            this.button4.FlatAppearance.BorderSize = 3;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(1080, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(154, 61);
-            this.button4.TabIndex = 8;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button1_Click);
+            this.adicionarItemButton.BackColor = System.Drawing.Color.Tomato;
+            this.adicionarItemButton.BackgroundImage = global::LJMSOFT.Properties.Resources.add_to_shopping_cart_e_commerce_symbol__1_;
+            this.adicionarItemButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.adicionarItemButton.FlatAppearance.BorderColor = System.Drawing.Color.IndianRed;
+            this.adicionarItemButton.FlatAppearance.BorderSize = 3;
+            this.adicionarItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adicionarItemButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adicionarItemButton.Location = new System.Drawing.Point(1080, 2);
+            this.adicionarItemButton.Name = "adicionarItemButton";
+            this.adicionarItemButton.Size = new System.Drawing.Size(154, 61);
+            this.adicionarItemButton.TabIndex = 8;
+            this.adicionarItemButton.UseVisualStyleBackColor = false;
+            this.adicionarItemButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // valorTotalPedidoBox
             // 
@@ -452,26 +452,27 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.cancelarButton);
+            this.panel2.Controls.Add(this.finalizarButton);
             this.panel2.Location = new System.Drawing.Point(13, 671);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1325, 53);
             this.panel2.TabIndex = 32;
             // 
-            // button1
+            // cancelarButton
             // 
-            this.button1.BackColor = System.Drawing.Color.IndianRed;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, -1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 49);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.cancelarButton.BackColor = System.Drawing.Color.IndianRed;
+            this.cancelarButton.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.cancelarButton.FlatAppearance.BorderSize = 3;
+            this.cancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelarButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelarButton.Location = new System.Drawing.Point(3, 0);
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(144, 49);
+            this.cancelarButton.TabIndex = 11;
+            this.cancelarButton.Text = "Cancelar";
+            this.cancelarButton.UseVisualStyleBackColor = false;
+            this.cancelarButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // CaixaEntradaTela
             // 
@@ -482,6 +483,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "CaixaEntradaTela";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa - Entrada";
@@ -502,7 +504,7 @@
         private System.Windows.Forms.TextBox codigoBox;
         private System.Windows.Forms.TextBox valorTotalBox;
         private System.Windows.Forms.TextBox valorParcelaBox;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button finalizarButton;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox formaPagamentoCombo;
@@ -518,7 +520,7 @@
         private System.Windows.Forms.TextBox valorTotalPedidoBox;
         private System.Windows.Forms.ComboBox itensCombo;
         private System.Windows.Forms.DataGridView itemDataGridView;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button adicionarItemButton;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox tipoPagamentoCombo;
@@ -526,7 +528,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cancelarButton;
+        private System.Windows.Forms.Button deletarButton;
     }
 }

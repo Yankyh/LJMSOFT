@@ -237,7 +237,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(379, 82);
+            this.panel2.Location = new System.Drawing.Point(380, 82);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1524, 385);
             this.panel2.TabIndex = 8;

@@ -20,6 +20,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         //VARIAVEIS
         static float valorItem = 0;
         public static int itemHandle = -1, count = 0;
+        public int tipoPagamentoHandle = 0;
         String valorTotal = "";
         //
         public CaixaEntradaTela()
@@ -28,13 +29,14 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             //Inicializa os elementos
             quantidadeBox.Text = "1";
             count = 0;
+            deletarButton.Enabled = false;
             //
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             conexao.Conectar();
-
+            
             String item = itensCombo.Text;
             int quantidade = Convert.ToInt32(quantidadeBox.Text);
             valorTotal = valorTotalBox.Text.Replace(',', '.').Replace('R', ' ').Replace('$', ' ');
@@ -55,10 +57,10 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             String query4 = "SELECT HANDLE FROM PS_PESSOA WHERE NOME = '" + pessoaNome + "'";
             SqlDataReader reader3 = conexao.Pesquisa(query4);
-
+            int pessoaHandle = -1;
             while (reader3.Read())
             {
-                pessoaNome = reader3["HANDLE"].ToString();
+                pessoaHandle = Convert.ToInt32(reader3["HANDLE"]);
             }
             reader3.Close();
 
@@ -82,7 +84,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             {
                 if (tipoMovimentacaoCombo.Text != "")
                 {
-                    if (pessoaCombo.Text != "")
+                    if (pessoaCombo.Text != "" || (tipoMovimentacaoCombo.Text == "SIMPLES"))
                     {
                         if (formaPagamentoCombo.Text != "")
                         {
@@ -92,11 +94,13 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                                 {
                                     if (quantidadeBox.Text != "")
                                     {
+                                        this.Text = "Pedido - Cadastrado";
+
                                         pessoaCombo.Enabled = false;
                                         formaPagamentoCombo.Enabled = false;
 
                                         //Cria um pedido
-                                        String query1 = "INSERT INTO CX_PEDIDO (ATIVO) VALUES (1)";
+                                        String query1 = "INSERT INTO CX_PEDIDO (ATIVO, STATUS, PESSOA) VALUES (1,1, "+ pessoaHandle + ")";
                                         conexao.Inserir(query1);
                                         //Busca o handle e atualiza o código do pedido
                                         String query2 = "SELECT MAX(HANDLE) HANDLE FROM CX_PEDIDO";
@@ -111,7 +115,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                                         count++;
 
                                         //Pega handle do item
-                                        String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PESSOA, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidade + ", " + valorTotal + ", " + pessoaNome + ", " + codigoBox.Text + ", '" + nomeItem + "')";
+                                        String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidade + ", " + valorTotal + ", " + codigoBox.Text + ", '" + nomeItem + "')";
                                         conexao.Inserir(query6);
 
                                         //Atualiza a tabela de itens
@@ -166,7 +170,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             {
                 if (quantidadeBox.Text != "")
                 {
-                    String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PESSOA, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidade + ", '" + valorTotal + "', " + pessoaNome + ", " + codigoBox.Text + ", '" + nomeItem + "')";
+                    String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidade + ", '" + valorTotal + ", " + codigoBox.Text + ", '" + nomeItem + "')";
                     conexao.Inserir(query6);
 
                     //Atualiza a tabela de itens
@@ -344,6 +348,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             while (reader9.Read())
             {
+                tipoPagamentoHandle = Convert.ToInt32(reader9["HANDLE"]);
                 tipoPagamento = reader9["NOME"].ToString();
                 quantidadeParcela = Convert.ToInt32(reader9["NUMEROPARCELA"]);
             }
@@ -481,12 +486,61 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 itemHandle = Convert.ToInt32(reader["HANDLE"]);
             }
             //
+            deletarButton.Enabled = true;
             conexao.Desconectar();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Você realmente deseja cancelar este pedido? Se você cancelar não será possível retorná-lo!", "Cancelar Pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                conexao.Conectar();
+                //Desabilita o form e encerra o pedido
+                pessoaCombo.Enabled = false;
+                formaPagamentoCombo.Enabled = false;
+                tipoMovimentacaoCombo.Enabled = false;
+                quantidadeBox.Enabled = false;
+                valorTotalBox.Enabled = false;
+                itensCombo.Enabled = false;
+                checkBox.Enabled = false;
+                adicionarItemButton.Enabled = false;
+                deletarButton.Enabled = false;
+                finalizarButton.Enabled = false;
+                cancelarButton.Enabled = false;
+                itemDataGridView.Enabled = false;
+                //Cancela pedido
+                String query1 = "UPDATE CX_PEDIDO SET STATUS = 2 WHERE HANDLE = "+codigoBox.Text;
+                conexao.Inserir(query1);
+                conexao.Desconectar();
+                //ENCERA O FORM
+                this.Text = "Pedido - Cancelado";
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            conexao.Conectar();
+            //Desabilita o form e encerra o pedido
+            pessoaCombo.Enabled = false;
+            formaPagamentoCombo.Enabled = false;
+            tipoMovimentacaoCombo.Enabled = false;
+            quantidadeBox.Enabled = false;
+            valorTotalBox.Enabled = false;
+            itensCombo.Enabled = false;
+            checkBox.Enabled = false;
+            adicionarItemButton.Enabled = false;
+            deletarButton.Enabled = false;
+            finalizarButton.Enabled = false;
+            cancelarButton.Enabled = false;
+            itemDataGridView.Enabled = false;
 
+            String query1;
+
+            query1 = "UPDATE CX_PEDIDO SET STATUS = 3, TIPOPAGAMENTO = "+tipoPagamentoHandle+", VALORTOTAL = "+ valorTotalPedidoBox.Text.Replace(',','.').Replace('R', ' ').Replace('$', ' ') +" WHERE HANDLE = "+codigoBox.Text;
+            conexao.Inserir(query1);
+            this.Text = "Pedido - Encerrado";
+            conexao.Desconectar();
         }
 
         public void DeletarItem(int itemHandle)
