@@ -59,7 +59,16 @@ namespace LJMSOFT
                 " FROM CX_PEDIDO A WHERE A.DATAPEDIDO LIKE FORMAT(GETDATE(), 'yyyy-MM-dd', 'en-us') + '%'";
             String query2 = "SELECT SUM(A.VALORTOTAL) ONTEM " +
                 " FROM CX_PEDIDO A WHERE A.DATAPEDIDO LIKE FORMAT(GETDATE() - 1, 'yyyy-MM-dd', 'en-us') + '%'";
+            String query3 = "SELECT SUM(A.VALORTOTAL) MÊS " +
+             " FROM CX_PEDIDO A WHERE 1=2";
+            String query4 = "SELECT SUM(A.VALORTOTAL) HOJE " +
+             " FROM CX_PEDIDO A WHERE 1=2";
+            String query5 = "SELECT SUM(A.VALORTOTAL) ONTEM " +
+            " FROM CX_PEDIDO A WHERE 1=2";
+            String query6 = "SELECT SUM(A.VALORTOTAL) MÊS " +
+            " FROM CX_PEDIDO A WHERE 1=2";
 
+            //DASHBOARD 1
             BindingSource Binding = new BindingSource();
             Binding.DataSource = conexao.DataTable(query);
             dashBoard2.DataSource = Binding;
@@ -69,7 +78,7 @@ namespace LJMSOFT
             dashBoard2.RowTemplate.Height = 46;
             dashBoard2.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dashBoard2.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            //DASHBOARD 2
             BindingSource Binding2 = new BindingSource();
             Binding2.DataSource = conexao.DataTable(query2);
             dashBoard3.DataSource = Binding2;
@@ -79,12 +88,52 @@ namespace LJMSOFT
             dashBoard3.RowTemplate.Height = 46;
             dashBoard3.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dashBoard3.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //DASHBOARD 3
+            BindingSource Binding3 = new BindingSource();
+            Binding3.DataSource = conexao.DataTable(query3);
+            dashBoard4.DataSource = Binding3;
+            dashBoard4.AllowUserToResizeRows = false;
+            dashBoard4.AllowUserToAddRows = false;
+            dashBoard4.Columns[0].Width = 240;
+            dashBoard4.RowTemplate.Height = 46;
+            dashBoard4.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dashBoard4.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //DASHBOARD 4
+            BindingSource Binding4 = new BindingSource();
+            Binding4.DataSource = conexao.DataTable(query4);
+            dashBoard5.DataSource = Binding4;
+            dashBoard5.AllowUserToResizeRows = false;
+            dashBoard5.AllowUserToAddRows = false;
+            dashBoard5.Columns[0].Width = 240;
+            dashBoard5.RowTemplate.Height = 46;
+            dashBoard5.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dashBoard5.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //DASHBOARD 5
+            BindingSource Binding5 = new BindingSource();
+            Binding5.DataSource = conexao.DataTable(query5);
+            dashBoard6.DataSource = Binding5;
+            dashBoard6.AllowUserToResizeRows = false;
+            dashBoard6.AllowUserToAddRows = false;
+            dashBoard6.Columns[0].Width = 240;
+            dashBoard6.RowTemplate.Height = 46;
+            dashBoard6.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dashBoard6.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //DASHBOARD 6
+            BindingSource Binding6 = new BindingSource();
+            Binding6.DataSource = conexao.DataTable(query6);
+            dashBoard7.DataSource = Binding6;
+            dashBoard7.AllowUserToResizeRows = false;
+            dashBoard7.AllowUserToAddRows = false;
+            dashBoard7.Columns[0].Width = 240;
+            dashBoard7.RowTemplate.Height = 46;
+            dashBoard7.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dashBoard7.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+
 
             conexao.Desconectar();
         }
-
-
-
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
