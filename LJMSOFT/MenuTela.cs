@@ -65,14 +65,20 @@ namespace LJMSOFT
             dashBoard2.DataSource = Binding;
             dashBoard2.AllowUserToResizeRows = false;
             dashBoard2.AllowUserToAddRows = false;
-            dashBoard2.Columns[0].Width = 262;
+            dashBoard2.Columns[0].Width = 243;
+            dashBoard2.RowTemplate.Height = 46;
+            dashBoard2.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dashBoard2.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             BindingSource Binding2 = new BindingSource();
             Binding2.DataSource = conexao.DataTable(query2);
             dashBoard3.DataSource = Binding2;
             dashBoard3.AllowUserToResizeRows = false;
             dashBoard3.AllowUserToAddRows = false;
-            dashBoard3.Columns[0].Width = 262;
+            dashBoard3.Columns[0].Width = 240;
+            dashBoard3.RowTemplate.Height = 46;
+            dashBoard3.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dashBoard3.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             conexao.Desconectar();
         }
@@ -161,6 +167,11 @@ namespace LJMSOFT
         }
 
         private void dashBoard2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
