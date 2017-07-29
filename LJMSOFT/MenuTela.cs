@@ -34,12 +34,15 @@ namespace LJMSOFT
                              " FROM CX_PEDIDO A " +
                             " INNER JOIN PS_PESSOA B ON B.HANDLE = A.PESSOA" +
                             " INNER JOIN CX_TIPOPAGAMENTO C ON C.HANDLE = A.TIPOPAGAMENTO" +
-                            " INNER JOIN CX_FORMAPAGAMENTO D ON D.HANDLE = A.FORMAPAGAMENTO";
+                            " INNER JOIN CX_FORMAPAGAMENTO D ON D.HANDLE = A.FORMAPAGAMENTO" +
+                            " AND B.NOME IS NOT NULL";
            
 
             BindingSource Binding = new BindingSource();
             Binding.DataSource = conexao.DataTable(query);
             dashBoard1.DataSource = Binding;
+       
+            dashBoard1.ClearSelection();
             dashBoard1.Columns[0].Width = 350;
             dashBoard1.Columns[2].Width = 153;
             dashBoard1.Columns[3].Width = 170;
@@ -139,6 +142,11 @@ namespace LJMSOFT
         {
             formOrcamentoRelatorio orcamento = new formOrcamentoRelatorio();
             orcamento.ShowDialog();
+        }
+
+        private void refreshDashboards(object sender, EventArgs e)
+        {
+            CreateDashBoard1();
         }
     }
 }
