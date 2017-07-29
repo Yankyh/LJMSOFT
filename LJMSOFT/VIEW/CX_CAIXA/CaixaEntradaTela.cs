@@ -170,7 +170,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             {
                 if (quantidadeBox.Text != "")
                 {
-                    String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidade + ", '" + valorTotal + ", " + codigoBox.Text + ", '" + nomeItem + "')";
+                    String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidade + ", " + valorTotal + ", " + codigoBox.Text + ", '" + nomeItem + "')";
                     conexao.Inserir(query6);
 
                     //Atualiza a tabela de itens
