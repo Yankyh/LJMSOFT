@@ -26,7 +26,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         private void button2_Click(object sender, EventArgs e)
         {
             String str = "3,5";
-            str= str.Replace(',', '.');
+            str = str.Replace(',', '.');
             MessageBox.Show(str);
 
         }

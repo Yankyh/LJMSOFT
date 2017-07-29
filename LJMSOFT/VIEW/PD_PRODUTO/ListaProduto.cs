@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LJMSOFT.DAL;
+using System.Drawing.Drawing2D;
+
 namespace LJMSOFT.VIEW.PD_PRODUTO
 {
     public partial class ListaProduto : Form
@@ -19,13 +21,13 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         public ListaProduto()
         {
             InitializeComponent();
-            this.Refresh();
-            
+            this.RefreshGrid();
+
         }
 
 
         //metodo refresh
-        public void Refresh()
+        public void RefreshGrid()
         {
             //Mostra a tabela
             conexao.Conectar();
@@ -58,15 +60,10 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
 
 
-        private void ListaProduto_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void selecionaRow(object sender, DataGridViewCellMouseEventArgs e)
         {
             row = itemDataGridView.Columns[e.ColumnIndex].HeaderText;
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -77,7 +74,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             String pesquisa = pesquisaBox.Text;
             String query = "";
 
-            if(pesquisa == "")
+            if (pesquisa == "")
             {
                 query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
                "FROM CX_ITEM A " +
@@ -87,26 +84,26 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             else
             {
 
-          
 
-            if (row == "NOME")
-            {
-                row = "A.NOME";
-                pesquisa = "'" + pesquisa + "'";
+
+                if (row == "NOME")
+                {
+                    row = "A.NOME";
+                    pesquisa = "'" + pesquisa + "'";
+
+                }
+                else
+                {
+                    row = "A.HANDLE";
+                }
+                query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
+    "FROM CX_ITEM A " +
+    " INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
+    " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA" +
+    " WHERE " + row + " = " + pesquisa;
 
             }
-            else
-            {
-                row = "A.HANDLE";
-            }
-            query = "SELECT A.HANDLE CÓDIGO, A.NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
-"FROM CX_ITEM A " +
-" INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
-" INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA" +
-" WHERE " + row + " = " + pesquisa;
-                
-            }
-          
+
 
             BindingSource Binding = new BindingSource();
             Binding.DataSource = conexao.DataTable(query);
@@ -137,7 +134,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
         private void cellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            itemHandle  = Convert.ToInt32(itemDataGridView.CurrentRow.Cells[0].Value);
+            itemHandle = Convert.ToInt32(itemDataGridView.CurrentRow.Cells[0].Value);
             CadastroItem cadastroItem = new CadastroItem();
             cadastroItem.ShowDialog();
         }
@@ -150,13 +147,14 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
         private void ListaProduto_Activated(object sender, EventArgs e)
         {
-            this.Refresh();
-         //   itemHandle = -1;
+            this.RefreshGrid();
+           
+            //   itemHandle = -1;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Refresh();
+            this.RefreshGrid();
         }
 
         private void itemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -173,9 +171,9 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         {
             var result = MessageBox.Show("Você realmente deseja excluir este item?", "Excluir Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if(result == DialogResult.No)
+            if (result == DialogResult.No)
             {
-              
+
             }
             else
             {
@@ -183,14 +181,33 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                 String query = "DELETE CX_ITEM WHERE HANDLE = " + itemHandle;
                 conexao.Inserir(query);
                 conexao.Desconectar();
-                this.Refresh();
+                this.RefreshGrid();
             }
         }
 
         private void itemDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             itemHandle = Convert.ToInt32(itemDataGridView.CurrentRow.Cells[0].Value);
-            
+
+        }
+
+
+        //
+      
+
+        //Arendondar button
+      public void teste()
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(28, 54, 198, 198, 0, 360);
+            //path.AddString("MB!!!",Font.FontFamily, 1, 75, new Point(0, 0), new StringFormat());
+            Region = new Region(path);
+        }
+        
+
+            private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

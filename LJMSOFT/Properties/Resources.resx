@@ -121,11 +121,23 @@
   <data name="entradaDinheiro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\entradaDinheiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="letter-i" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter-i.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add-to-shopping-cart-e-commerce-symbol (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-to-shopping-cart-e-commerce-symbol (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="notepad-icon-29008" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notepad-icon-29008.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add-to-shopping-cart-e-commerce-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-to-shopping-cart-e-commerce-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="refresh-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,11 +157,17 @@
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="notebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="agenda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agenda.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="saidaDinheiro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\saidaDinheiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,7 +175,7 @@
   <data name="caixaIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\caixaIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="file" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

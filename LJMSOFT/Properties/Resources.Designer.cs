@@ -73,6 +73,26 @@ namespace LJMSOFT.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_to_shopping_cart_e_commerce_symbol {
+            get {
+                object obj = ResourceManager.GetObject("add-to-shopping-cart-e-commerce-symbol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_to_shopping_cart_e_commerce_symbol__1_ {
+            get {
+                object obj = ResourceManager.GetObject("add-to-shopping-cart-e-commerce-symbol (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agenda {
             get {
                 object obj = ResourceManager.GetObject("agenda", resourceCulture);
@@ -113,6 +133,16 @@ namespace LJMSOFT.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boss {
+            get {
+                object obj = ResourceManager.GetObject("boss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap caixaIcon {
             get {
                 object obj = ResourceManager.GetObject("caixaIcon", resourceCulture);
@@ -146,6 +176,36 @@ namespace LJMSOFT.Properties {
         internal static System.Drawing.Bitmap entradaDinheiro {
             get {
                 object obj = ResourceManager.GetObject("entradaDinheiro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file {
+            get {
+                object obj = ResourceManager.GetObject("file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap letter_i {
+            get {
+                object obj = ResourceManager.GetObject("letter-i", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notebook {
+            get {
+                object obj = ResourceManager.GetObject("notebook", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

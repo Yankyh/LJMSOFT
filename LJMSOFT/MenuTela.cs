@@ -19,7 +19,7 @@ namespace LJMSOFT
         public MenuTela()
         {
             InitializeComponent();
-
+            menuPanel.Visible = false;
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace LJMSOFT
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-        
+
         }
 
         private void MenuTela_Load(object sender, EventArgs e)
@@ -45,17 +45,17 @@ namespace LJMSOFT
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-         
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-        
+
         }
 
         private void treeView1_Click(object sender, EventArgs e)
         {
-           if( menuTreeView.SelectedNode == null)
+            if (menuTreeView.SelectedNode == null)
             {
 
             }
@@ -85,7 +85,7 @@ namespace LJMSOFT
                         }
                         else
                         {
-                            if(node == "Agenda")
+                            if (node == "Agenda")
                             {
                                 Agenda agenda = new Agenda();
                                 agenda.ShowDialog();
@@ -94,7 +94,7 @@ namespace LJMSOFT
                     }
                 }
             }
-    
+
 
         }
 
@@ -105,15 +105,17 @@ namespace LJMSOFT
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            if(menuTreeView.Visible == false)
+            if (menuTreeView.Visible == false)
             {
                 menuTreeView.Visible = true;
+                menuPanel.Visible = true;
             }
             else
             {
                 menuTreeView.Visible = false;
+                menuPanel.Visible = false;
             }
-          
+
         }
 
         private void Provisoriobutton_Click(object sender, EventArgs e)

@@ -27,16 +27,16 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             cadastrarButton.Enabled = false;
             cancelarButton.Enabled = false;
 
-            if(nomeBox.Text != "")
+            if (nomeBox.Text != "")
             {
-              
+
                 conexao.Conectar();
 
-                String query = "INSERT INTO PD_FAMILIA (NOME) VALUES ('"+nomeBox.Text+"')";
+                String query = "INSERT INTO PD_FAMILIA (NOME) VALUES ('" + nomeBox.Text + "')";
                 conexao.Inserir(query);
-            
-          
-              
+
+
+
                 MessageBox.Show("Cadastrado");
                 String query2 = "SELECT MAX(HANDLE) HANDLE FROM PD_FAMILIA";
                 SqlDataReader reader14 = conexao.Pesquisa(query2);
@@ -51,14 +51,34 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                 conexao.Desconectar();
 
             }
-     
-           
+
+
 
 
 
         }
 
         private void CadastroFamilia_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void codigoBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nomeBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

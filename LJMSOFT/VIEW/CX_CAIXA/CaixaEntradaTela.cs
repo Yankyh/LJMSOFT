@@ -16,33 +16,19 @@ namespace LJMSOFT.VIEW.CX_CAIXA
     public partial class CaixaEntradaTela : Form
     {
         Conexao conexao = new Conexao();
-        static float valorItem = 0;
-        static int quantidadeItem = 1, count = 0, antValor = 0;
-        String item, valorTotal = "";
-       
 
+        //VARIAVEIS
+        static float valorItem = 0;
+        public static int itemHandle = -1, count = 0;
+        String valorTotal = "";
+        //
         public CaixaEntradaTela()
         {
             InitializeComponent();
-            quantidadeItem = 1;
+            //Inicializa os elementos
             quantidadeBox.Text = "1";
             count = 0;
-            conexao.Desconectar();
-        }
-
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            //
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,7 +37,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             String item = itensCombo.Text;
             int quantidade = Convert.ToInt32(quantidadeBox.Text);
-            valorTotal = valorTotalBox.Text.Replace(',','.');
+            valorTotal = valorTotalBox.Text.Replace(',', '.').Replace('R', ' ').Replace('$', ' ');
 
             //Busca o handle pelo nome
             String query3 = "SELECT HANDLE, NOME FROM CX_ITEM WHERE NOME = '" + item + "'";
@@ -66,8 +52,8 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             reader2.Close();
             //Pega handle da pessoa
             String pessoaNome = pessoaCombo.Text;
-            String query4 = "SELECT HANDLE FROM PS_PESSOA WHERE NOME = '" + pessoaNome + "'";
 
+            String query4 = "SELECT HANDLE FROM PS_PESSOA WHERE NOME = '" + pessoaNome + "'";
             SqlDataReader reader3 = conexao.Pesquisa(query4);
 
             while (reader3.Read())
@@ -79,8 +65,8 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             //SELECIONA O TIPO DE PAGAMENTO
             String tipoPagamento = tipoPagamentoCombo.Text;
             int quantidadeParcela = 0;
-            String query5 = "SELECT * FROM CX_TIPOPAGAMENTO WHERE NOME = '" + tipoPagamento + "'";
 
+            String query5 = "SELECT * FROM CX_TIPOPAGAMENTO WHERE NOME = '" + tipoPagamento + "'";
             SqlDataReader reader5 = conexao.Pesquisa(query5);
 
             while (reader5.Read())
@@ -94,17 +80,17 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             if (count == 0)
             {
-                if(tipoMovimentacaoCombo.Text != "")
+                if (tipoMovimentacaoCombo.Text != "")
                 {
-                    if(pessoaCombo.Text != "")
+                    if (pessoaCombo.Text != "")
                     {
                         if (formaPagamentoCombo.Text != "")
                         {
-                            if(tipoPagamentoCombo.Text != "")
+                            if (tipoPagamentoCombo.Text != "")
                             {
-                                if(itensCombo.Text != "")
+                                if (itensCombo.Text != "")
                                 {
-                                    if(quantidadeBox.Text != "")
+                                    if (quantidadeBox.Text != "")
                                     {
                                         pessoaCombo.Enabled = false;
                                         formaPagamentoCombo.Enabled = false;
@@ -114,7 +100,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                                         conexao.Inserir(query1);
                                         //Busca o handle e atualiza o código do pedido
                                         String query2 = "SELECT MAX(HANDLE) HANDLE FROM CX_PEDIDO";
-
                                         SqlDataReader reader = conexao.Pesquisa(query2);
 
                                         while (reader.Read())
@@ -122,29 +107,15 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                                             codigoBox.Text = reader["HANDLE"].ToString();
                                         }
                                         reader.Close();
+
                                         count++;
 
                                         //Pega handle do item
                                         String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PESSOA, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidade + ", " + valorTotal + ", " + pessoaNome + ", " + codigoBox.Text + ", '" + nomeItem + "')";
-
                                         conexao.Inserir(query6);
 
-                                        //Mostra a tabela
-
-                                        BindingSource Binding = new BindingSource();
-                                        // itemDataGridView.AutoGenerateColumns = true;
-                                        String query = "SELECT ITEMNOME ITEM, QUANTIDADE, VALORTOTAL VALOR FROM CX_ITEMPEDIDO WHERE PEDIDO = " + codigoBox.Text;
-
-                                        Binding.DataSource = conexao.DataTable(query);
-
-                                        itemDataGridView.DataSource = Binding;
-                                        itemDataGridView.Columns[0].Width = 837;
-                                        itemDataGridView.Columns[1].Width = 200;
-                                        itemDataGridView.Columns[2].Width = 250;
-                                        itemDataGridView.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                        itemDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                                        itemDataGridView.AllowUserToResizeRows = false;
-
+                                        //Atualiza a tabela de itens
+                                        this.RefreshDataGrid();
 
                                         //Seleciona a soma dos itens no banco
                                         String query8 = "SELECT SUM(VALORTOTAL) VALORTOTAL FROM CX_ITEMPEDIDO WHERE PEDIDO = " + codigoBox.Text;
@@ -156,18 +127,15 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                                             valorTotalPedidoBox.Text = "R$ " + reader4["VALORTOTAL"].ToString();
                                         }
                                         reader4.Close();
-                                        valorTotalPedido = valorTotalPedido / quantidadeParcela;
 
-                                        valorParcelaBox.Text = "R$ " + valorTotalPedido.ToString();
-                                        checkBox.Checked = false;
-                                        valorTotalBox.Enabled = false;
-
+                                        //Atualiza o valor da parcela
+                                        this.AtualizaValorParcela(valorTotalPedido, quantidadeParcela);
                                     }
                                     else
                                     {
                                         MessageBox.Show("Preencha o campo unidade");
                                     }
-                                   
+
                                 }
                                 else
                                 {
@@ -184,7 +152,8 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                             MessageBox.Show("Preencha o campo forma de pagamento");
                         }
                     }
-                    else{
+                    else
+                    {
                         MessageBox.Show("Preencha o campo cliente");
                     }
                 }
@@ -192,7 +161,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 {
                     MessageBox.Show("Preencha o campo tipo de movimentação");
                 }
-             
             }
             else
             {
@@ -201,21 +169,8 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                     String query6 = "INSERT INTO CX_ITEMPEDIDO (ITEM, QUANTIDADE, VALORTOTAL, PESSOA, PEDIDO, ITEMNOME) VALUES (" + item + ", " + quantidade + ", '" + valorTotal + "', " + pessoaNome + ", " + codigoBox.Text + ", '" + nomeItem + "')";
                     conexao.Inserir(query6);
 
-                    //Mostra a tabela
-                    BindingSource Binding = new BindingSource();
-                    // itemDataGridView.AutoGenerateColumns = true;
-                    String query = "SELECT ITEMNOME ITEM, QUANTIDADE, VALORTOTAL VALOR FROM CX_ITEMPEDIDO WHERE PEDIDO = " + codigoBox.Text;
-
-                    Binding.DataSource = conexao.DataTable(query);
-
-                    itemDataGridView.DataSource = Binding;
-                    itemDataGridView.Columns[0].Width = 837;
-                    itemDataGridView.Columns[1].Width = 200;
-                    itemDataGridView.Columns[2].Width = 250;
-                    itemDataGridView.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    itemDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                    itemDataGridView.AllowUserToResizeRows = false;
-
+                    //Atualiza a tabela de itens
+                    this.RefreshDataGrid();
 
                     //Seleciona a soma dos itens no banco
                     String query8 = "SELECT SUM(VALORTOTAL) VALORTOTAL FROM CX_ITEMPEDIDO WHERE PEDIDO = " + codigoBox.Text;
@@ -227,29 +182,18 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                         valorTotalPedidoBox.Text = "R$ " + reader4["VALORTOTAL"].ToString();
                     }
                     reader4.Close();
-                    valorTotalPedido = valorTotalPedido / quantidadeParcela;
 
-                    valorParcelaBox.Text = "R$ " + valorTotalPedido.ToString();
-                    checkBox.Checked = false;
-                    valorTotalBox.Enabled = false;
+                    //Atualiza o valor da parcela
+                    this.AtualizaValorParcela(valorTotalPedido, quantidadeParcela);
                 }
                 else
                 {
                     MessageBox.Show("Preencha o campo unidade");
                 }
-                
             }
-           
-       
-
             conexao.Desconectar();
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-       
         private void listarCliente(object sender, EventArgs e)
         {
             conexao.Conectar();
@@ -258,46 +202,34 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             //Lista os tipos
             String query1 = "SELECT NOME FROM PS_PESSOA";
-           
-
-
             SqlDataReader reader = conexao.Pesquisa(query1);
 
             while (reader.Read())
             {
                 pessoaCombo.Items.Add((reader["NOME"].ToString()));
             }
-
             reader.Close();
+
             conexao.Desconectar();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void listarFormaPagamento(object sender, EventArgs e)
         {
-            
             conexao.Conectar();
             //Limpa a combo box
             formaPagamentoCombo.Items.Clear();
 
             //Lista os tipos
             String query1 = "SELECT NOME FROM CX_FORMAPAGAMENTO";
-          
             SqlDataReader reader = conexao.Pesquisa(query1);
 
             while (reader.Read())
             {
                 formaPagamentoCombo.Items.Add((reader["NOME"].ToString()));
-              
             }
-
             reader.Close();
-            conexao.Desconectar();
 
+            conexao.Desconectar();
         }
 
         private void listarTipoPagamento(object sender, EventArgs e)
@@ -308,15 +240,14 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             //Lista os tipos
             String query1 = "SELECT NOME FROM CX_TIPOPAGAMENTO";
-
             SqlDataReader reader = conexao.Pesquisa(query1);
 
             while (reader.Read())
             {
                 tipoPagamentoCombo.Items.Add((reader["NOME"].ToString()));
             }
-
             reader.Close();
+
             conexao.Desconectar();
         }
 
@@ -328,22 +259,15 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
             //Lista os tipos
             String query1 = "SELECT * FROM CX_ITEM";
-
             SqlDataReader reader = conexao.Pesquisa(query1);
 
             while (reader.Read())
             {
                 itensCombo.Items.Add((reader["NOME"].ToString()));
-
             }
 
             reader.Close();
             conexao.Desconectar();
-        }
-
-        private void selecionarItem(object sender, EventArgs e)
-        {
-          
         }
 
         private void itensCombo_DropDownClosed(object sender, EventArgs e)
@@ -351,28 +275,25 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             String item = "";
 
             Object selectedItem = itensCombo.SelectedItem;
-            if ((selectedItem == null || checkBox.Checked))
+            if ((selectedItem != null || checkBox.Checked))
             {
-
-            }
-            else
-            {
+                //Transforma o item selecionado em String
                 item = selectedItem.ToString();
                 conexao.Conectar();
-                //Limpa a combo box
 
-                valorTotalBox.Text = "";
+                //Limpa a combo box
+                valorTotalBox.Text = "R$ 0,00";
                 quantidadeBox.Text = "1";
+
                 //Lista os tipos
                 String query1 = "SELECT VALORUNITARIO FROM CX_ITEM WHERE NOME = '" + item + "'";
-
                 SqlDataReader reader = conexao.Pesquisa(query1);
-                float teste = 0;
+
                 while (reader.Read())
                 {
                     String valorItemAntes = "";
-                    valorTotalBox.Text = reader["VALORUNITARIO"].ToString();
-                    valorItem = float.Parse(valorTotalBox.Text);
+                    valorTotalBox.Text = "R$ " + reader["VALORUNITARIO"].ToString();
+                    valorItem = float.Parse(reader["VALORUNITARIO"].ToString());
                     valorItemAntes = reader["VALORUNITARIO"].ToString();
                     valorItemAntes = valorItemAntes.Replace(',', '.');
                 }
@@ -380,18 +301,11 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 reader.Close();
                 conexao.Desconectar();
             }
-
-          
-        }
-
-        private void recalcularValor(object sender, EventArgs e)
-        {
-  
         }
 
         private void recalcularValorr(object sender, EventArgs e)
         {
-            if(quantidadeBox.Text == "")
+            if (quantidadeBox.Text == "")
             {
 
             }
@@ -404,7 +318,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
 
                     float total = valor * quantidade;
                     //Adiciona na text box
-                    valorTotalBox.Text = total.ToString();
+                    valorTotalBox.Text = "R$ " + total.ToString();
                 }
                 else
                 {
@@ -412,20 +326,14 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                     //faz a conta
                     float total = valorItem * quantidade;
                     //Adiciona na text box
-                    valorTotalBox.Text = total.ToString();
+                    valorTotalBox.Text = "R$ " + total.ToString();
                 }
             }
-    
-        }
-
-        private void CaixaEntradaTela_Load(object sender, EventArgs e)
-        {
 
         }
 
         private void atualizarTipoPagamento(object sender, EventArgs e)
         {
-
             conexao.Conectar();
             //SELECIONA O TIPO DE PAGAMENTO
             String tipoPagamento = tipoPagamentoCombo.Text;
@@ -440,14 +348,12 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 quantidadeParcela = Convert.ToInt32(reader9["NUMEROPARCELA"]);
             }
             reader9.Close();
-            decimal novoValor = 0;
-            if(valorTotalPedidoBox.Text == "")
+            if (valorTotalPedidoBox.Text == "")
             {
 
             }
             else
             {
-
                 String query8 = "SELECT SUM(VALORTOTAL) VALORTOTAL FROM CX_ITEMPEDIDO WHERE PEDIDO = " + codigoBox.Text;
                 SqlDataReader reader11 = conexao.Pesquisa(query8);
                 decimal valorTotalPedido = 0;
@@ -456,33 +362,24 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                     valorTotalPedido = Convert.ToDecimal(reader11["VALORTOTAL"]);
                     valorTotalPedidoBox.Text = "R$ " + reader11["VALORTOTAL"].ToString();
                 }
-                
+
                 valorTotalPedido = valorTotalPedido / quantidadeParcela;
-                
 
                 valorParcelaBox.Text = "R$ " + valorTotalPedido.ToString();
                 reader11.Close();
             }
-
             conexao.Desconectar();
-
         }
 
         private void tipoMovimentacaoDrop(object sender, EventArgs e)
         {
-            if(tipoMovimentacaoCombo.Text == "COMPOSTA")
+            if (tipoMovimentacaoCombo.Text == "SIMPLES")
             {
                 pessoaCombo.Enabled = false;
-                tipoPagamentoCombo.Enabled = false;
-                formaPagamentoCombo.Enabled = false;
-                tipoPagamentoCombo.Enabled = false;
             }
             else
             {
                 pessoaCombo.Enabled = true;
-                tipoPagamentoCombo.Enabled = true;
-                formaPagamentoCombo.Enabled = true;
-                tipoPagamentoCombo.Enabled = true;
             }
         }
 
@@ -494,26 +391,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                 CadastroItem cadastroItem = new CadastroItem();
                 cadastroItem.ShowDialog();
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void itensCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tipoMovimentacaoCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void itemDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void checkEvent(object sender, EventArgs e)
@@ -528,14 +405,39 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             }
         }
 
-        private void itemDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        //METODOS
 
+        //REFRESH DATAGRIDVIEW
+        public void RefreshDataGrid()
+        {
+            //Mostra a tabela
+            BindingSource Binding = new BindingSource();
+            // itemDataGridView.AutoGenerateColumns = true;
+            String query = "SELECT ITEMNOME ITEM, QUANTIDADE, VALORTOTAL VALOR FROM CX_ITEMPEDIDO WHERE PEDIDO = " + codigoBox.Text;
+
+            Binding.DataSource = conexao.DataTable(query);
+
+            itemDataGridView.DataSource = Binding;
+            itemDataGridView.Columns[0].Width = 845;
+            itemDataGridView.Columns[1].Width = 200;
+            itemDataGridView.Columns[2].Width = 250;
+            itemDataGridView.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            itemDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            itemDataGridView.AllowUserToResizeRows = false;
+        }
+        //
+        //Atualiza o valor da parcela
+        public void AtualizaValorParcela(decimal valorTotalPedido, int quantidadeParcela)
+        {
+            valorTotalPedido = valorTotalPedido / quantidadeParcela;
+            valorParcelaBox.Text = "R$ " + valorTotalPedido.ToString();
+            checkBox.Checked = false;
+            valorTotalBox.Enabled = false;
         }
 
         private void informarValorCheck(object sender, EventArgs e)
         {
-           if(checkBox.Checked == true)
+            if (checkBox.Checked == true)
             {
                 valorTotalBox.Enabled = true;
             }
@@ -543,6 +445,56 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             {
                 valorTotalBox.Enabled = false;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(itemHandle != -1)
+            {
+                var result = MessageBox.Show("Você realmente deseja excluir este item?", "Excluir Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    DeletarItem(itemHandle);
+                    itemHandle = -1;
+                    this.RefreshDataGrid();
+                    //FALTA ATUALIZAR OS VALORES
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um item para deletar");
+            }
+        }
+       
+        private void itemHandleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            conexao.Conectar();
+            String itemNome = (itemDataGridView.CurrentRow.Cells[0].Value).ToString();
+            int itemQuantidade = Convert.ToInt32(itemDataGridView.CurrentRow.Cells[1].Value);
+            decimal itemValorTotal = Convert.ToDecimal(itemDataGridView.CurrentRow.Cells[2].Value);
+
+            //Busca o handle do item pelo nome
+            String query = "SELECT A.HANDLE, B.NOME FROM CX_ITEMPEDIDO A INNER JOIN CX_ITEM B ON B.HANDLE = A.ITEM AND A.VALORTOTAL = "+itemValorTotal+" AND A.PEDIDO = "+codigoBox.Text+" AND A.QUANTIDADE = "+itemQuantidade;
+            SqlDataReader reader = conexao.Pesquisa(query);
+            while (reader.Read())
+            {
+                itemHandle = Convert.ToInt32(reader["HANDLE"]);
+            }
+            //
+            conexao.Desconectar();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void DeletarItem(int itemHandle)
+        {
+            conexao.Conectar();
+            String query = "DELETE CX_ITEMPEDIDO WHERE HANDLE = " + itemHandle;
+            conexao.Inserir(query);
+            conexao.Desconectar();
         }
     }
 }
