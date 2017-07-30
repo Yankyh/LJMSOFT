@@ -41,7 +41,7 @@
             treeNode4,
             treeNode5});
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Produto");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Serviço", 2, 2);
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Ordem de compra", 2, 2);
             System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Almoxarifado", new System.Windows.Forms.TreeNode[] {
             treeNode7,
             treeNode8});
@@ -196,7 +196,7 @@
             treeNode8.Name = "Nó6";
             treeNode8.NodeFont = new System.Drawing.Font("Arial", 15.75F);
             treeNode8.SelectedImageIndex = 2;
-            treeNode8.Text = "Serviço";
+            treeNode8.Text = "Ordem de compra";
             treeNode9.ImageKey = "folder2.png";
             treeNode9.Name = "Nó1";
             treeNode9.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

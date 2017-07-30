@@ -108,11 +108,11 @@
     <Compile Include="VIEW\CX_CAIXA\CaixaEntradaTela.Designer.cs">
       <DependentUpon>CaixaEntradaTela.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\CX_CAIXA\CaixaSaidaTela.cs">
+    <Compile Include="VIEW\CX_CAIXA\OrdemDeCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\CX_CAIXA\CaixaSaidaTela.Designer.cs">
-      <DependentUpon>CaixaSaidaTela.cs</DependentUpon>
+    <Compile Include="VIEW\CX_CAIXA\OrdemDeCompra.Designer.cs">
+      <DependentUpon>OrdemDeCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\CX_CAIXA\CaixaTela.cs">
       <SubType>Form</SubType>
@@ -191,8 +191,8 @@
     <EmbeddedResource Include="VIEW\AG_AGENDA\Agenda.resx">
       <DependentUpon>Agenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaSaidaTela.resx">
-      <DependentUpon>CaixaSaidaTela.cs</DependentUpon>
+    <EmbeddedResource Include="VIEW\CX_CAIXA\OrdemDeCompra.resx">
+      <DependentUpon>OrdemDeCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\CX_CAIXA\CaixaTela.resx">
       <DependentUpon>CaixaTela.cs</DependentUpon>

@@ -40,6 +40,14 @@ namespace LJMSOFT.VIEW
                             Agenda agenda = new Agenda();
                             agenda.ShowDialog();
                         }
+                        else
+                        {
+                            if(node == "Ordem de compra")
+                            {
+                                OrdemDeCompra ordemDeCompra = new OrdemDeCompra();
+                                ordemDeCompra.ShowDialog();
+                            }
+                        }
                     }
                 }
             }

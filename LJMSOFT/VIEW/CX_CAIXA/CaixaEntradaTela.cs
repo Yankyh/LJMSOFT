@@ -560,6 +560,11 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             conexao.Desconectar();
         }
 
+        private void CaixaEntradaTela_Load(object sender, EventArgs e)
+        {
+
+        }
+
         public void DeletarItem(int itemHandle)
         {
             conexao.Conectar();

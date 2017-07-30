@@ -1,6 +1,6 @@
 ﻿namespace LJMSOFT.VIEW.CX_CAIXA
 {
-    partial class CaixaSaidaTela
+    partial class OrdemDeCompra
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -60,11 +60,16 @@
             this.itemDataGridView = new System.Windows.Forms.DataGridView();
             this.adicionarItemButton = new System.Windows.Forms.Button();
             this.finalizarButton = new System.Windows.Forms.Button();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.orcamentoTab = new System.Windows.Forms.TabControl();
+            this.dateTimePickerAte = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.orcamentoTabPage = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).BeginInit();
-            this.tabControl3.SuspendLayout();
+            this.orcamentoTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -80,6 +85,10 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.dateTimePickerAte);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.tipoPagamentoCombo);
@@ -104,7 +113,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1191, 6);
+            this.label12.Location = new System.Drawing.Point(1188, 12);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(76, 24);
             this.label12.TabIndex = 28;
@@ -144,11 +153,13 @@
             this.tipoMovimentacaoCombo.FormattingEnabled = true;
             this.tipoMovimentacaoCombo.Items.AddRange(new object[] {
             "SIMPLES",
-            "COMPOSTA"});
+            "COMPOSTA",
+            "VINCULADA A ORÇAMENTO"});
             this.tipoMovimentacaoCombo.Location = new System.Drawing.Point(6, 35);
             this.tipoMovimentacaoCombo.Name = "tipoMovimentacaoCombo";
-            this.tipoMovimentacaoCombo.Size = new System.Drawing.Size(313, 35);
+            this.tipoMovimentacaoCombo.Size = new System.Drawing.Size(350, 35);
             this.tipoMovimentacaoCombo.TabIndex = 1;
+            this.tipoMovimentacaoCombo.DropDownClosed += new System.EventHandler(this.tipoDeMovimentacaoClosed);
             // 
             // label20
             // 
@@ -178,7 +189,7 @@
             // 
             this.codigoBox.Enabled = false;
             this.codigoBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoBox.Location = new System.Drawing.Point(1196, 37);
+            this.codigoBox.Location = new System.Drawing.Point(1192, 35);
             this.codigoBox.Name = "codigoBox";
             this.codigoBox.Size = new System.Drawing.Size(102, 35);
             this.codigoBox.TabIndex = 27;
@@ -189,9 +200,9 @@
             this.pessoaCombo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.pessoaCombo.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pessoaCombo.FormattingEnabled = true;
-            this.pessoaCombo.Location = new System.Drawing.Point(323, 35);
+            this.pessoaCombo.Location = new System.Drawing.Point(362, 35);
             this.pessoaCombo.Name = "pessoaCombo";
-            this.pessoaCombo.Size = new System.Drawing.Size(470, 35);
+            this.pessoaCombo.Size = new System.Drawing.Size(486, 35);
             this.pessoaCombo.TabIndex = 2;
             // 
             // valorParcelaBox
@@ -209,11 +220,11 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label15.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(319, 8);
+            this.label15.Location = new System.Drawing.Point(358, 12);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 22);
+            this.label15.Size = new System.Drawing.Size(109, 22);
             this.label15.TabIndex = 21;
-            this.label15.Text = "Cliente";
+            this.label15.Text = "Fornecedor";
             // 
             // formaPagamentoCombo
             // 
@@ -221,9 +232,9 @@
             this.formaPagamentoCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.formaPagamentoCombo.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.formaPagamentoCombo.FormattingEnabled = true;
-            this.formaPagamentoCombo.Location = new System.Drawing.Point(799, 35);
+            this.formaPagamentoCombo.Location = new System.Drawing.Point(854, 35);
             this.formaPagamentoCombo.Name = "formaPagamentoCombo";
-            this.formaPagamentoCombo.Size = new System.Drawing.Size(313, 35);
+            this.formaPagamentoCombo.Size = new System.Drawing.Size(292, 35);
             this.formaPagamentoCombo.TabIndex = 3;
             // 
             // valorTotalPedidoBox
@@ -241,7 +252,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label14.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(795, 8);
+            this.label14.Location = new System.Drawing.Point(850, 12);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(192, 22);
             this.label14.TabIndex = 23;
@@ -384,30 +395,30 @@
             // 
             this.itemDataGridView.AllowUserToAddRows = false;
             this.itemDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.itemDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.itemDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.itemDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.itemDataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.itemDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.itemDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.itemDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.itemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.itemDataGridView.Location = new System.Drawing.Point(2, 66);
             this.itemDataGridView.MultiSelect = false;
             this.itemDataGridView.Name = "itemDataGridView";
@@ -446,17 +457,75 @@
             this.finalizarButton.Text = "Finalizar";
             this.finalizarButton.UseVisualStyleBackColor = false;
             // 
-            // tabControl3
+            // orcamentoTab
             // 
-            this.tabControl3.Controls.Add(this.tabPage4);
-            this.tabControl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl3.Location = new System.Drawing.Point(13, 186);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1325, 473);
-            this.tabControl3.TabIndex = 33;
+            this.orcamentoTab.Controls.Add(this.tabPage4);
+            this.orcamentoTab.Controls.Add(this.orcamentoTabPage);
+            this.orcamentoTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orcamentoTab.Location = new System.Drawing.Point(13, 186);
+            this.orcamentoTab.Name = "orcamentoTab";
+            this.orcamentoTab.SelectedIndex = 0;
+            this.orcamentoTab.Size = new System.Drawing.Size(1325, 473);
+            this.orcamentoTab.TabIndex = 33;
             // 
-            // CaixaSaidaTela
+            // dateTimePickerAte
+            // 
+            this.dateTimePickerAte.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePickerAte.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerAte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerAte.Location = new System.Drawing.Point(975, 111);
+            this.dateTimePickerAte.Name = "dateTimePickerAte";
+            this.dateTimePickerAte.Size = new System.Drawing.Size(171, 35);
+            this.dateTimePickerAte.TabIndex = 31;
+            this.dateTimePickerAte.Value = new System.DateTime(2017, 7, 19, 1, 16, 29, 0);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(971, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 22);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Previsão de chegada";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(799, 111);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(170, 35);
+            this.dateTimePicker1.TabIndex = 33;
+            this.dateTimePicker1.Value = new System.DateTime(2017, 7, 19, 1, 16, 29, 0);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(795, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(140, 22);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Data do pedido";
+            // 
+            // orcamentoTabPage
+            // 
+            this.orcamentoTabPage.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.orcamentoTabPage.Location = new System.Drawing.Point(4, 34);
+            this.orcamentoTabPage.Name = "orcamentoTabPage";
+            this.orcamentoTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.orcamentoTabPage.Size = new System.Drawing.Size(1317, 435);
+            this.orcamentoTabPage.TabIndex = 1;
+            this.orcamentoTabPage.Text = "Orçamento";
+            // 
+            // OrdemDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -465,15 +534,16 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cancelarButton);
             this.Controls.Add(this.finalizarButton);
-            this.Controls.Add(this.tabControl3);
-            this.Name = "CaixaSaidaTela";
-            this.Text = "Caixa - Saída";
+            this.Controls.Add(this.orcamentoTab);
+            this.Name = "OrdemDeCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ordem de compra";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).EndInit();
-            this.tabControl3.ResumeLayout(false);
+            this.orcamentoTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -509,6 +579,11 @@
         private System.Windows.Forms.DataGridView itemDataGridView;
         private System.Windows.Forms.Button adicionarItemButton;
         private System.Windows.Forms.Button finalizarButton;
-        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabControl orcamentoTab;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAte;
+        private System.Windows.Forms.TabPage orcamentoTabPage;
     }
 }
