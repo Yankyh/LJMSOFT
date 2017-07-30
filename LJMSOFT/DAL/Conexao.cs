@@ -28,7 +28,6 @@ namespace LJMSOFT.DAL
 
         public SqlDataReader Pesquisa(String query)
         {
-
             this.cmd2 = new SqlCommand(query, this.conexao);
             this.resultSet = cmd2.ExecuteReader();
 
@@ -118,7 +117,16 @@ namespace LJMSOFT.DAL
         {
             try
             {
-                this.conexao.Open();
+                if (conexao.State == ConnectionState.Open)
+                {
+                    this.Desconectar();
+                    this.conexao.Open();
+                }
+                else
+                {
+                    this.conexao.Open();
+                }
+
             }
             catch (Exception erro)
             {
@@ -133,7 +141,13 @@ namespace LJMSOFT.DAL
         {
             try
             {
-                this.conexao.Close();
+                if (conexao.State == ConnectionState.Closed)
+                {
+                }
+                else
+                {
+                    this.conexao.Close();
+                }
             }
             catch (Exception erro)
             {

@@ -49,8 +49,8 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             {
                 ehNovo = 1;
                 query = "SELECT A.HANDLE CÓDIGO, A.NOME NOME, A.VALORUNITARIO VALOR, A.UNIDADEMEDIDA UN, C.NOME FAMÍLIA, B.NOME FORNECEDOR, A.OBSERVACAO OBSERVAÇÃO " +
-"FROM CX_ITEM A " +
-" INNER JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
+"  FROM CX_ITEM A " +
+"  LEFT JOIN PS_PESSOA B ON B.HANDLE = A.FORNECEDOR" +
 " INNER JOIN PD_FAMILIA C ON C.HANDLE = A.FAMILIA" +
 " WHERE A.HANDLE = " + itemHandle;
                 SqlDataReader reader = conexao.Pesquisa(query);
@@ -235,6 +235,11 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             unidadeMedidaCombo.Enabled = true;
             fornecedorCombo.Enabled = true;
             observacaoBox.Enabled = true;
+
+        }
+
+        private void CadastroItem_Load(object sender, EventArgs e)
+        {
 
         }
     }

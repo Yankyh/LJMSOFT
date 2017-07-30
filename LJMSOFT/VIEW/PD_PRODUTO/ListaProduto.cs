@@ -22,7 +22,6 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         {
             InitializeComponent();
             this.RefreshGrid();
-
         }
 
 
@@ -51,7 +50,6 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             itemDataGridView.AllowUserToResizeRows = false;
 
             conexao.Desconectar();
-
         }
 
 
@@ -64,7 +62,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            conexao.Desconectar();
+           // conexao.Desconectar();
             conexao.Conectar();
 
             String pesquisa = pesquisaBox.Text;
@@ -76,9 +74,6 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             }
             else
             {
-
-
-
                 if (row == "NOME")
                 {
                     row = "A.NOME";
@@ -97,24 +92,29 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
 
             }
 
-
             BindingSource Binding = new BindingSource();
-            Binding.DataSource = conexao.DataTable(query);
-            itemDataGridView.DataSource = Binding;
-            itemDataGridView.Columns[0].Width = 100;
-            itemDataGridView.Columns[1].Width = 300;
-            itemDataGridView.Columns[2].Width = 100;
-            itemDataGridView.Columns[3].Width = 75;
-            itemDataGridView.Columns[4].Width = 150;
-            itemDataGridView.Columns[5].Width = 300;
-            itemDataGridView.Columns[6].Width = 500;
-            itemDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            itemDataGridView.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            itemDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            try
+            {
+                Binding.DataSource = conexao.DataTable(query);
+                itemDataGridView.DataSource = Binding;
+                itemDataGridView.Columns[0].Width = 100;
+                itemDataGridView.Columns[1].Width = 300;
+                itemDataGridView.Columns[2].Width = 100;
+                itemDataGridView.Columns[3].Width = 75;
+                itemDataGridView.Columns[4].Width = 150;
+                itemDataGridView.Columns[5].Width = 300;
+                itemDataGridView.Columns[6].Width = 500;
+                itemDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                itemDataGridView.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                itemDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            itemDataGridView.AllowUserToResizeRows = false;
-            itemDataGridView.AllowUserToAddRows = false;
-
+                itemDataGridView.AllowUserToResizeRows = false;
+                itemDataGridView.AllowUserToAddRows = false; 
+            }
+            catch
+            {
+                MessageBox.Show("Utilize somente números para pesquisar pelo número do produto.");
+            }
             conexao.Desconectar();
         }
 
@@ -175,6 +175,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                 conexao.Inserir(query);
                 conexao.Desconectar();
                 this.RefreshGrid();
+                conexao.Desconectar();
             }
         }
 
@@ -182,40 +183,6 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         {
             itemHandle = Convert.ToInt32(itemDataGridView.CurrentRow.Cells[0].Value);
 
-        }
-
-
-        //
-      
-
-        //Arendondar button
-      public void teste()
-        {
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(28, 54, 198, 198, 0, 360);
-            //path.AddString("MB!!!",Font.FontFamily, 1, 75, new Point(0, 0), new StringFormat());
-            Region = new Region(path);
-        }
-        
-
-            private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void ListaProduto_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void treeView1_Click(object sender, EventArgs e)
-        {
-         
         }
     }
 }

@@ -115,7 +115,6 @@
             this.familiaCombo.Size = new System.Drawing.Size(435, 40);
             this.familiaCombo.TabIndex = 35;
             this.familiaCombo.DropDown += new System.EventHandler(this.listarFamilia);
-            
             this.familiaCombo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.f3event);
             // 
             // label19
@@ -139,7 +138,6 @@
             this.label20.Size = new System.Drawing.Size(118, 24);
             this.label20.TabIndex = 33;
             this.label20.Text = "Fornecedor";
-            
             // 
             // fornecedorCombo
             // 
@@ -151,7 +149,6 @@
             this.fornecedorCombo.Size = new System.Drawing.Size(416, 40);
             this.fornecedorCombo.TabIndex = 31;
             this.fornecedorCombo.DropDown += new System.EventHandler(this.listarFornecedor);
-          
             // 
             // unidadeMedidaCombo
             // 
@@ -256,7 +253,7 @@
             this.Name = "CadastroItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar novo item";
-           
+            this.Load += new System.EventHandler(this.CadastroItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

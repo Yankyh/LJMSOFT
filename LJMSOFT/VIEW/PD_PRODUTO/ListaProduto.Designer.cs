@@ -253,7 +253,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1817, 78);
             this.panel2.TabIndex = 7;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+           
             // 
             // panel3
             // 
@@ -356,7 +356,7 @@
             this.Text = "Produtos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.ListaProduto_Activated);
-            this.Load += new System.EventHandler(this.ListaProduto_Load);
+           
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
