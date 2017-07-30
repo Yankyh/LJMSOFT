@@ -71,11 +71,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Location = new System.Drawing.Point(143, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(601, 57);
+            this.label1.Size = new System.Drawing.Size(726, 55);
             this.label1.TabIndex = 0;
             this.label1.Text = "      Cadastrar nova pessoa       ";
             // 
@@ -90,10 +90,10 @@
             // 
             // NomePessoatextBox
             // 
-            this.NomePessoatextBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomePessoatextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NomePessoatextBox.Location = new System.Drawing.Point(142, 120);
             this.NomePessoatextBox.Name = "NomePessoatextBox";
-            this.NomePessoatextBox.Size = new System.Drawing.Size(606, 32);
+            this.NomePessoatextBox.Size = new System.Drawing.Size(606, 31);
             this.NomePessoatextBox.TabIndex = 2;
             this.NomePessoatextBox.TextChanged += new System.EventHandler(this.textBoxNomePessoa_TextChanged);
             // 
@@ -109,30 +109,30 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(18, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 33);
+            this.label3.Size = new System.Drawing.Size(106, 33);
             this.label3.TabIndex = 4;
             this.label3.Text = "Nome ";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // CNJPCPFtextBox
             // 
-            this.CNJPCPFtextBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CNJPCPFtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CNJPCPFtextBox.Location = new System.Drawing.Point(142, 165);
             this.CNJPCPFtextBox.Name = "CNJPCPFtextBox";
-            this.CNJPCPFtextBox.Size = new System.Drawing.Size(232, 32);
+            this.CNJPCPFtextBox.Size = new System.Drawing.Size(232, 31);
             this.CNJPCPFtextBox.TabIndex = 5;
             // 
             // CPFCNPJlabel
             // 
             this.CPFCNPJlabel.AutoSize = true;
             this.CPFCNPJlabel.BackColor = System.Drawing.Color.Transparent;
-            this.CPFCNPJlabel.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPFCNPJlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPFCNPJlabel.Location = new System.Drawing.Point(19, 165);
             this.CPFCNPJlabel.Name = "CPFCNPJlabel";
-            this.CPFCNPJlabel.Size = new System.Drawing.Size(124, 31);
+            this.CPFCNPJlabel.Size = new System.Drawing.Size(157, 31);
             this.CPFCNPJlabel.TabIndex = 6;
             this.CPFCNPJlabel.Text = "CPF/CPNJ";
             this.CPFCNPJlabel.Click += new System.EventHandler(this.CPFCNPJlabel_Click);
@@ -141,10 +141,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(23, 215);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 33);
+            this.label4.Size = new System.Drawing.Size(166, 33);
             this.label4.TabIndex = 8;
             this.label4.Text = "Fone         ";
             // 
@@ -152,46 +152,46 @@
             // 
             this.Emaillabel5.AutoSize = true;
             this.Emaillabel5.BackColor = System.Drawing.Color.Transparent;
-            this.Emaillabel5.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Emaillabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Emaillabel5.Location = new System.Drawing.Point(427, 215);
             this.Emaillabel5.Name = "Emaillabel5";
-            this.Emaillabel5.Size = new System.Drawing.Size(87, 33);
+            this.Emaillabel5.Size = new System.Drawing.Size(105, 33);
             this.Emaillabel5.TabIndex = 10;
             this.Emaillabel5.Text = "E-mail";
             // 
             // FonetextBox
             // 
-            this.FonetextBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FonetextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FonetextBox.Location = new System.Drawing.Point(142, 215);
             this.FonetextBox.Name = "FonetextBox";
-            this.FonetextBox.Size = new System.Drawing.Size(232, 32);
+            this.FonetextBox.Size = new System.Drawing.Size(232, 31);
             this.FonetextBox.TabIndex = 11;
             // 
             // EmailtextBox
             // 
-            this.EmailtextBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailtextBox.Location = new System.Drawing.Point(520, 218);
             this.EmailtextBox.Name = "EmailtextBox";
-            this.EmailtextBox.Size = new System.Drawing.Size(232, 32);
+            this.EmailtextBox.Size = new System.Drawing.Size(232, 31);
             this.EmailtextBox.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(456, 168);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 33);
+            this.label5.Size = new System.Drawing.Size(70, 33);
             this.label5.TabIndex = 13;
             this.label5.Text = "RG ";
             // 
             // RGtextBox
             // 
-            this.RGtextBox.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RGtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RGtextBox.Location = new System.Drawing.Point(520, 168);
             this.RGtextBox.Name = "RGtextBox";
-            this.RGtextBox.Size = new System.Drawing.Size(232, 32);
+            this.RGtextBox.Size = new System.Drawing.Size(232, 31);
             this.RGtextBox.TabIndex = 14;
             // 
             // tabControl1
@@ -238,10 +238,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(606, 119);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 25);
+            this.label8.Size = new System.Drawing.Size(44, 25);
             this.label8.TabIndex = 10;
             this.label8.Text = "Nº ";
             // 
@@ -257,10 +257,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(28, 119);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 25);
+            this.label7.Size = new System.Drawing.Size(133, 25);
             this.label7.TabIndex = 8;
             this.label7.Text = "Referência ";
             // 
@@ -268,10 +268,10 @@
             // 
             this.CEPlabel7.AutoSize = true;
             this.CEPlabel7.BackColor = System.Drawing.Color.Transparent;
-            this.CEPlabel7.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CEPlabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CEPlabel7.Location = new System.Drawing.Point(384, 23);
             this.CEPlabel7.Name = "CEPlabel7";
-            this.CEPlabel7.Size = new System.Drawing.Size(95, 25);
+            this.CEPlabel7.Size = new System.Drawing.Size(124, 25);
             this.CEPlabel7.TabIndex = 7;
             this.CEPlabel7.Text = "Cep          ";
             // 
@@ -295,10 +295,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(384, 75);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 25);
+            this.label6.Size = new System.Drawing.Size(114, 25);
             this.label6.TabIndex = 4;
             this.label6.Text = "Cidade    ";
             // 
@@ -314,10 +314,10 @@
             // 
             this.Bairrolabel6.AutoSize = true;
             this.Bairrolabel6.BackColor = System.Drawing.Color.Transparent;
-            this.Bairrolabel6.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bairrolabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bairrolabel6.Location = new System.Drawing.Point(28, 75);
             this.Bairrolabel6.Name = "Bairrolabel6";
-            this.Bairrolabel6.Size = new System.Drawing.Size(109, 25);
+            this.Bairrolabel6.Size = new System.Drawing.Size(138, 25);
             this.Bairrolabel6.TabIndex = 2;
             this.Bairrolabel6.Text = "Bairro         ";
             // 
@@ -334,10 +334,10 @@
             // 
             this.RuaLabel.AutoSize = true;
             this.RuaLabel.BackColor = System.Drawing.Color.Transparent;
-            this.RuaLabel.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RuaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RuaLabel.Location = new System.Drawing.Point(28, 23);
             this.RuaLabel.Name = "RuaLabel";
-            this.RuaLabel.Size = new System.Drawing.Size(93, 25);
+            this.RuaLabel.Size = new System.Drawing.Size(112, 25);
             this.RuaLabel.TabIndex = 0;
             this.RuaLabel.Text = "Endereço";
             // 
@@ -375,7 +375,7 @@
             // 
             // CancelarButton
             // 
-            this.CancelarButton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelarButton.Location = new System.Drawing.Point(61, 455);
             this.CancelarButton.Name = "CancelarButton";
             this.CancelarButton.Size = new System.Drawing.Size(185, 44);
@@ -386,7 +386,7 @@
             // 
             // Cadastrarbutton
             // 
-            this.Cadastrarbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cadastrarbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cadastrarbutton.Location = new System.Drawing.Point(520, 455);
             this.Cadastrarbutton.Name = "Cadastrarbutton";
             this.Cadastrarbutton.Size = new System.Drawing.Size(185, 44);
@@ -397,7 +397,7 @@
             // 
             // Limparbutton
             // 
-            this.Limparbutton.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Limparbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Limparbutton.Location = new System.Drawing.Point(290, 455);
             this.Limparbutton.Name = "Limparbutton";
             this.Limparbutton.Size = new System.Drawing.Size(185, 44);
@@ -411,7 +411,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LJMSOFT.Properties.Resources.backgroundn;
-            this.ClientSize = new System.Drawing.Size(776, 511);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.Limparbutton);
             this.Controls.Add(this.Cadastrarbutton);
             this.Controls.Add(this.CancelarButton);

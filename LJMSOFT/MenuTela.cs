@@ -25,30 +25,31 @@ namespace LJMSOFT
         {
             InitializeComponent();
             menuPanel.Visible = false;
-            CreateDashBoard1();
-            CreateDashBoard2();
+            this.CreateDashBoard1();
+            this.CreateDashBoard2();
         }
 
         public void CreateDashBoard1()
         {
             conexao.Conectar();
             //Cria o dashboard1
+
             String query = "SELECT B.NOME PESSOA, A.VALORTOTAL VALOR, C.NOME TIPO, D.NOME FORMA, A.DATAPEDIDO DATA" +
                              " FROM CX_PEDIDO A" +
                             " LEFT JOIN PS_PESSOA B ON B.HANDLE = A.PESSOA" +
                             " INNER JOIN CX_TIPOPAGAMENTO C ON C.HANDLE = A.TIPOPAGAMENTO" +
                             " INNER JOIN CX_FORMAPAGAMENTO D ON D.HANDLE = A.FORMAPAGAMENTO" +
                             " ORDER BY DATAPEDIDO DESC";
-
+            
             BindingSource Binding = new BindingSource();
             Binding.DataSource = conexao.DataTable(query);
+
             dashBoard1.DataSource = Binding;
             dashBoard1.Columns[0].Width = 250;
             dashBoard1.Columns[2].Width = 123;
             dashBoard1.Columns[3].Width = 130;
             dashBoard1.Columns[4].Width = 170;
             dashBoard1.AllowUserToResizeRows = false;
-            dashBoard1.AllowUserToAddRows = false;
 
             conexao.Desconectar();
         }
@@ -70,9 +71,9 @@ namespace LJMSOFT
             " FROM CX_PEDIDO A WHERE 1=2";
 
             //DASHBOARD 1
-            BindingSource Binding = new BindingSource();
-            Binding.DataSource = conexao.DataTable(query);
-            dashBoard2.DataSource = Binding;
+            BindingSource Binding1 = new BindingSource();
+            Binding1.DataSource = conexao.DataTable(query);
+            dashBoard2.DataSource = Binding1;
             dashBoard2.AllowUserToResizeRows = false;
             dashBoard2.AllowUserToAddRows = false;
             dashBoard2.Columns[0].Width = 243;
@@ -129,9 +130,6 @@ namespace LJMSOFT
             dashBoard7.RowTemplate.Height = 46;
             dashBoard7.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dashBoard7.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-
-
 
             conexao.Desconectar();
         }
@@ -199,6 +197,7 @@ namespace LJMSOFT
         private void refreshDashboards(object sender, EventArgs e)
         {
             CreateDashBoard1();
+            CreateDashBoard2();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -222,6 +221,11 @@ namespace LJMSOFT
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dashBoard1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

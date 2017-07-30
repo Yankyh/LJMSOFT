@@ -184,5 +184,10 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
             itemHandle = Convert.ToInt32(itemDataGridView.CurrentRow.Cells[0].Value);
 
         }
+
+        private void ListaProduto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
