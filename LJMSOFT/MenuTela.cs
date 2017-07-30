@@ -34,10 +34,11 @@ namespace LJMSOFT
             conexao.Conectar();
             //Cria o dashboard1
             String query = "SELECT B.NOME PESSOA, A.VALORTOTAL VALOR, C.NOME TIPO, D.NOME FORMA, A.DATAPEDIDO DATA" +
-                             " FROM CX_PEDIDO A " +
+                             " FROM CX_PEDIDO A" +
                             " LEFT JOIN PS_PESSOA B ON B.HANDLE = A.PESSOA" +
                             " INNER JOIN CX_TIPOPAGAMENTO C ON C.HANDLE = A.TIPOPAGAMENTO" +
-                            " INNER JOIN CX_FORMAPAGAMENTO D ON D.HANDLE = A.FORMAPAGAMENTO";
+                            " INNER JOIN CX_FORMAPAGAMENTO D ON D.HANDLE = A.FORMAPAGAMENTO" +
+                            " ORDER BY DATAPEDIDO DESC";
 
             BindingSource Binding = new BindingSource();
             Binding.DataSource = conexao.DataTable(query);
