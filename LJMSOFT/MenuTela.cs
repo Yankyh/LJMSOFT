@@ -45,7 +45,7 @@ namespace LJMSOFT
             Binding.DataSource = conexao.DataTable(query);
 
             dashBoard1.DataSource = Binding;
-            dashBoard1.Columns[0].Width = 250;
+            dashBoard1.Columns[0].Width = 240;
             dashBoard1.Columns[2].Width = 123;
             dashBoard1.Columns[3].Width = 130;
             dashBoard1.Columns[4].Width = 170;
@@ -198,36 +198,6 @@ namespace LJMSOFT
         {
             CreateDashBoard1();
             CreateDashBoard2();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuTela_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dashBoard2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dashBoard1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

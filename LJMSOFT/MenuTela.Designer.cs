@@ -254,7 +254,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1904, 78);
             this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button6
             // 
@@ -357,7 +356,6 @@
             this.dashBoard2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dashBoard2.Size = new System.Drawing.Size(244, 80);
             this.dashBoard2.TabIndex = 2;
-            this.dashBoard2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashBoard2_CellContentClick);
             // 
             // dashBoard1
             // 
@@ -387,7 +385,6 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dashBoard1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dashBoard1.Enabled = false;
             this.dashBoard1.Location = new System.Drawing.Point(3, 45);
             this.dashBoard1.MultiSelect = false;
             this.dashBoard1.Name = "dashBoard1";
@@ -406,7 +403,6 @@
             this.dashBoard1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dashBoard1.Size = new System.Drawing.Size(775, 335);
             this.dashBoard1.TabIndex = 3;
-            this.dashBoard1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashBoard1_CellContentClick);
             // 
             // panel3
             // 
@@ -465,7 +461,6 @@
             this.label2.Size = new System.Drawing.Size(257, 32);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tarefas Pendentes";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel5
             // 
@@ -733,7 +728,6 @@
             this.label5.Size = new System.Drawing.Size(117, 32);
             this.label5.TabIndex = 1;
             this.label5.Text = "Entrada";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // dashBoard3
             // 
@@ -996,7 +990,6 @@
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.refreshDashboards);
-            this.Load += new System.EventHandler(this.MenuTela_Load);
             this.menuPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dashBoard2)).EndInit();
