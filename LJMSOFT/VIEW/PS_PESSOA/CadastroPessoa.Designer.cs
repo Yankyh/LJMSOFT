@@ -411,7 +411,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LJMSOFT.Properties.Resources.backgroundn;
-            this.ClientSize = new System.Drawing.Size(797, 517);
+            this.ClientSize = new System.Drawing.Size(778, 517);
             this.Controls.Add(this.Limparbutton);
             this.Controls.Add(this.Cadastrarbutton);
             this.Controls.Add(this.CancelarButton);
