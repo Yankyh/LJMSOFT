@@ -116,7 +116,7 @@
             this.RefreshpictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshpictureBox.BackgroundImage")));
             this.RefreshpictureBox.Location = new System.Drawing.Point(194, 15);
             this.RefreshpictureBox.Name = "RefreshpictureBox";
-            this.RefreshpictureBox.Size = new System.Drawing.Size(65, 63);
+            this.RefreshpictureBox.Size = new System.Drawing.Size(63, 63);
             this.RefreshpictureBox.TabIndex = 8;
             this.RefreshpictureBox.TabStop = false;
             this.RefreshpictureBox.Click += new System.EventHandler(this.RefreshpictureBox_Click);
