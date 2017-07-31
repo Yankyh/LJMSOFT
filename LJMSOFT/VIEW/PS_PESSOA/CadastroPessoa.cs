@@ -21,10 +21,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         static private Boolean ok = true; // 1 = CPF/CNPJ ja cadastrado; 2 = Campo obrigatório não preenchido NOME; 3 = Campo obrigatório não preenchido CNPJ/CPF; 4 = Erro não especificado
         static private String nomeIgual;
         static private int controleStatus;
-
-
-
-      
+     
         public CadastroPessoa()
         {
             InitializeComponent();
