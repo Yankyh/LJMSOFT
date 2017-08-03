@@ -14,46 +14,68 @@ namespace LJMSOFT.VIEW
     {
         public void Menu(String node)
         {
-            if (node == "Pessoa")
+
+            if (node == "Nova Tarefa")
             {
-                ListaPessoas listaPessoas = new ListaPessoas();
-                listaPessoas.ShowDialog();
+                CadastraTarefa novaTarefa = new CadastraTarefa();
+                novaTarefa.ShowDialog();
+
             }
             else
             {
-                if (node == "Produto")
+                if (node == "Consultar Tarefas")
                 {
-                    ListaProduto listaProduto = new ListaProduto();
-                    listaProduto.ShowDialog();
+                    Agenda agenda = new Agenda();
+                    agenda.ShowDialog();
+
                 }
                 else
                 {
-                    if (node == "Entrada")
+
+
+
+
+                    if (node == "Pessoa")
                     {
-                        CaixaEntradaTela caixaEntradaTela = new CaixaEntradaTela();
-                        caixaEntradaTela.ShowDialog();
+                        ListaPessoas listaPessoas = new ListaPessoas();
+                        listaPessoas.ShowDialog();
                     }
                     else
                     {
-                        if (node == "Agenda")
+                        if (node == "Produto")
                         {
-                            Agenda agenda = new Agenda();
-                            agenda.ShowDialog();
+                            ListaProduto listaProduto = new ListaProduto();
+                            listaProduto.ShowDialog();
                         }
                         else
                         {
-                            if(node == "Ordem de compra")
+                            if (node == "Entrada")
                             {
-                                OrdemDeCompra ordemDeCompra = new OrdemDeCompra();
-                                ordemDeCompra.ShowDialog();
+                                CaixaEntradaTela caixaEntradaTela = new CaixaEntradaTela();
+                                caixaEntradaTela.ShowDialog();
+                            }
+                            else
+                            {
+                                if (node == "Agenda")
+                                {
+                                    Agenda agenda = new Agenda();
+                                    agenda.ShowDialog();
+                                }
+                                else
+                                {
+                                    if (node == "Ordem de compra")
+                                    {
+                                        OrdemDeCompra ordemDeCompra = new OrdemDeCompra();
+                                        ordemDeCompra.ShowDialog();
+                                    }
+                                }
                             }
                         }
                     }
                 }
+
+
             }
-
-
-
 
         }
 
