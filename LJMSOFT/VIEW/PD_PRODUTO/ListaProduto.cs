@@ -22,8 +22,9 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
         {
             InitializeComponent();
             this.RefreshGrid();
+            
         }
-
+        
 
         //metodo refresh
         public void RefreshGrid()
