@@ -94,7 +94,7 @@
             // valorUnitarioBox
             // 
             this.valorUnitarioBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorUnitarioBox.Location = new System.Drawing.Point(426, 136);
+            this.valorUnitarioBox.Location = new System.Drawing.Point(426, 111);
             this.valorUnitarioBox.Name = "valorUnitarioBox";
             this.valorUnitarioBox.Size = new System.Drawing.Size(233, 32);
             this.valorUnitarioBox.TabIndex = 32;
@@ -127,7 +127,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(426, 109);
+            this.label19.Location = new System.Drawing.Point(426, 84);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(131, 24);
             this.label19.TabIndex = 34;
@@ -138,7 +138,7 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(0, 109);
+            this.label20.Location = new System.Drawing.Point(0, 84);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(118, 24);
             this.label20.TabIndex = 33;
@@ -149,7 +149,7 @@
             this.fornecedorCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fornecedorCombo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fornecedorCombo.FormattingEnabled = true;
-            this.fornecedorCombo.Location = new System.Drawing.Point(4, 136);
+            this.fornecedorCombo.Location = new System.Drawing.Point(4, 111);
             this.fornecedorCombo.Name = "fornecedorCombo";
             this.fornecedorCombo.Size = new System.Drawing.Size(416, 32);
             this.fornecedorCombo.TabIndex = 31;
@@ -164,7 +164,7 @@
             "KG",
             "UN",
             "PC"});
-            this.unidadeMedidaCombo.Location = new System.Drawing.Point(663, 136);
+            this.unidadeMedidaCombo.Location = new System.Drawing.Point(663, 111);
             this.unidadeMedidaCombo.Name = "unidadeMedidaCombo";
             this.unidadeMedidaCombo.Size = new System.Drawing.Size(255, 32);
             this.unidadeMedidaCombo.TabIndex = 45;
@@ -174,7 +174,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(663, 109);
+            this.label3.Location = new System.Drawing.Point(663, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(188, 24);
             this.label3.TabIndex = 47;
