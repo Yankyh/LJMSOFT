@@ -88,7 +88,7 @@ namespace LJMSOFT.DAL
             try
             {
                 this.cmd = new SqlCommand(query, this.conexao);
-                cmd.ExecuteNonQuery();
+                 cmd.ExecuteNonQuery();
             }
             catch (InvalidCastException e)
             {

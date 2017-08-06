@@ -82,12 +82,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LJMSOFTDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LJMSOFTDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LJMSOFTDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LJMSOFTDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LJMSOFTDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MenuTela.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuTela.Designer.cs">
       <DependentUpon>MenuTela.cs</DependentUpon>
     </Compile>
+    <Compile Include="PESQUISA\Pessoa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -233,6 +244,28 @@
     </None>
     <None Include="LJMSOFTDataSet.xss">
       <DependentUpon>LJMSOFTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LJMSOFTDataSet1.xsc">
+      <DependentUpon>LJMSOFTDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LJMSOFTDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LJMSOFTDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LJMSOFTDataSet1.xss">
+      <DependentUpon>LJMSOFTDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LJMSOFTDataSet2.xsc">
+      <DependentUpon>LJMSOFTDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="LJMSOFTDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LJMSOFTDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LJMSOFTDataSet2.xss">
+      <DependentUpon>LJMSOFTDataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

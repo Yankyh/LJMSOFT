@@ -1008,6 +1008,7 @@
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.refreshDashboards);
+            this.Load += new System.EventHandler(this.MenuTela_Load);
             this.menuPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dashBoard2)).EndInit();

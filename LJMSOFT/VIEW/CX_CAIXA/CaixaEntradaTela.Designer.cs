@@ -82,7 +82,7 @@
             // 
             this.codigoBox.Enabled = false;
             this.codigoBox.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigoBox.Location = new System.Drawing.Point(1196, 37);
+            this.codigoBox.Location = new System.Drawing.Point(1195, 35);
             this.codigoBox.Name = "codigoBox";
             this.codigoBox.Size = new System.Drawing.Size(102, 35);
             this.codigoBox.TabIndex = 27;

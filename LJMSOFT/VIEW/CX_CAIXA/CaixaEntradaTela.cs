@@ -100,7 +100,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                                         formaPagamentoCombo.Enabled = false;
 
                                         //Cria um pedido
-                                        String query1 = "INSERT INTO CX_PEDIDO (ATIVO, STATUS, PESSOA) VALUES (1,1, " + pessoaHandle + ")";
+                                        String query1 = "INSERT INTO CX_PEDIDO (ATIVO, STATUS, PESSOA, TIPOMOVIMENTACAO) VALUES (1,1, " + pessoaHandle + ", 1)";
                                         conexao.Inserir(query1);
                                         //Busca o handle e atualiza o código do pedido
                                         String query2 = "SELECT MAX(HANDLE) HANDLE FROM CX_PEDIDO";
@@ -317,7 +317,7 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             {
                 if (checkBox.Checked)
                 {
-                    int quantidade = Convert.ToInt32(quantidadeBox.Text), valor = Convert.ToInt32(valorTotalBox.Text); ;
+                    int quantidade = Convert.ToInt32(quantidadeBox.Text), valor = Convert.ToInt32(valorTotalBox.Text);
                     //faz a conta
 
                     float total = valor * quantidade;

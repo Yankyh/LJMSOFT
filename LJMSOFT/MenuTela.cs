@@ -34,21 +34,22 @@ namespace LJMSOFT
             conexao.Conectar();
             //Cria o dashboard1
 
-            String query = "SELECT B.NOME PESSOA, A.VALORTOTAL VALOR, C.NOME TIPO, D.NOME FORMA, A.DATAPEDIDO DATA" +
+            String query = "SELECT B.NOME PESSOA, A.VALORTOTAL VALOR, C.NOME TIPO, D.NOME FORMA, FORMAT(A.DATAPEDIDO, 'MM/dd') DATA, E.NOME TIP  " +
                              " FROM CX_PEDIDO A" +
                             " LEFT JOIN PS_PESSOA B ON B.HANDLE = A.PESSOA" +
                             " INNER JOIN CX_TIPOPAGAMENTO C ON C.HANDLE = A.TIPOPAGAMENTO" +
                             " INNER JOIN CX_FORMAPAGAMENTO D ON D.HANDLE = A.FORMAPAGAMENTO" +
+                            " INNER JOIN CX_TIPOMOVIMENTACAO E ON E.HANDLE = A.TIPOMOVIMENTACAO" +
                             " ORDER BY DATAPEDIDO DESC";
-            
+
             BindingSource Binding = new BindingSource();
             Binding.DataSource = conexao.DataTable(query);
 
             dashBoard1.DataSource = Binding;
-            dashBoard1.Columns[0].Width = 240;
-            dashBoard1.Columns[2].Width = 123;
+            dashBoard1.Columns[0].Width = 300;
+            dashBoard1.Columns[2].Width = 90;
             dashBoard1.Columns[3].Width = 130;
-            dashBoard1.Columns[4].Width = 170;
+            dashBoard1.Columns[4].Width = 90;
             dashBoard1.AllowUserToResizeRows = false;
 
             conexao.Desconectar();
@@ -58,17 +59,23 @@ namespace LJMSOFT
             conexao.Conectar();
             //Cria o dashboard1
             String query = "SELECT SUM(A.VALORTOTAL) HOJE" +
-                " FROM CX_PEDIDO A WHERE A.DATAPEDIDO LIKE FORMAT(GETDATE(), 'yyyy-MM-dd', 'en-us') + '%'";
+                " FROM CX_PEDIDO A WHERE A.DATAPEDIDO LIKE FORMAT(GETDATE(), 'yyyy-MM-dd', 'en-us') + '%'" +
+                " AND A.TIPOMOVIMENTACAO = 1";
             String query2 = "SELECT SUM(A.VALORTOTAL) ONTEM " +
-                " FROM CX_PEDIDO A WHERE A.DATAPEDIDO LIKE FORMAT(GETDATE() - 1, 'yyyy-MM-dd', 'en-us') + '%'";
+                " FROM CX_PEDIDO A WHERE A.DATAPEDIDO LIKE FORMAT(GETDATE() - 1, 'yyyy-MM-dd', 'en-us') + '%'" +
+                " AND A.TIPOMOVIMENTACAO = 1";
             String query3 = "SELECT SUM(A.VALORTOTAL) MÊS " +
-             " FROM CX_PEDIDO A WHERE 1=2";
+             " FROM CX_PEDIDO A WHERE 1=2" +
+             " AND A.TIPOMOVIMENTACAO = 1";
             String query4 = "SELECT SUM(A.VALORTOTAL) HOJE " +
-             " FROM CX_PEDIDO A WHERE 1=2";
+             " FROM CX_PEDIDO A WHERE A.DATAPEDIDO LIKE FORMAT(GETDATE(), 'yyyy-MM-dd', 'en-us') + '%'" +
+             " AND A.TIPOMOVIMENTACAO = 2";
             String query5 = "SELECT SUM(A.VALORTOTAL) ONTEM " +
-            " FROM CX_PEDIDO A WHERE 1=2";
+            " FROM CX_PEDIDO A WHERE A.DATAPEDIDO LIKE FORMAT(GETDATE() - 1, 'yyyy-MM-dd', 'en-us') + '%'" +
+            " AND A.TIPOMOVIMENTACAO = 2";
             String query6 = "SELECT SUM(A.VALORTOTAL) MÊS " +
-            " FROM CX_PEDIDO A WHERE 1=2";
+            " FROM CX_PEDIDO A WHERE 1=2" +
+            " AND A.TIPOMOVIMENTACAO = 2";
 
             //DASHBOARD 1
             BindingSource Binding1 = new BindingSource();
@@ -198,6 +205,11 @@ namespace LJMSOFT
         {
             CreateDashBoard1();
             CreateDashBoard2();
+        }
+
+        private void MenuTela_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
