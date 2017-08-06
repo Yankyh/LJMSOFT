@@ -34,7 +34,7 @@ namespace LJMSOFT
             conexao.Conectar();
             //Cria o dashboard1
 
-            String query = "SELECT B.NOME PESSOA, A.VALORTOTAL VALOR, C.NOME TIPO, D.NOME FORMA, FORMAT(A.DATAPEDIDO, 'MM/dd') DATA, E.NOME TIP  " +
+            String query = "SELECT B.NOME PESSOA, A.VALORTOTAL VALOR, C.NOME TIPO, D.NOME FORMA, FORMAT(A.DATAPEDIDO, 'dd/MM/yy') DATA, E.NOME TIP  " +
                              " FROM CX_PEDIDO A" +
                             " LEFT JOIN PS_PESSOA B ON B.HANDLE = A.PESSOA" +
                             " INNER JOIN CX_TIPOPAGAMENTO C ON C.HANDLE = A.TIPOPAGAMENTO" +

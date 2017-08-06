@@ -32,7 +32,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.codigoBox = new System.Windows.Forms.TextBox();
             this.nomeBox = new System.Windows.Forms.TextBox();
-            this.valorUnitarioBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.familiaCombo = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.valorUnitarioBox = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -91,14 +91,6 @@
             this.nomeBox.Size = new System.Drawing.Size(369, 32);
             this.nomeBox.TabIndex = 39;
             // 
-            // valorUnitarioBox
-            // 
-            this.valorUnitarioBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorUnitarioBox.Location = new System.Drawing.Point(426, 111);
-            this.valorUnitarioBox.Name = "valorUnitarioBox";
-            this.valorUnitarioBox.Size = new System.Drawing.Size(233, 32);
-            this.valorUnitarioBox.TabIndex = 32;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -127,7 +119,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(426, 84);
+            this.label19.Location = new System.Drawing.Point(419, 84);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(131, 24);
             this.label19.TabIndex = 34;
@@ -237,11 +229,11 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.valorUnitarioBox);
             this.panel1.Controls.Add(this.unidadeMedidaCombo);
             this.panel1.Controls.Add(this.fornecedorCombo);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.valorUnitarioBox);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.codigoBox);
@@ -272,6 +264,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(924, 9);
             this.panel3.TabIndex = 55;
+            // 
+            // valorUnitarioBox
+            // 
+            this.valorUnitarioBox.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valorUnitarioBox.Location = new System.Drawing.Point(423, 111);
+            this.valorUnitarioBox.Mask = "0000,00";
+            this.valorUnitarioBox.Name = "valorUnitarioBox";
+            this.valorUnitarioBox.PromptChar = '0';
+            this.valorUnitarioBox.Size = new System.Drawing.Size(236, 32);
+            this.valorUnitarioBox.TabIndex = 48;
             // 
             // CadastroItem
             // 
@@ -304,7 +306,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox codigoBox;
         private System.Windows.Forms.TextBox nomeBox;
-        private System.Windows.Forms.TextBox valorUnitarioBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox familiaCombo;
         private System.Windows.Forms.Label label19;
@@ -320,5 +321,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.MaskedTextBox valorUnitarioBox;
     }
 }

@@ -417,12 +417,14 @@ namespace LJMSOFT.VIEW.CX_CAIXA
                                 {
                                     if (quantidadeBox.Text != "")
                                     {
-                                        if(dataPedidoDate.Value < dataPrevisaoDate.Value)
+                                        if (dataPedidoDate.Value < dataPrevisaoDate.Value)
                                         {
-                                            this.Text = "Pedido - Cadastrado";
+                                            this.Text = "Ordem de compra - Cadastrado";
 
                                             pessoaCombo.Enabled = false;
                                             formaPagamentoCombo.Enabled = false;
+                                            dataPedidoDate.Enabled = false;
+                                            dataPrevisaoDate.Enabled = false;
 
                                             //Cria um pedido
                                             String query1 = "INSERT INTO CX_PEDIDO (ATIVO, STATUS, PESSOA, TIPOMOVIMENTACAO, DATADOPEDIDO, DATAPREVISAO) VALUES (1,1, " + pessoaHandle + ", 2, '" + dataPedidoDate.Value + "', '" + dataPrevisaoDate.Value + "')";

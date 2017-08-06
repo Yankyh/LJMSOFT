@@ -149,7 +149,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                                 familiaHandle = Convert.ToInt32(reader["HANDLE"]);
                             }
                             reader.Close();
-                            if(fornecedorCombo.Text == "")
+                            if (fornecedorCombo.Text == "")
                             {
                                 fornecedorHandle = 3;
                             }
@@ -165,7 +165,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                                 reader.Close();
                             }
 
-                            String valorUnitario = valorUnitarioBox.Text.Replace(",", ".");
+                            String valorUnitario = valorUnitarioBox.Text;
                             if (ehNovo == 1)
                             {
                                 query = "UPDATE CX_ITEM SET NOME = '" + nomeBox.Text + "', FAMILIA = " + familiaHandle + ", VALORUNITARIO = " + valorUnitario + ", FORNECEDOR = '" + fornecedorHandle + "', UNIDADEMEDIDA = '" + unidadeMedidaCombo.Text + "', OBSERVACAO = '" + observacaoBox.Text + "' WHERE HANDLE = " + codigoBox.Text;
@@ -174,6 +174,7 @@ namespace LJMSOFT.VIEW.PD_PRODUTO
                             else
                             {
                                 query = "INSERT INTO CX_ITEM (NOME, FAMILIA, VALORUNITARIO, FORNECEDOR, UNIDADEMEDIDA, OBSERVACAO) VALUES ('" + nomeBox.Text + "', " + familiaHandle + ", " + valorUnitario + ", '" + fornecedorHandle + "', '" + unidadeMedidaCombo.Text + "', '" + observacaoBox.Text + "')";
+                                MessageBox.Show(query);
                                 conexao.Inserir(query);
                                 MessageBox.Show("Item cadastrado com sucesso");
                                 String query3 = "SELECT MAX(HANDLE) HANDLE FROM CX_ITEM";
