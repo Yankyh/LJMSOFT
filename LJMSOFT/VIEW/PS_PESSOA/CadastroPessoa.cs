@@ -185,6 +185,15 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
         }
 
+        private void Bairrolabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BairroTextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
