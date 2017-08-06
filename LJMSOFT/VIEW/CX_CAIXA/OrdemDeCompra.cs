@@ -15,7 +15,6 @@ namespace LJMSOFT.VIEW.CX_CAIXA
         public OrdemDeCompra()
         {
             InitializeComponent();
-            orcamentoTabPage.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -28,20 +27,17 @@ namespace LJMSOFT.VIEW.CX_CAIXA
             if (tipoMovimentacaoCombo.Text == "SIMPLES")
             {
                 pessoaCombo.Enabled = false;
-                orcamentoTabPage.Visible = false;
             }
             else
             {
                 if (tipoMovimentacaoCombo.Text == "VINCULADA A ORÇAMENTO")
                 {
-                    orcamentoTabPage.Visible = true;
+                    pessoaCombo.Enabled = true;
                 }
                 else
                 {
                     pessoaCombo.Enabled = true;
-                    orcamentoTabPage.Visible = false;
                 }
-                  
             }
         }
     }

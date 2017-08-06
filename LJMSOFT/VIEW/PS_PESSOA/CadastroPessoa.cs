@@ -42,17 +42,18 @@ namespace LJMSOFT.VIEW.PS_PESSOA
             {
 
                 Boolean teste = campoVazio();
-                if (teste = false) { 
-                        if (EhjuridicacheckBox.Checked)
-                        {
-                            onzeDigitosCNPJ();
-                            juridica = 1;
-                        }
-                        else
-                        {
-                            onzeDigitosCPF();
-                            juridica = 0;
-                        }
+                if (teste = false)
+                {
+                    if (EhjuridicacheckBox.Checked)
+                    {
+                        onzeDigitosCNPJ();
+                        juridica = 1;
+                    }
+                    else
+                    {
+                        onzeDigitosCPF();
+                        juridica = 0;
+                    }
 
                     if (validaCPFCNPJ != false)
                     {
@@ -63,7 +64,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
                         this.Hide();
                         BotoesGerais bg = new BotoesGerais();
                         bg.ShowDialog();
-                    }                
+                    }
                 }
                 else
                 {
@@ -74,9 +75,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
         }
         private void CancelarButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
             this.Close();
-
         }
         private void Limparbutton_Click(object sender, EventArgs e)
         {
@@ -111,7 +110,7 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
 
         }
-        private int    existeCNPJCPF()
+        private int existeCNPJCPF()
         {
             String query = "SELECT HANDLE, NOME FROM PS_PESSOA WHERE CPFCNPJ = '" + CNJPCPFtextBox.Text + "'";
             SqlDataReader reader = conexao.Pesquisa(query);
