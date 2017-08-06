@@ -36,15 +36,21 @@
             treeNode2,
             treeNode3});
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Agenda", 2, 2);
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Administração", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Nova Tarefa", 2, 2);
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Consultar Tarefas", 2, 2);
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Tarefa", 0, 0, new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Administração", new System.Windows.Forms.TreeNode[] {
             treeNode1,
             treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Produto");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Ordem de compra", 2, 2);
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Almoxarifado", new System.Windows.Forms.TreeNode[] {
-            treeNode7,
+            treeNode5,
             treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Produto");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Ordem de compra", 2, 2);
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Almoxarifado", new System.Windows.Forms.TreeNode[] {
+            treeNode10,
+            treeNode11});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuTela));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -156,7 +162,7 @@
             this.menuTreeView.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuTreeView.ImageIndex = 1;
             this.menuTreeView.ImageList = this.imageList1;
-            this.menuTreeView.Location = new System.Drawing.Point(0, 0);
+            this.menuTreeView.Location = new System.Drawing.Point(2, 0);
             this.menuTreeView.Name = "menuTreeView";
             treeNode1.ImageIndex = 2;
             treeNode1.Name = "Nó3";
@@ -183,28 +189,40 @@
             treeNode5.NodeFont = new System.Drawing.Font("Arial", 20.25F);
             treeNode5.SelectedImageIndex = 2;
             treeNode5.Text = "Agenda";
-            treeNode6.ImageIndex = 1;
-            treeNode6.Name = "Nó0";
-            treeNode6.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode6.Text = "Administração";
+            treeNode6.ImageIndex = 2;
+            treeNode6.Name = "Tarefa";
+            treeNode6.SelectedImageIndex = 2;
+            treeNode6.Text = "Nova Tarefa";
             treeNode7.ImageIndex = 2;
-            treeNode7.Name = "Nó4";
-            treeNode7.NodeFont = new System.Drawing.Font("Arial", 15.75F);
-            treeNode7.SelectedImageKey = "document.png";
-            treeNode7.Text = "Produto";
-            treeNode8.ImageIndex = 2;
-            treeNode8.Name = "Nó6";
-            treeNode8.NodeFont = new System.Drawing.Font("Arial", 15.75F);
-            treeNode8.SelectedImageIndex = 2;
-            treeNode8.Text = "Ordem de compra";
-            treeNode9.ImageKey = "folder2.png";
-            treeNode9.Name = "Nó1";
+            treeNode7.Name = "Consulta";
+            treeNode7.SelectedImageIndex = 2;
+            treeNode7.Text = "Consultar Tarefas";
+            treeNode8.ImageIndex = 0;
+            treeNode8.Name = "Tarefa";
+            treeNode8.SelectedImageIndex = 0;
+            treeNode8.Text = "Tarefa";
+            treeNode9.ImageIndex = 1;
+            treeNode9.Name = "Nó0";
             treeNode9.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNode9.SelectedImageKey = "folder2.png";
-            treeNode9.Text = "Almoxarifado";
+            treeNode9.Text = "Administração";
+            treeNode10.ImageIndex = 2;
+            treeNode10.Name = "Nó4";
+            treeNode10.NodeFont = new System.Drawing.Font("Arial", 15.75F);
+            treeNode10.SelectedImageKey = "document.png";
+            treeNode10.Text = "Produto";
+            treeNode11.ImageIndex = 2;
+            treeNode11.Name = "Nó6";
+            treeNode11.NodeFont = new System.Drawing.Font("Arial", 15.75F);
+            treeNode11.SelectedImageIndex = 2;
+            treeNode11.Text = "Ordem de compra";
+            treeNode12.ImageKey = "folder2.png";
+            treeNode12.Name = "Nó1";
+            treeNode12.NodeFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            treeNode12.SelectedImageKey = "folder2.png";
+            treeNode12.Text = "Almoxarifado";
             this.menuTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode9});
+            treeNode9,
+            treeNode12});
             this.menuTreeView.SelectedImageIndex = 1;
             this.menuTreeView.Size = new System.Drawing.Size(317, 727);
             this.menuTreeView.TabIndex = 3;

@@ -13,18 +13,21 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 {
     public partial class ListaPessoas : Form
     {
+        // Variáveis.
         private static int handlePessoa = -1;
         private static String row = "";
         Conexao conecta = new Conexao();
+
+
+        // Métodos mãe
         public ListaPessoas()
         {
             InitializeComponent();
             refresh();
         }
-
         public void refresh()
         {
-            //Mostra a tabela
+           
             conecta.Conectar();
 
             BindingSource Binding = new BindingSource();
@@ -47,59 +50,60 @@ namespace LJMSOFT.VIEW.PS_PESSOA
 
             conecta.Desconectar();
         }
+ 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
+        // Picture box
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             CadastroPessoa cp = new CadastroPessoa();
             cp.ShowDialog();
         }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Close();
         }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void RefreshpictureBox_Click(object sender, EventArgs e)
         {
-
+            this.refresh();
         }
 
+        // Métodos em geral
         private void ListaPessoas_doubleClick(object sender, DataGridViewCellEventArgs e)
         {
             handlePessoa = Convert.ToInt32(PessoadataGridView1.CurrentRow.Cells[0].Value);
             CadastroPessoa cp = new CadastroPessoa();
             cp.ShowDialog();
         }
-
         private void selecionaRow(object sender, DataGridViewCellMouseEventArgs e)
         {
             row = PessoadataGridView1.Columns[e.ColumnIndex].HeaderText;
         }
-
         public static int getHandlePessoa()
         {
             return handlePessoa;
         }
 
-        private void buttonAtualizar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        // Métodos não utilizadas
         private void ListaPessoas_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void RefreshpictureBox_Click(object sender, EventArgs e)
+        private void buttonAtualizar_Click(object sender, EventArgs e)
         {
-              this.refresh();
+
         }
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+
     }
 }

@@ -75,6 +75,7 @@
       <DependentUpon>Component1.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Conexao.cs" />
+    <Compile Include="DAL\Controles.cs" />
     <Compile Include="DAL\MetodoQuery.cs" />
     <Compile Include="LJMSOFTDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

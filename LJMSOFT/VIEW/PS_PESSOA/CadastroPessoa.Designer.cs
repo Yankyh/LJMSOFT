@@ -73,11 +73,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(143, 9);
+            this.label1.Location = new System.Drawing.Point(132, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(726, 55);
+            this.label1.Size = new System.Drawing.Size(544, 55);
             this.label1.TabIndex = 0;
-            this.label1.Text = "      Cadastrar nova pessoa       ";
+            this.label1.Text = "Cadastrar nova pessoa";
             // 
             // pictureBox1
             // 
@@ -120,7 +120,7 @@
             // CNJPCPFtextBox
             // 
             this.CNJPCPFtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CNJPCPFtextBox.Location = new System.Drawing.Point(142, 165);
+            this.CNJPCPFtextBox.Location = new System.Drawing.Point(178, 168);
             this.CNJPCPFtextBox.Name = "CNJPCPFtextBox";
             this.CNJPCPFtextBox.Size = new System.Drawing.Size(232, 31);
             this.CNJPCPFtextBox.TabIndex = 5;
@@ -129,10 +129,10 @@
             // 
             this.CPFCNPJlabel.AutoSize = true;
             this.CPFCNPJlabel.BackColor = System.Drawing.Color.Transparent;
-            this.CPFCNPJlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPFCNPJlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPFCNPJlabel.Location = new System.Drawing.Point(19, 165);
             this.CPFCNPJlabel.Name = "CPFCNPJlabel";
-            this.CPFCNPJlabel.Size = new System.Drawing.Size(157, 31);
+            this.CPFCNPJlabel.Size = new System.Drawing.Size(139, 29);
             this.CPFCNPJlabel.TabIndex = 6;
             this.CPFCNPJlabel.Text = "CPF/CPNJ";
             this.CPFCNPJlabel.Click += new System.EventHandler(this.CPFCNPJlabel_Click);
@@ -170,7 +170,7 @@
             // EmailtextBox
             // 
             this.EmailtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailtextBox.Location = new System.Drawing.Point(520, 218);
+            this.EmailtextBox.Location = new System.Drawing.Point(520, 219);
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(232, 31);
             this.EmailtextBox.TabIndex = 12;
@@ -411,7 +411,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LJMSOFT.Properties.Resources.backgroundn;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(778, 517);
             this.Controls.Add(this.Limparbutton);
             this.Controls.Add(this.Cadastrarbutton);
             this.Controls.Add(this.CancelarButton);
